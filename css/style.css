@@ -1,0 +1,54 @@
+body
+{
+    /* background: rgb(33,147,176);
+    background: linear-gradient(90deg, rgba(33,147,176,1) 0%, rgba(109,213,237,1) 100%); */
+}
+
+header
+{
+    margin-bottom: 3em;
+}
+
+main{
+    /*background: rgb(33,147,176);
+    background: linear-gradient(90deg, rgba(33,147,176,1) 0%, rgba(109,213,237,1) 100%);*/
+}
+.cuerpo{
+    background: rgb(33,147,176);
+    background: linear-gradient(90deg, rgba(33,147,176,1) 0%, rgba(109,213,237,1) 100%);
+}
+
+
+
+
+input[type=submit]
+{
+    border-radius: 5px;
+    border: 0px;
+    background-color: transparent;
+    color:white;
+    font-size: 19px;
+}
+
+label
+{
+    color:white;
+}
+
+
+.info
+{
+    margin-bottom: 3em;
+}
+
+h1 .Bienvenido{
+    text-align: center;
+}
+
+.contenedor{
+    width:100%;
+    padding:15px;
+}
+.formulario{
+    background: #fff;
+}

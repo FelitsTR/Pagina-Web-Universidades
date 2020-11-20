@@ -263,6 +263,10 @@ iframe {
   padding-left: 2px;
 }
 
+.h3{
+  font-family: Poppins-SemiBold;
+}
+
 .input100 {
   display: block;
   width: 100%;

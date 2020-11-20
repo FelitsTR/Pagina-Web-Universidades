@@ -37,10 +37,26 @@
 
 <body>
 
-
+<!-- ACA ES SI? ACA ACA ACA SE QUE ME ESTAS VIENDO WE, ACA PONLO  -->
 
   <!-- ======= Header ======= -->
+  <div class="row align-items-center justify-content-center" id="container-fluid">
+    <div class="col-sm-4 align-items-center">
+      <img src="assets/img/topbar_logo_1.jpg" class="img-logo-1" alt="">
+      <img src="assets/img/topbar_logo_2.jpg" class="img-logo-2" alt="">
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+    <div class="col-sm-4 row justify-content-center">
+      <img src="assets/img/ceiba_cuadrado-favicon.png" class="img-logo-3" alt="">
+      <img src="assets/img//topbar_logo_3.png" class="img-logo-4" alt="">
+    </div>
+  </div>
+
+
   <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
+
     <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
@@ -58,6 +74,25 @@
 
     </div>
   </header><!-- End Header -->
+
+  <!-- <section id="topbar" class="d-none d-md-block">
+   
+
+    <div class="row align-items-center justify-content-between">
+      <div class="col-sm-4 align-items-center">
+        <img src="assets/img/topbar_logo_1.jpg" class="img-logo-1" alt="">
+        <img src="assets/img/topbar_logo_2.jpg" class="img-logo-2" alt="">
+      </div>
+      <div class="col-sm-4">
+
+      </div>        
+      <div class="col-sm-4 row justify-content-end">
+        <img src="assets/img/ceiba_cuadrado-favicon.png" class="img-logo-3" alt="">
+        <img src="assets/img//topbar_logo_3.png" class="img-logo-4" alt="">
+      </div>
+    </div>
+    
+  </section> -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
@@ -131,24 +166,32 @@
         </div>
 
         <div class="row content" data-aos="fade-up">
-          <div class="col-lg-6">
+          <div class="col-lg-9">
             <p>
             FERIA VIRTUAL UNIVERSITARIA
             </p>
+            <p>
+              Evento estatal que reúne a todos los Programas Educativos de nivel
+              superior, en un esfuerzo por acercar la Oferta Educativa a todos los jóvenes
+              que quieren continuar su formación cursando una carrera universitaria.
+            </p>
+            
             <!--<ul>
               <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
               <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
               <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
             </ul>-->
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
-              Evento estatal que reúne a todos los Programas Educativos de nivel
-              superior, en un esfuerzo por acercar la Oferta Educativa a todos los jóvenes
-              que quieren continuar su formación cursando una carrera universitaria.
-            </p>
-            <a href="#" class="btn-learn-more">Learn More</a>
+          <div class="col-lg-3">
+            <br><br>
+            <a href="login.html" class="btn-learn-more">Saber más</a>
           </div>
+          <!--<div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              
+            </p>
+            <a href="register.html" class="btn-learn-more">Saber más</a>
+          </div>-->
         </div>
 
       </div>
@@ -163,8 +206,8 @@
         <div class="tab-content" data-aos="fade-up">
           <div class="tab-pane active show" id="tab-1">
             <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>TEST VOCACIONAL</h3>
+              <div class="col-lg-6 order-2 order-lg-1 mt-1 mt-lg-0">
+                <h3>Test Vocacional</h3>
                 <p class="font-italic">
                   ¿Aún no sabes qué estudiar?
                 </p>
@@ -172,14 +215,22 @@
                   <li><i class="ri-check-double-line"></i> El test de orientación vocacional ayuda a esclarecer las mejores opciones para tu futuro, basándose en intereses, aptitudes, debilidades, entre otras características personales </li>              
                   <li><i class="ri-check-double-line"></i> El objetivo de esta herramienta es guiar y señalar dónde podrías prosperar profesionalmente.</li>
                 </ul>
+                <center><a class="btn btn-info btn-lg" href="http://www.decidetusestudios.sep.gob.mx/vista/test-vocacional/" target="_blank" -role="button" >Realizar Test</a></center>
+                <!--<img src="assets/img/features-1.png" alt="" class="img-fluid"> -->
               </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/features-1.png" alt="" class="img-fluid">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 text-center mt-5">
+                 <h3>Visitas</h3>
+                  <div> 
+                    <a title="contador de visitas" class="row justify-content-center"><img src="https://counter3.stat.ovh/private/contadorvisitasgratis.php?c=fzcl3duq6pzwbs3tagf2pqkr56zcljqy" ></a>
+                  </div>
+                
+                
               </div>
+               
             </div>
           </div>
           
-          <ul class="nav nav-tabs row d-flex">
+          <!-- <ul class="nav nav-tabs row d-flex">
             <li class="nav-item col-3" data-aos="zoom-in">
               <a class="nav-link active show" data-toggle="tab" href="http://www.decidetusestudios.sep.gob.mx/vista/test-vocacional/registro" target="_blank">
                 <i class="ri-gps-line"></i>
@@ -187,7 +238,7 @@
               </a>
             </li>
             
-          <!-- <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100">
+          <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100">
               <a class="nav-link" data-toggle="tab" href="#tab-2">
                 <i class="ri-body-scan-line"></i>
                 <h4 class="d-none d-lg-block">Unde praesenti mara setra le</h4>
@@ -716,18 +767,14 @@
               <div class="member-img">
                 <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
+                  <a href="https://www.facebook.com/profile.php?id=100016759814406" target="_blank"><i class="icofont-facebook"></i></a>
+                  <a href="https://www.instagram.com/xnobleswag?r=nametag" target="_blank"><i class="icofont-instagram"></i></a>
                 </div>
               </div>
               <div class="member-info">
                 <h4>Erick Espinoza</h4>
                 <span>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                   Dolores laudantium voluptas eligendi! Quidem voluptatum nihil debitis cum mollitia 
-                   repellat ab.
+                  El que le gusta complicarse la vida
                 </span>
               </div>
             </div>
@@ -738,10 +785,8 @@
               <div class="member-img">
                 <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
+                  <a href="https://www.facebook.com/sandra.ascencio.92" target="_blank"><i class="icofont-facebook"></i></a>
+                  <a href="https://www.instagram.com/sandra_asc/?hl=es-la" target="_blank"><i class="icofont-instagram"></i></a>
                 </div>
               </div>
               <div class="member-info">
@@ -756,10 +801,8 @@
               <div class="member-img">
                 <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
+                  <a href="https://www.facebook.com/profile.php?id=100041210151495" target="_blank" ><i class="icofont-facebook"></i></a>
+                  <a href="https://www.instagram.com/felits.tr/?hl=es-la" target="_blank"><i class="icofont-instagram"></i></a>
                 </div>
               </div>
               <div class="member-info">
@@ -774,15 +817,31 @@
               <div class="member-img">
                 <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
+                  <a href="https://www.facebook.com/azael.caos" target="_blank"><i class="icofont-facebook"></i></a>
+                  <a href="https://www.instagram.com/aza.el_sith/?hl=es-la" target="_blank"><i class="icofont-instagram"></i></a>
                 </div>
               </div>
               <div class="member-info">
                 <h4>Azael</h4>
                 <span>El que se rifa al final con el proyecto</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="assets/img/team/team-romo.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href="https://www.facebook.com/luisfernando.lopezromo.7" target="_blank"><i class="icofont-facebook"></i></a>
+                  <a href="https://www.instagram.com/fernando_romo43/?hl=es-la" target="_blank"><i class="icofont-instagram"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Romo</h4>
+                <span>
+                    Es romo pelón
+                </span>
               </div>
             </div>
           </div>
@@ -887,14 +946,25 @@
       </div>
     </div>
 
-
         <!-- ======= Top Bar ======= -->
 
   </footer><!-- End Footer -->
 
+  <div class="row align-items-center justify-content-center">
+    <div class="col-sm-4 align-items-center">
+      <img src="assets/img/topbar_logo_1.jpg" class="img-logo-1" alt="">
+      <img src="assets/img/topbar_logo_2.jpg" class="img-logo-2" alt="">
+    </div>
+    <div class="col-sm-4">
 
+    </div>
+    <div class="col-sm-4 row justify-content-center">
+      <img src="assets/img/ceiba_cuadrado-favicon.png" class="img-logo-3" alt="">
+      <img src="assets/img//topbar_logo_3.png" class="img-logo-4" alt="">
+    </div>
+  </div>
 
-    <section id="topbar" class="d-none d-md-block">
+    <!-- <section id="topbar" class="d-none d-md-block">
       <div class="container topbar-elements clearfix">
       
 
@@ -909,13 +979,13 @@
           </div>
 
 
-  <!--      <i class="icofont-envelope"></i><a href="mailto:contact@example.com">contact@example.com</a>
+        <i class="icofont-envelope"></i><a href="mailto:contact@example.com">contact@example.com</a>
           <i class="icofont-phone"></i> +1 5589 55488 55 -->
 
 
         
 
-        <!-- Redes sociales -->
+        <!-- Redes sociales 
 
 
       </div>
@@ -936,7 +1006,7 @@
       
     </section> 
 
-  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a> -->
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>

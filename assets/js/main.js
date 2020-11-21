@@ -234,7 +234,7 @@ function verificarPasswords() {
       document.getElementById("ok").classList.remove("ocultar");
 
       // Desabilitamos el botón de login 
-      document.getElementById("login").disabled = true;
+      document.getElementById("register").disabled = true;
 
       // Refrescamos la página (Simulación de envío del formulario) 
       setTimeout(function() {

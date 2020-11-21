@@ -4,15 +4,23 @@
             $nombre_usu = $_POST['nombre_usu'];
             $telefono_usu = $_POST['telefono_usu'];
 			$correo_usu = $_POST['correo_usu'];
-		/* 	if ($_POST["password"] === $_POST["confirm_password"]) {
-				// success!
-		  	} */
-            $clave_usu = $_POST['clave_usu'];
-            $motivo_usu = $_POST['motivo_usu'];
-            $Query = "INSERT INTO usuarios (nombre_usu, telefono_usu, correo_usu, clave_usu, motivo_usu) VALUES ('$nombre_usu', '$telefono_usu', '$correo_usu', '$clave_usu', '$motivo_usu')";
-            $Result = mysqli_query($conexion, $Query);
-            echo "<h3 class=\"ok\">The information has been saved</h3>";
-            mysqli_close($conexion);
+			$clave_usu = $_POST['clave_usu'];
+			$motivo_usu = $_POST['motivo_usu'];
+		if ($clave_usu == $_POST["repeat-pass"]) {
+				// acción en caso correcto
+				$Query = "INSERT INTO usuarios (nombre_usu, telefono_usu, correo_usu, clave_usu, motivo_usu) VALUES ('$nombre_usu', '$telefono_usu', '$correo_usu', '$clave_usu', '$motivo_usu')";
+				$Result = mysqli_query($conexion, $Query);
+				echo "<h3 class=\"ok\">Se ha creado su cuenta</h3>";
+				mysqli_close($conexion);
+			 }
+			 else {
+				// acción en caso incorrecto
+				echo "<h3>Las claves no coinciden</h3>";
+			 } 
+		
+
+            
+
         }
 		?>
 		
@@ -53,31 +61,24 @@
 		<div class="container-login100">
 			<div class="login100-more" style="background-image: url('images/bg-01.png');"></div>
 
-			<div id="msg"></div>
+			
  
-<!-- Mensajes de Verificación -->
-<div id="error" class="alert alert-danger ocultar" role="alert">
-    Las Contraseñas no coinciden, vuelve a intentar !
-</div>
-<div id="ok" class="alert alert-success ocultar" role="alert">
-    Las Contraseñas coinciden ! (Procesando formulario ... )
-</div>
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<form method="POST" class="login100-form validate-form" onsubmit="verificarPasswords(); return false">
+				<form method="POST" class="login100-form validate-form" " >
 					<span class="login100-form-title p-b-59 text-center">
 						Registro
 					</span>
 					<!-- Nombre del estudiante -->
 					<div class="wrap-input100 validate-input" data-validate="Name is required">
 						<span class="label-input100">Nombre completo</span>
-						<input class="input100" type="text" name="nombre_usu" placeholder="Nombre..." required>
+						<input class="input100" type="text" name="nombre_usu" placeholder="Nombre..." pattern="[A-Za-z0-9] required>
 						<span class="focus-input100"></span>
 					</div>
 					
 					<!-- Numero telefonico del estudiante -->
 					<div class="wrap-input100 validate-input" data-validate = "Number is required">
 						<span class="label-input100">Número de teléfono</span>
-						<input class="input100" type="number" name="telefono_usu" placeholder="123456789..." required>
+						<input class="input100" type="tel" name="telefono_usu" placeholder="123456789..." pattern="[0-9]{10}" required>
 						<span class="focus-input100"></span>
 					</div>
 
@@ -117,7 +118,7 @@
 					<div class="container-login100-form-btn justify-content-center pb-4">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn" type="submit" value="Enviar" name="Registrarse">
+							<button class="login100-form-btn" type="submit" value="Enviar" name="Registrarse" id="register">
 								Enviar
 							</button>
 						</div>

@@ -1,3 +1,18 @@
+<?php
+        if(isset($_POST['Registrarse'])){
+            include('conexion.php');
+            $nombre_usu = $_POST['nombre_usu'];
+            $telefono_usu = $_POST['telefono_usu'];
+            $correo_usu = $_POST['correo_usu'];
+            $clave_usu = $_POST['clave_usu'];
+            $motivo_usu = $_POST['motivo_usu'];
+            $Query = "INSERT INTO usuarios (nombre_usu, telefono_usu, correo_usu, clave_usu, motivo_usu) VALUES ('$nombre_usu', '$telefono_usu', '$correo_usu', '$clave_usu', '$motivo_usu')";
+            $Result = mysqli_query($conexion, $Query);
+            echo "<h3 class=\"ok\">The information has been saved</h3>";
+            mysqli_close($conexion);
+        }
+		?>
+		
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -33,38 +48,38 @@
 	
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="login100-more" style="background-image: url('images/bg-01.jpg');"></div>
+			<div class="login100-more" style="background-image: url('images/bg-01.png');"></div>
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<form class="login100-form validate-form">
+				<form method="POST" class="login100-form validate-form">
 					<span class="login100-form-title p-b-59 text-center">
 						Registro
 					</span>
 					<!-- Nombre del estudiante -->
 					<div class="wrap-input100 validate-input" data-validate="Name is required">
 						<span class="label-input100">Nombre completo</span>
-						<input class="input100" type="text" name="name" placeholder="Nombre...">
+						<input class="input100" type="text" name="nombre_usu" placeholder="Nombre...">
 						<span class="focus-input100"></span>
 					</div>
 					
 					<!-- Numero telefonico del estudiante -->
 					<div class="wrap-input100 validate-input" data-validate = "Number is required">
 						<span class="label-input100">Número de teléfono</span>
-						<input class="input100" type="text" name="pass" placeholder="123456789...">
+						<input class="input100" type="num" name="telefono_usu" placeholder="123456789...">
 						<span class="focus-input100"></span>
 					</div>
 
 					<!-- Email del estudiante -->
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<span class="label-input100">Email</span>
-						<input class="input100" type="text" name="email" placeholder="Correo electronico...">
+						<input class="input100" type="text" name="correo_usu" placeholder="Correo electronico...">
 						<span class="focus-input100"></span>
 					</div>
 
 					<!-- Contraseña del estudiante -->
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
 						<span class="label-input100">Contraseña</span>
-						<input class="input100" type="text" name="pass" placeholder="*************">
+						<input class="input100" type="password" name="clave_usu" placeholder="*************">
 						<span class="focus-input100"></span>
 					</div>
 					<!-- Contraseña del estudiante x2 -->
@@ -76,7 +91,7 @@
 
 					<!-- Select box del motivo que eligieron -->
 					<div class="w-100 mb-4">
-					<select class="mdb-select md-form w-100">
+					<select name="motivo_usu" class="mdb-select md-form w-100">
 						<option value="" disabled selected>Motivo de la visita a la feria </option>
 						<option value="1">Soy egresado o estoy estudiando en nivel bachillerato</option>
 						<option value="2">Soy padre o tutor</option>
@@ -100,14 +115,15 @@
 
 						
 					</div>
+					
 
 					<div class="container-login100-form-btn justify-content-center mb-4">
 						
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<input type="submit" name="Registrarse" class="login100-form-btn">
 								Registrarse
-							</button>
+							</input>
 						</div>
 
 					</div>
@@ -118,6 +134,7 @@
 							<i class="fa fa-long-arrow-right m-l-5"></i>
 						</a>
 					</div>
+					
 
 				</form>
 			</div>

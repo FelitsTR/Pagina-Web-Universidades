@@ -186,6 +186,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   list-style: none;
+  
 }
 
 .nav-menu > ul > li {
@@ -280,7 +281,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 1366px) {
-  .nav-menu .drop-down .drop-down ul {
+
+  /*.nav-menu .drop-down .drop-down ul {
     left: -90%;
   }
   .nav-menu .drop-down .drop-down:hover > ul {
@@ -288,7 +290,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   .nav-menu .drop-down .drop-down > a:after {
     content: "\ea9d";
-  }
+  }*/
 }
 
 /* Mobile Navigation */
@@ -1674,15 +1676,7 @@ section {
   font-size: 13px;
 }
 
-#affix {
-  top: 0;
-  width: 100%;
-  z-index: 9999 !important;
-}
 
-#affix + #container-fluid {
-  padding-top: 70px;
-}
 
 .Probando{
  

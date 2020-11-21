@@ -117,16 +117,16 @@
 					</div>
 					
 
-					<div class="container-login100-form-btn justify-content-center mb-4">
-						
+					<div class="container-login100-form-btn justify-content-center pb-4">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<input type="submit" name="Registrarse" class="login100-form-btn">
-								Registrarse
-							</input>
+							<button class="login100-form-btn" type="submit" value="Enviar" name="Registrarse">
+								Enviar
+							</button>
 						</div>
-
 					</div>
+
+		
 
 					<div class="container-login100-form-btn justify-content-center w-100">
 						<a href="login.html" class="">

@@ -3,7 +3,10 @@
             include('conexion.php');
             $nombre_usu = $_POST['nombre_usu'];
             $telefono_usu = $_POST['telefono_usu'];
-            $correo_usu = $_POST['correo_usu'];
+			$correo_usu = $_POST['correo_usu'];
+		/* 	if ($_POST["password"] === $_POST["confirm_password"]) {
+				// success!
+		  	} */
             $clave_usu = $_POST['clave_usu'];
             $motivo_usu = $_POST['motivo_usu'];
             $Query = "INSERT INTO usuarios (nombre_usu, telefono_usu, correo_usu, clave_usu, motivo_usu) VALUES ('$nombre_usu', '$telefono_usu', '$correo_usu', '$clave_usu', '$motivo_usu')";
@@ -50,48 +53,57 @@
 		<div class="container-login100">
 			<div class="login100-more" style="background-image: url('images/bg-01.png');"></div>
 
+			<div id="msg"></div>
+ 
+<!-- Mensajes de Verificación -->
+<div id="error" class="alert alert-danger ocultar" role="alert">
+    Las Contraseñas no coinciden, vuelve a intentar !
+</div>
+<div id="ok" class="alert alert-success ocultar" role="alert">
+    Las Contraseñas coinciden ! (Procesando formulario ... )
+</div>
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<form method="POST" class="login100-form validate-form">
+				<form method="POST" class="login100-form validate-form" onsubmit="verificarPasswords(); return false">
 					<span class="login100-form-title p-b-59 text-center">
 						Registro
 					</span>
 					<!-- Nombre del estudiante -->
 					<div class="wrap-input100 validate-input" data-validate="Name is required">
 						<span class="label-input100">Nombre completo</span>
-						<input class="input100" type="text" name="nombre_usu" placeholder="Nombre...">
+						<input class="input100" type="text" name="nombre_usu" placeholder="Nombre..." required>
 						<span class="focus-input100"></span>
 					</div>
 					
 					<!-- Numero telefonico del estudiante -->
 					<div class="wrap-input100 validate-input" data-validate = "Number is required">
 						<span class="label-input100">Número de teléfono</span>
-						<input class="input100" type="num" name="telefono_usu" placeholder="123456789...">
+						<input class="input100" type="number" name="telefono_usu" placeholder="123456789..." required>
 						<span class="focus-input100"></span>
 					</div>
 
 					<!-- Email del estudiante -->
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<span class="label-input100">Email</span>
-						<input class="input100" type="text" name="correo_usu" placeholder="Correo electronico...">
+						<input class="input100" type="email" name="correo_usu" placeholder="Correo electronico..." required>
 						<span class="focus-input100"></span>
 					</div>
 
 					<!-- Contraseña del estudiante -->
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
 						<span class="label-input100">Contraseña</span>
-						<input class="input100" type="password" name="clave_usu" placeholder="*************">
+						<input class="input100" type="password" name="clave_usu" placeholder="*************" id="pass1" required>
 						<span class="focus-input100"></span>
 					</div>
 					<!-- Contraseña del estudiante x2 -->
 					<div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
 						<span class="label-input100">Repite tu contraseña</span>
-						<input class="input100" type="text" name="repeat-pass" placeholder="*************">
+						<input class="input100" type="password" name="repeat-pass" placeholder="*************" id="pass2" required>
 						<span class="focus-input100"></span>
 					</div>
 
 					<!-- Select box del motivo que eligieron -->
 					<div class="w-100 mb-4">
-					<select name="motivo_usu" class="mdb-select md-form w-100">
+					<select name="motivo_usu" class="mdb-select md-form w-100" required>
 						<option value="" disabled selected>Motivo de la visita a la feria </option>
 						<option value="1">Soy egresado o estoy estudiando en nivel bachillerato</option>
 						<option value="2">Soy padre o tutor</option>

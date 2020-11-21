@@ -282,7 +282,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 1366px) {
 
-  /*.nav-menu .drop-down .drop-down ul {
+  .nav-menu .drop-down .drop-down ul {
     left: -90%;
   }
   .nav-menu .drop-down .drop-down:hover > ul {
@@ -290,7 +290,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   .nav-menu .drop-down .drop-down > a:after {
     content: "\ea9d";
-  }*/
+  }
 }
 
 /* Mobile Navigation */
@@ -1682,6 +1682,11 @@ section {
  
 position: sticky;
 top: 0;
-z-index: 9999 !important;
+z-index: 10 !important;
 vertical-align: middle;
+}
+
+#Facha{
+  position: sticky;
+top: 0;
 }

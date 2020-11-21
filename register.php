@@ -100,21 +100,6 @@
 					
 					</div>
 
-					<div class="flex-m w-full p-b-33">
-						<div class="contact100-form-checkbox">
-							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-							<label class="label-checkbox100" for="ckb1">
-								<span class="txt1">
-									Acepto 
-									<a href="#" class="txt2 hov1">
-										Terminos de usuario
-									</a>
-								</span>
-							</label>
-						</div>
-
-						
-					</div>
 					
 
 					<div class="container-login100-form-btn justify-content-center pb-4">

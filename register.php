@@ -64,7 +64,7 @@
 			
  
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<form method="POST" class="login100-form validate-form" " >
+				<form method="POST" class="login100-form validate-form">
 					<span class="login100-form-title p-b-59 text-center">
 						Registro
 					</span>

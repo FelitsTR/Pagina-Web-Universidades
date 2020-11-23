@@ -64,14 +64,14 @@
 			
  
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<form method="POST" class="login100-form validate-form" " >
+				<form method="POST" class="login100-form validate-form">
 					<span class="login100-form-title p-b-59 text-center">
 						Registro
 					</span>
 					<!-- Nombre del estudiante -->
 					<div class="wrap-input100 validate-input" data-validate="Name is required">
 						<span class="label-input100">Nombre completo</span>
-						<input class="input100" type="text" name="nombre_usu" placeholder="Nombre..." pattern="[A-Za-z0-9] required>
+						<input class="input100" type="text" name="nombre_usu" placeholder="Nombre..." required>
 						<span class="focus-input100"></span>
 					</div>
 					

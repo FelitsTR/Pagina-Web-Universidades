@@ -71,7 +71,7 @@
 					<!-- Nombre del estudiante -->
 					<div class="wrap-input100 validate-input" data-validate="Name is required">
 						<span class="label-input100">Nombre completo</span>
-						<input class="input100" type="text" name="nombre_usu" placeholder="Nombre..." pattern="[A-Za-z0-9] required>
+						<input class="input100" type="text" name="nombre_usu" placeholder="Nombre..." required>
 						<span class="focus-input100"></span>
 					</div>
 					

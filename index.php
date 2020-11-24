@@ -51,7 +51,7 @@
       <img src="assets/img//topbar_logo_3.png" class="img-logo-4" alt="">
     </div>
   </div>
-  <nav class="Probando" style="">
+  <nav class="Probando">
    <!-- 
   <header id="header"  class="fixed-top d-flex align-items-center  header-transparent ">
     -->

@@ -1,3 +1,40 @@
+<?php
+if(isset($_POST['Iniciar1'])){
+	include('conexion.php');
+	$correo_usu = $_POST['correo_usu'];
+	$clave_usu = $_POST['clave_usu'];
+	$Query= "SELECT * FROM usuarios WHERE correo_usu='".$correo_usu."' and clave_usu='".$clave_usu."'";
+	$resultado = mysqli_query($conexion, $Query);
+
+	$nr = mysqli_num_rows($resultado);
+	if($nr == 1){
+    	echo "bienvenido";
+    	//echo '<a href="universidades.html"></a>';
+    
+	}
+	else if($nr == 0){
+    echo "Este usuario no existe";
+	}
+}
+
+if(isset($_POST['Iniciar2'])){
+	include('conexion.php');
+	$correo_uni = $_POST['correo_uni'];
+	$clave_uni = $_POST['clave_uni'];
+	$Query_uni = "SELECT * FROM usuarios_uni WHERE correo_uni='".$correo_uni."' and clave_uni='".$clave_uni."'";
+	$resultado_uni = mysqli_query($conexion, $Query_uni);
+
+	$nr_uni = mysqli_num_rows($resultado_uni);
+	if($nr_uni == 1){
+    	echo "bienvenido universidad";
+    	//echo '<a href="universidades.html"></a>';
+    
+	}
+	else if($nr_uni == 0){
+    echo "Esta universidad no existe";
+	}
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -35,7 +72,7 @@
 		<div class="container-login100">
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<form class="login100-form validate-form">
+				<form method="POST" class="login100-form validate-form">
 					<span class="login100-form-title p-b-59 text-center">
 						Iniciar sesión
 					</span>
@@ -80,15 +117,24 @@
 						<!-- Email del estudiante -->
 						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 							<span class="label-input100">Email</span>
-							<input class="input100" type="text" name="email" placeholder="Correo electronico...">
+							<input class="input100" type="text" name="correo_usu" placeholder="Correo electronico...">
 							<span class="focus-input100"></span>
 						</div>
 
 						<!-- Contraseña del estudiante -->
 						<div class="wrap-input100 validate-input" data-validate = "Password is required">
 							<span class="label-input100">Contraseña</span>
-							<input class="input100" type="text" name="pass" placeholder="*************">
+							<input class="input100" type="password" name="clave_usu" placeholder="*************">
 							<span class="focus-input100"></span>
+						</div>
+
+						<div class="container-login100-form-btn justify-content-center pb-4">
+							<div class="wrap-login100-form-btn">
+								<div class="login100-form-bgbtn"></div>
+								<button class="login100-form-btn" type="submit" value="Enviar" name="Iniciar1" id="Iniciar1">
+									Iniciar sesion1
+								</button>
+							</div>
 						</div>
 					</div>
 
@@ -97,35 +143,29 @@
 							<p class="h3">Universidades</p>
 						</div>
 						
-						<!-- Email del estudiante -->
+						<!-- Email de la universidad -->
 						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 							<span class="label-input100">Email</span>
-							<input class="input100" type="text" name="email" placeholder="Correo electronico...">
+							<input class="input100" type="text" name="correo_uni" placeholder="Correo electronico...">
 							<span class="focus-input100"></span>
 						</div>
 
-						<!-- Contraseña del estudiante -->
+						<!-- Contraseña de la universidad -->
 						<div class="wrap-input100 validate-input" data-validate = "Password is required">
 							<span class="label-input100">Contraseña</span>
-							<input class="input100" type="text" name="pass" placeholder="*************">
+							<input class="input100" type="password" name="clave_uni" placeholder="*************">
 							<span class="focus-input100"></span>
 						</div>
-					</div>
-
-					
-
-
-
-					<div class="container-login100-form-btn justify-content-center mb-4">
-						
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
-								Iniciar sesión
-							</button>
+						<div class="container-login100-form-btn justify-content-center pb-4">
+							<div class="wrap-login100-form-btn">
+								<div class="login100-form-bgbtn"></div>
+								<button class="login100-form-btn" type="submit" value="Enviar" name="Iniciar2" id="Iniciar2">
+									Iniciar sesion2
+								</button>
+							</div>
 						</div>
-
 					</div>
+
 
 					<div class="container-login100-form-btn justify-content-center w-100">
 						<a href="register.php" class="">

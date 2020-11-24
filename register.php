@@ -61,7 +61,7 @@
 		<div class="container-login100">
 			<div class="login100-more" style="background-image: url('images/bg-01.png');"></div>
 
-			
+			<a href=""></a>
  
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
 				<form method="POST" class="login100-form validate-form">

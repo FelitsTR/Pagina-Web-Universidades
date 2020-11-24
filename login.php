@@ -19,9 +19,9 @@ if(isset($_POST['Iniciar1'])){
 
 if(isset($_POST['Iniciar2'])){
 	include('conexion.php');
-	$correo_uni = $_POST['correo_uni'];
+	$correo_u = $_POST['correo_u'];
 	$clave_uni = $_POST['clave_uni'];
-	$Query_uni = "SELECT * FROM usuarios_uni WHERE correo_uni='".$correo_uni."' and clave_uni='".$clave_uni."'";
+	$Query_uni = "SELECT * FROM usuarios_uni WHERE correo_u='".$correo_u."' and clave_uni='".$clave_uni."'";
 	$resultado_uni = mysqli_query($conexion, $Query_uni);
 
 	$nr_uni = mysqli_num_rows($resultado_uni);
@@ -72,7 +72,7 @@ if(isset($_POST['Iniciar2'])){
 		<div class="container-login100">
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<form method="POST" class="login100-form validate-form">
+				<form class="login100-form validate-form">
 					<span class="login100-form-title p-b-59 text-center">
 						Iniciar sesión
 					</span>
@@ -111,60 +111,64 @@ if(isset($_POST['Iniciar2'])){
 
 
 					<div id="Ocultar1" class="w-100">
-						<div class="w-100 font-weight-bold text-center">
-							<p class="h3">Estudiantes</p>
-						</div>
+						<form method="POST">
+							<div class="w-100 font-weight-bold text-center">
+								<p class="h3">Estudiantes</p>
+							</div>
 						<!-- Email del estudiante -->
-						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-							<span class="label-input100">Email</span>
-							<input class="input100" type="text" name="correo_usu" placeholder="Correo electronico...">
-							<span class="focus-input100"></span>
-						</div>
+							<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+								<span class="label-input100">Email</span>
+								<input class="input100" type="text" name="correo_usu" placeholder="Correo electronico...">
+								<span class="focus-input100"></span>
+							</div>
 
 						<!-- Contraseña del estudiante -->
-						<div class="wrap-input100 validate-input" data-validate = "Password is required">
-							<span class="label-input100">Contraseña</span>
-							<input class="input100" type="password" name="clave_usu" placeholder="*************">
-							<span class="focus-input100"></span>
-						</div>
-
-						<div class="container-login100-form-btn justify-content-center pb-4">
-							<div class="wrap-login100-form-btn">
-								<div class="login100-form-bgbtn"></div>
-								<button class="login100-form-btn" type="submit" value="Enviar" name="Iniciar1" id="Iniciar1">
-									Iniciar sesion1
-								</button>
+							<div class="wrap-input100 validate-input" data-validate = "Password is required">
+								<span class="label-input100">Contraseña</span>
+								<input class="input100" type="password" name="clave_usu" placeholder="*************">
+								<span class="focus-input100"></span>
 							</div>
-						</div>
+
+							<div class="container-login100-form-btn justify-content-center pb-4">
+								<div class="wrap-login100-form-btn">
+									<div class="login100-form-bgbtn"></div>
+									<button class="login100-form-btn" type="submit" value="Enviar" name="Iniciar1" id="Iniciar1">
+										Iniciar sesion1
+									</button>
+								</div>
+							</div>
+						</form>
 					</div>
 
-					<div id="Ocultar2" class="w-100">
+				<div id="Ocultar2" class="w-100">
+					<form method="POST">
 						<div class="w-100 font-weight-bold text-center">
-							<p class="h3">Universidades</p>
-						</div>
-						
-						<!-- Email de la universidad -->
-						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-							<span class="label-input100">Email</span>
-							<input class="input100" type="text" name="correo_uni" placeholder="Correo electronico...">
-							<span class="focus-input100"></span>
-						</div>
-
-						<!-- Contraseña de la universidad -->
-						<div class="wrap-input100 validate-input" data-validate = "Password is required">
-							<span class="label-input100">Contraseña</span>
-							<input class="input100" type="password" name="clave_uni" placeholder="*************">
-							<span class="focus-input100"></span>
-						</div>
-						<div class="container-login100-form-btn justify-content-center pb-4">
-							<div class="wrap-login100-form-btn">
-								<div class="login100-form-bgbtn"></div>
-								<button class="login100-form-btn" type="submit" value="Enviar" name="Iniciar2" id="Iniciar2">
-									Iniciar sesion2
-								</button>
+								<p class="h3">Universidades</p>
 							</div>
-						</div>
-					</div>
+							
+							<!-- Email de la universidad -->
+							<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+								<span class="label-input100">Email</span>
+								<input class="input100" type="text" name="correo_u" placeholder="Correo electronico...">
+								<span class="focus-input100"></span>
+							</div>
+
+							<!-- Contraseña de la universidad -->
+							<div class="wrap-input100 validate-input" data-validate = "Password is required">
+								<span class="label-input100">Contraseña</span>
+								<input class="input100" type="password" name="clave_uni" placeholder="*************">
+								<span class="focus-input100"></span>
+							</div>
+							<div class="container-login100-form-btn justify-content-center pb-4">
+								<div class="wrap-login100-form-btn">
+									<div class="login100-form-bgbtn"></div>
+									<button class="login100-form-btn" type="submit" value="Enviar" name="Iniciar2" id="Iniciar2">
+										Iniciar sesion2
+									</button>
+								</div>
+							</div>
+					</form>
+				</div>
 
 
 					<div class="container-login100-form-btn justify-content-center w-100">
@@ -173,13 +177,11 @@ if(isset($_POST['Iniciar2'])){
 							<i class="fa fa-long-arrow-right m-l-5"></i>
 						</a>
 					</div>
-
-					<script>
+				</form>
+				<script>
 						document.getElementById("Ocultar1").style.display = "block";
 						document.getElementById("Ocultar2").style.display = "none";
 				 	</script>
-
-				</form>
 			</div>
 
 			<div class="login100-more" style="background-image: url('images/bg-02.png');"></div>

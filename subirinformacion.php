@@ -159,6 +159,188 @@
   </section>--><!-- End Hero -->
 
   <main id="main">
+<?php include('conexion.php'); ?>
+<?php
+require('conexion_m.php');
+$query_m = "SELECT id_municipio, nombre_muni FROM municipio ORDER BY nombre_muni ASC";
+$resultado_m = $mysqli->query($query_m);
+?>
+<div class="container">
+  <!--APPLICATION-->
+  <div id="App" class="row pt-5">
+    <div class="col-md-6 cont" style="text-align:center; margin: 0 auto">
+      <?php
+      if (isset($_SESSION['message'])) {
+        ?>
+          <div class="alert alert-<?= $_SESSION['message_type'] ?> alert-dismissible fade show" role="alert">
+        <?= $_SESSION['message'] ?>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <?php session_unset();
+      } //clear data session
+      ?>
+      <!-- Datos Generales -->
+
+      <div class="card box mt-4 card-child">
+        <div class="card-header head">
+          <h4 class="h4">Datos Generales</h4>
+        </div>
+        <form action="save.php" method="POST" id="note-form" class="card-body">
+          <input id="opc_1" name="Opciones1" type="radio" value="Opciones" onchange="funcion1()">
+          Información
+          <input id="opc_2" name="Opciones1" type="radio" value="Opciones" onchange="funcion1()">
+          Archivos y documentos
+          <div id="changeForm"></div>
+            <script>
+              function funcion1(){
+                document.getElementById("Ocultar_1").style.display = "none";
+                document.getElementById("Ocultar_2").style.display = "none";
+                var opc_1 = document.getElementById("opc_1");
+                var opc_2 = document.getElementById("opc_2");
+                if(opc_1.checked){
+                  document.getElementById("Ocultar_1").style.display = "block";
+                  //document.getElementById("changeForm").innerHTML = "Ano";
+                }
+                if(opc_2.checked){
+                  document.getElementById("Ocultar_2").style.display = "block";
+                  //document.getElementById("changeForm").innerHTML = "A";
+                }
+              }
+            </script>
+          <div id="Ocultar_1">
+            <div name="Nombre_Universidad" class="form-group">
+              <input require type="text" id="nombre_uni" placeholder="Nombre Universidad" class="form-control descrip" name="nombre_uni" />
+            </div>
+            <select name="id_municipio" class="form-group">
+              <option value="0">Municipio</option>
+              <?php while($row = $resultado_m->fetch_assoc()) { ?>
+                <option value="<?php echo $row['id_municipio']; ?>"><?php echo $row['nombre_muni']; ?></option>
+              <?php } ?>
+            </select>
+            <div name="telefono_uni" class="form-group">
+              <input require type="text" id="telefono_uni" placeholder="Telefono" class="form-control descrip" name="telefono_uni" />
+            </div>
+            <div name="correo_uni" class="form-group">
+              <input require type="text" id="correo_uni" placeholder="Correo" class="form-control descrip" name="correo_uni" />
+            </div>
+            <div name="ubicacion" class="form-group">
+              <textarea require id="ubicacion" name="ubicacion" cols="30" rows="10" class="form-control descrip" placeholder="Ubicación"></textarea>
+            </div>
+            <div name="facebook" class="form-group">
+              <input require type="text" id="facebook" placeholder="Facebook" class="form-control descrip" name="facebook" />
+            </div>
+            <div name="whatsapp" class="form-group">
+              <input require type="text" id="whatsapp" placeholder="Whatsapp" class="form-control descrip" name="whatsapp" />
+            </div>
+            <div name="nombre_conferencia" class="form-group">
+              <input require type="text" id="nombre_conferencia" placeholder="Descripción de la conferencia" class="form-control descrip" name="nombre_conferencia" />
+            </div>
+            <div name="src_conferencia" class="form-group">
+              <input require type="text" id="src_conferencia" placeholder="Conferencia" class="form-control descrip" name="src_conferencia" />
+            </div>
+          </div>
+          <div id="Ocultar_2">
+            <div name="logo_uni" class="form-group">
+              <input require type="text" id="logo_uni" placeholder="Logo" class="form-control descrip" name="logo_uni" />
+            </div>
+            <div name="src_imagenes_uni" class="form-group">
+              <input require type="text" id="src_imagenes_uni" placeholder="Imagen" class="form-control descrip" name="src_imagenes_uni" />
+            </div>
+            <div name="src_videos_uni" class="form-group">
+              <input require type="text" id="src_videos_uni" placeholder="Video" class="form-control descrip" name="src_videos_uni" />
+            </div>
+          </div>
+          <div class="card-header head">
+
+          <!-- Oferta Educativa -->
+
+          <h4 class="h4">Oferta Educativa</h4>
+          </div><br>
+            <input id="opc1" name="Opciones2" type="radio" value="Opciones" onchange="funcion()">
+            Información
+            <input id="opc2" name="Opciones2" type="radio" value="Opciones" onchange="funcion()">
+            Archivos y documentos
+            <div id="changeForm"></div>
+              <script>
+                function funcion(){
+                  document.getElementById("Ocultar1").style.display = "none";
+                  document.getElementById("Ocultar2").style.display = "none";
+                  var opc1 = document.getElementById("opc1");
+                  var opc2 = document.getElementById("opc2");
+                  if(opc1.checked){
+                    document.getElementById("Ocultar1").style.display = "block";
+                    //document.getElementById("changeForm").innerHTML = "Ano";
+                  }
+                  if(opc2.checked){
+                  document.getElementById("Ocultar2").style.display = "block";
+                  //document.getElementById("changeForm").innerHTML = "A";
+                  }
+                }
+              </script>
+              <div id="Ocultar1">
+                <div class="form-group">
+                  <input require type="text" id="tipo" placeholder="Tipo de Universidad" class="form-control descrip" name="tipo" />
+                </div>
+                <div name="carrera" class="form-group">
+                  <input require type="text" id="carrera" placeholder="Carrera" class="form-control descrip" name="carrera" />
+                </div>
+                <div name="years" class="form-group">
+                  <input require type="text" id="years" placeholder="Años" class="form-control descrip" name="years" />
+                </div>
+                <div name="meses" class="form-group">
+                  <input require type="text" id="meses" placeholder="Meses" class="form-control descrip" name="meses" />
+                </div>
+                <div class="form-group">
+                  <textarea require id="descripcion" name="descripcion" cols="30" rows="10" class="form-control descrip" placeholder="Descripción"></textarea>
+                </div>
+                <div  class="form-group">
+                  <textarea require id="objetivo" name="objetivo" cols="30" rows="10" class="form-control descrip" placeholder="Objetivo"></textarea>
+                </div>
+                <div name="perfil_ingreso" class="form-group">
+                  <input require type="text" id="perfil_ingreso" placeholder="Perfil de Ingreso" class="form-control descrip" name="perfil_ingreso" />
+                </div>
+                <div name="perfil_egreso" class="form-group">
+                  <input type="text" id="perfil_egreso" placeholder="Perfil de Egreso" class="form-control descrip" name="perfil_egreso" />
+                </div>
+                <div name="plan_estudio" class="form-group">
+                  <input type="text" id="plan_estudio" placeholder="Plan de Estudio" class="form-control descrip" name="plan_estudio" />
+                </div>
+                <div name="modalidad" class="form-group">
+                  <input type="text" id="modalidad" placeholder="Modalidad" class="form-control descrip" name="modalidad" />
+                </div>
+              </div>
+            
+              <div id="Ocultar2">
+                <div name="src_imagenes_carrera" class="form-group">
+                  <textarea require id="src_imagenes_carrera" name="src_imagenes_carrera" cols="30" rows="10" class="form-control descrip" placeholder="Imagen"></textarea>
+                </div>
+                <div name="src_video_carrera" class="form-group">
+                  <textarea require id="src_video_carrera" name="src_video_carrera" cols="30" rows="10" class="form-control descrip" placeholder="Video"></textarea>
+                </div>
+                <div name="nombre_documento" class="form-group">
+                  <input type="text" id="nombre_documento" placeholder="Nombre del documento" class="form-control descrip" name="nombre_documento" />
+                </div>
+                <div name="src_documento" class="form-group">
+                  <textarea require id="src_documento" name="src_documento" cols="30" rows="10" class="form-control descrip" placeholder="Documento"></textarea>
+                </div>
+              </div>
+              <script>
+                document.getElementById("Ocultar_1").style.display = "none";
+                document.getElementById("Ocultar_2").style.display = "none";
+                document.getElementById("Ocultar1").style.display = "none";
+                document.getElementById("Ocultar2").style.display = "none";
+              </script>
+              <!--<div  class="form-group">
+              <textarea id="description" name="descriptions" cols="30" rows="10" class="form-control descrip" placeholder="Add a Description"></textarea>
+              </div>-->
+              <input type="submit" value="Guardar" class="btn btn-primary btn-block button-submit" name="Guardar" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">

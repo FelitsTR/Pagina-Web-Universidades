@@ -37,7 +37,7 @@
 		<div class="container-login100">
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<form method="POST" class="login100-form validate-form" action="validar1.php">
+				<form  action="login-usu.php" method="POST" class="login100-form validate-form">
 					<span class="login100-form-title p-b-59 text-center">
 						Iniciar sesión
 					</span>
@@ -71,7 +71,7 @@
 						<div class="container-login100-form-btn justify-content-center pb-4">
 							<div class="wrap-login100-form-btn">
 								<div class="login100-form-bgbtn"></div>
-								<button class="login100-form-btn" type="submit" value="Enviar" name="Iniciar1" id="Iniciar1">
+								<button class="login100-form-btn" type="submit" value="Enviar" name="Iniciar_1" id="Iniciar_1">
 									Iniciar Sesión
 								</button>
 							</div>

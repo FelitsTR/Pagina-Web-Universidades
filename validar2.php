@@ -8,8 +8,7 @@ if(isset($_POST['Iniciar_2'])){
 
 	$nr = mysqli_num_rows($resultado);
 	if($nr == 1){
-    	echo "bienvenido universidad";
-    	//echo '<a href="universidades.html"></a>';
+    	echo '<a href="universidades.php"></a>';
 	}
 	else if($nr == 0){
     echo "Esta universidad no existe";

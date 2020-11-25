@@ -159,14 +159,40 @@
   </section>--><!-- End Hero -->
 
   <main id="main">
-<?php include('conexion.php'); ?>
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>INFORMACIÓN</h2>
+          <p>ADMINISTRA TU INFORMACIóN AQUÍ</p>
+        </div>
+
+        <div class="row content" data-aos="fade-up">
+          <div class="col-lg-9">
+            <p>
+            <!--FERIA VIRTUAL UNIVERSITARIA
+            </p>
+            <p>
+              Evento estatal que reúne a todos los Programas Educativos de nivel
+              superior, en un esfuerzo por acercar la Oferta Educativa a todos los jóvenes
+              que quieren continuar su formación cursando una carrera universitaria.
+            </p>-->
+            
+            <!--<ul>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+            </ul>-->
+            <?php include('conexion.php'); ?>
 <?php
 require('conexion_m.php');
 $query_m = "SELECT id_municipio, nombre_muni FROM municipio ORDER BY nombre_muni ASC";
 $resultado_m = $mysqli->query($query_m);
 ?>
 <div class="container">
-  <!--APPLICATION-->
+ <!--APPLICATION-->
   <div id="App" class="row pt-5">
     <div class="col-md-6 cont" style="text-align:center; margin: 0 auto">
       <?php
@@ -342,32 +368,7 @@ $resultado_m = $mysqli->query($query_m);
   </div>
 </div>
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>ADMINISTRA TU INFORMACIóN AQUÍ</h2>
-          <p>¡HOLI!</p>
-        </div>
-
-        <div class="row content" data-aos="fade-up">
-          <div class="col-lg-9">
-            <p>
-            <!--FERIA VIRTUAL UNIVERSITARIA
-            </p>
-            <p>
-              Evento estatal que reúne a todos los Programas Educativos de nivel
-              superior, en un esfuerzo por acercar la Oferta Educativa a todos los jóvenes
-              que quieren continuar su formación cursando una carrera universitaria.
-            </p>-->
-            
-            <!--<ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-            </ul>-->
-            <meta charset="utf-8">
+          <!--  <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="CSS/ash.css">
 
      <form><center>
@@ -410,7 +411,7 @@ $resultado_m = $mysqli->query($query_m);
        </div><br>
         <input type="button" name="subir" value="Subir Información">
          </center>
-      </form>
+      </form>-->
           </div>
           <!--<div class="col-lg-3">
             <br><br>

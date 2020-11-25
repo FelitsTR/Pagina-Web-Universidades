@@ -1,3 +1,17 @@
+<?php
+  session_start();
+  $admin=$_SESSION['id_uni'];
+  echo '<script> alert("Bienvenido '.$admin.'"); </script>';
+  
+?>
+
+<?php
+  session_start();
+  $usuario=$_SESSION['id_usu'];
+  echo '<script> alert("Bienvenido '.$usuario.'"); </script>';
+  
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -81,6 +95,7 @@
 
   <main id="main">
     
+
     <!-- ======= Features Section ======= 
     <section id="features" class="features">
       <div class="container">

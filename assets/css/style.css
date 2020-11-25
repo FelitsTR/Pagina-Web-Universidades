@@ -1825,3 +1825,27 @@ hr.new3subir {
     margin: 2% 8%;  
      display: inline-block;
 }
+
+#soporte
+{
+  display: none;
+}
+
+.boton-soporte button
+{
+  background-color: transparent;
+  position: relative;
+  color: #fff;
+  padding: 5px 15px 7px 15px;
+  margin-left: 5px;
+  transition: 0.3s;
+  font-size: 14px;
+  border-radius: 50px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.boton-soporte button:hover
+{
+  background: #27BB8C;
+  text-decoration: none;
+}

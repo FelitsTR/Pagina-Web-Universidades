@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  $admin=$_SESSION['id'];
+  echo '<script> alert("Bienvenido '.$admin.'"); </script>';
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -355,7 +361,7 @@
               </div>
                
             </div>
-          </div>-->
+          </div>
           
           <!-- <ul class="nav nav-tabs row d-flex">
             <li class="nav-item col-3" data-aos="zoom-in">
@@ -385,7 +391,7 @@
             </li> 
           </ul>
 
-         <!---- <div class="tab-pane" id="tab-2">
+          <div class="tab-pane" id="tab-2">
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                 <h3>Neque exercitationem debitis soluta quos debitis quo mollitia officia est</h3>

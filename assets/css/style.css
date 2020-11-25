@@ -1834,6 +1834,7 @@ hr.new3subir {
 .boton-soporte button
 {
   background-color: transparent;
+  border-color: transparent;
   position: relative;
   color: #fff;
   padding: 5px 15px 7px 15px;

@@ -51,7 +51,7 @@
       <img src="assets/img//topbar_logo_3.png" class="img-logo-4" alt="">
     </div>
   </div>
-  <nav class="Probando" style="">
+  <nav class="Probando">
    <!-- 
   <header id="header"  class="fixed-top d-flex align-items-center  header-transparent ">
     -->
@@ -1174,6 +1174,13 @@ $resultado_m = $mysqli->query($query_m);
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/selecao-bootstrap-template/ -->
         Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a>
+        <br>¿Tienes problemas con la pagina? <a href="javascript:document.getElementById('soporte').style.display='block';void0">Mandanos un mensaje</a>
+        <div id="soporte">
+          <br><textarea name="textareasoporte" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
+          <div class="boton-soporte">
+            <br><button type="submit">Enviar mensaje</button>
+          </div>
+        </div> 
       </div>
     </div>
 

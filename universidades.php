@@ -2,14 +2,14 @@
   session_start();
   $admin=$_SESSION['id_uni'];
   echo '<script> alert("Bienvenido '.$admin.'"); </script>';
-  
+  //falta arreglarlo
 ?>
 
 <?php
   session_start();
   $usuario=$_SESSION['id_usu'];
   echo '<script> alert("Bienvenido '.$usuario.'"); </script>';
-  
+  //falta arreglarlo
 ?>
 
 <!DOCTYPE html>
@@ -794,6 +794,13 @@
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/selecao-bootstrap-template/ -->
         Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a>
+        <br>¿Tienes problemas con la pagina? <a href="javascript:document.getElementById('soporte').style.display='block';void0">Mandanos un mensaje</a>
+        <div id="soporte">
+          <br><textarea name="textareasoporte" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
+          <div class="boton-soporte">
+            <br><button type="submit">Enviar mensaje</button>
+          </div>
+        </div> 
       </div>
     </div>
 

@@ -34,25 +34,25 @@
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
 				<form action="validar_uni.php" method="POST" class="login100-form validate-form">
-					<span class="login100-form-title p-b-59 text-center">
+					<a href="index.php">Inicio</a><br><br><span class="login100-form-title p-b-59 text-center">
 						Iniciar sesión
-                    </span>
+					</span>
                     <div class="container-login100-form-btn justify-content-center w-100 mb-5">
-                            <a href="login_usu.php" class="">
-                                Iniciar Sesión como Usuario
-                                <i class="fa fa-long-arrow-right m-l-5"></i>
-                            </a>
+                        <a href="login_usu.php" class="">
+                            Iniciar Sesión como Usuario
+                            <i class="fa fa-long-arrow-right m-l-5"></i>
+                        </a>
 					</div>
 					<div class="w-100 font-weight-bold text-center">
 						<p class="h3">Universidades</p>
 					</div>
-						<!-- Email del estudiante -->
+					<!-- Email del estudiante -->
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<span class="label-input100">Email</span>
 						<input class="input100" type="text" name="correo_u" placeholder="Correo electronico..." required>
 						<span class="focus-input100"></span>
 					</div>
-						<!-- Contraseña del estudiante -->
+					<!-- Contraseña del estudiante -->
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
 						<span class="label-input100">Contraseña</span>
 						<input class="input100" type="password" name="clave_uni" placeholder="*************" required>
@@ -68,7 +68,7 @@
                         </div>
 					</div>
 				</form>
-                <div class="login100-more" style="background-image: url('images/bg-02.png');">
+                <div class="login100-more" style="background-image: url('images/bg-02.png');"></div>
             </div>
 		</div>
 	</div>

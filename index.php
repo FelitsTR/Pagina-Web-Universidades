@@ -206,8 +206,89 @@ if(isset($_POST['Mensaje'])){
               </div>
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 text-center mt-5">
                  <h3>Visitas</h3>
-                  <div> 
+                  <div>   
                     <a title="contador de visitas" class="row justify-content-center"><img src="https://counter3.stat.ovh/private/contadorvisitasgratis.php?c=fzcl3duq6pzwbs3tagf2pqkr56zcljqy" ></a>
+                    
+                      <div> 
+                      <meta name="viewport" content="width=device-width, initial-scale=3">
+<link href="https://fonts.googleapis.com/css?family=Releway:400,700,900" rel="stylesheet">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                      
+                   <?php
+   
+
+require('contador_de_visitas.php');
+include('visitas.php');
+//Se obtinen los votos 
+//PRI
+$pri_archivo = fopen("visitas.txt", "r");
+$pri =  fgets($pri_archivo);	
+fclose($pri_archivo);
+//PAN
+//$pan_archivo = fopen("usuario.txt", "r");
+//$pan =  fgets($pan_archivo);	
+//fclose($pan_archivo);
+//PRD
+$prd_archivo = fopen("contar_dia.dat", "r");
+$prd =  fgets($prd_archivo);	
+fclose($prd_archivo);
+//MORENA
+$morena_archivo = fopen("contar_mes.dat", "r");
+$morena =  fgets($morena_archivo);	
+fclose($morena_archivo);
+
+?>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load("current", {packages:['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+["Partido", "VISIATAS", { role: "style" } ],
+["VISITAS TOTALES", <?php echo $pri; ?>, "#27BB8C"],
+["AL DIA", <?php echo $prd; ?>, "#2771BB"],
+["AL MES", <?php echo $morena; ?>, "#27BB8C"]
+]);
+
+var view = new google.visualization.DataView(data);
+view.setColumns([0, 1,
+{ calc: "stringify",
+sourceColumn: 1,
+type: "string",
+role: "annotation" },
+2]);
+
+var options = {
+title: "Estadisticas Del Sitio",
+width: 500,
+height: 440,
+bar: {groupWidth: "85%"},
+legend: { position: "none" },
+};
+var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+chart.draw(view, options);
+}
+</script>
+<div id="columnchart_values" style="width: 600%; height: 200%; "></div>
+
+
+
+<!--Aqui se pone el pie de la Pagina-->
+<footer>
+<h6 a>DosPuntosTres @TodosLosDerechosReservados</h6>
+</footer>
+
+
+
+
+<style type="text/css">
+input{display: inline-block;
+   background-color:#444444;
+width: 14;
+  
+</style>
+               
+
                   </div>
                 
                 
@@ -216,100 +297,33 @@ if(isset($_POST['Mensaje'])){
             </div>
           </div>
 
-    <!-- ======= Team Section ======= -->
+          <!-- ======= Team Section ======= -->
      <section id="team" class="team">
       <div class="container">
 
         <div class="section-title" data-aos="zoom-out">
           <h2>Equipo</h2>
-          <p>Nuestro Equipo de Desarrollo</p>
+         <!--  <p>Nuestro Equipo de Desarrollo</p>-->
+             <div class="row content" data-aos="fade-up">
+          <div class="col-lg-9">
+          <p>  <h3>
+            Responsables del desarrollo del sitio
+            </h3></p>
+          <p><h6>
+             ¿Deseas conocer más acerca de nuestro equipo?
+            </h6></p> 
+            
+          </div>
+          <div class="col-lg-9">
+            <br><br>
+            <a href="equipo.php" class="btn-learn-more">Ver más</a>
+          </div>
+
         </div>
 
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="https://www.facebook.com/profile.php?id=100016759814406" target="_blank"><i class="icofont-facebook"></i></a>
-                  <a href="https://www.instagram.com/xnobleswag?r=nametag" target="_blank"><i class="icofont-instagram"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Erick Espinoza</h4>
-                <span>
-                  El que le gusta complicarse la vida
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="100">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="https://www.facebook.com/sandra.ascencio.92" target="_blank"><i class="icofont-facebook"></i></a>
-                  <a href="https://www.instagram.com/sandra_asc/?hl=es-la" target="_blank"><i class="icofont-instagram"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Sandra Ascencio</h4>
-                <span>La patrona del diseño :3</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="200">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="https://www.facebook.com/profile.php?id=100041210151495" target="_blank" ><i class="icofont-facebook"></i></a>
-                  <a href="https://www.instagram.com/felits.tr/?hl=es-la" target="_blank"><i class="icofont-instagram"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Felix Torres</h4>
-                <span>El guapo del grupo</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="300">
-              <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="https://www.facebook.com/azael.caos" target="_blank"><i class="icofont-facebook"></i></a>
-                  <a href="https://www.instagram.com/aza.el_sith/?hl=es-la" target="_blank"><i class="icofont-instagram"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Azael</h4>
-                <span>El que se rifa al final con el proyecto</span>
-              </div>
-            </div>
-          </div>
-
-         <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up">
-              <div class="member-img">
-                <img src="assets/img/team/team-romo.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="https://www.facebook.com/luisfernando.lopezromo.7" target="_blank"><i class="icofont-facebook"></i></a>
-                  <a href="https://www.instagram.com/fernando_romo43/?hl=es-la" target="_blank"><i class="icofont-instagram"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Romo</h4>
-                <span>
-                    Es romo pelón
-                </span>
-              </div>
-            </div>
-          </div>
+          
 
         </div>
 

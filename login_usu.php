@@ -30,55 +30,53 @@
 <!--===============================================================================================-->
 </head>
 <body style="background-color: #999999;">
-	
 	<div class="limiter">
 		<div class="container-login100">
-
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
 				<form action="validar_usu.php" method="POST" class="login100-form validate-form">
-					<a href="index.php">Inicio</a><br><br>	<span class="login100-form-title p-b-59 text-center">
+					<a href="index.php">Inicio</a><br><br><span class="login100-form-title p-b-59 text-center">
 						Iniciar sesión
 					</span>
-
                     <div class="container-login100-form-btn justify-content-center w-100 mb-5">
-                            <a href="login_uni.php" class="">
-                                Iniciar Sesión como Universidad
-                                <i class="fa fa-long-arrow-right m-l-5"></i>
-                            </a>
+                        <a href="login_uni.php" class="">
+                            Iniciar Sesión como Universidad
+                            <i class="fa fa-long-arrow-right m-l-5"></i>
+                        </a>
 					</div>
-					
-						<div class="w-100 font-weight-bold text-center">
-							<p class="h3">Usuarios</p>
-                        </div>
-                        
-
-						<!-- Email del estudiante -->
-						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-							<span class="label-input100">Email</span>
-							<input class="input100" type="text" name="correo_usu" placeholder="Correo electronico..." required>
-						<!-- Contraseña del estudiante -->
-						<div class="wrap-input100 validate-input" data-validate = "Password is required">
-							<span class="label-input100">Contraseña</span>
-							<input class="input100" type="password" name="clave_usu" placeholder="*************" required>
-							<span class="focus-input100"></span>
-						</div>
-
-						<div class="container-login100-form-btn justify-content-center pb-4">
-						</div>
-
-
+					<div class="w-100 font-weight-bold text-center">
+						<p class="h3">Usuarios</p>
+                    </div>
+					<!-- Email del estudiante -->
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<span class="label-input100">Email</span>
+						<input class="input100" type="text" name="correo_usu" placeholder="Correo electronico..." required>
+						<span class="focus-input100"></span>
+					</div>
+					<!-- Contraseña del estudiante -->
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<span class="label-input100">Contraseña</span>
+						<input class="input100" type="password" name="clave_usu" placeholder="*************" required>
+						<span class="focus-input100"></span>
+					</div>
 					<div class="container-login100-form-btn justify-content-center w-100">
 						<a href="register.php" class="">
 							Registrarse
 							<i class="fa fa-long-arrow-right m-l-5"></i>
 						</a>
 					</div>
-
+					<div class="container-login100-form-btn justify-content-center pb-4">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+								<button class="login100-form-btn" type="submit" value="Enviar" name="Iniciar_1" id="Iniciar_1">
+                                    Iniciar Sesión
+								</button>
+							</div>
+                        </div>
+					</div>
+					
 				</form>
+				<div class="login100-more" style="background-image: url('images/bg-02.png');"></div>
 			</div>
-
-			<div class="login100-more" style="background-image: url('images/bg-02.png');"></div>
-
 		</div>
 	</div>
 	

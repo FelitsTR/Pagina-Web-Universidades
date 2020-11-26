@@ -1,11 +1,11 @@
 <?php 
+
 if (isset($_POST['Guardar'])){
 
 
     //ID de Universidad
     session_start();
     $admin=$_SESSION['id_uni'];
-    echo '<script> alert("Bienvenido '.$admin.'"); </script>';
     //falta arreglarlo
 
     // Universidad
@@ -66,47 +66,48 @@ if (isset($_POST['Guardar'])){
     
     //Insercion de datos en la base de datos 
     
-        include('conexion.php');
-        $stm1 = "INSERT INTO universidades (nombre_uni, telefono_uni, correo_uni, id_municipio) SELECT '$nombre_uni', '$telefono_uni', '$correo_uni', '$id_municipio', MAX(id_usu_uni) FROM usuario_uni";
-        $Result1 = mysqli_query($Connection, $stm1);
-        mysqli_close($Connection);
-        include('conexion.php');
-        $stm3 = "INSERT INTO universidades_video (src_videos_uni, id_universidad) SELECT '$src_videos_uni',MAX(id_universidad) FROM universidades";
-        $Result3 = mysqli_query($Connection, $stm3);
-        mysqli_close($Connection);
-        include('conexion.php');
-        $stm2 = "INSERT INTO universidades_imagen (src_imagenes_uni)SELECT '$src_imageness_uni',MAX(id_universidad) FROM universidades";
-        $Result2 = mysqli_query($Connection, $stm2);
-        mysqli_close($Connection);
-        include('conexion.php');
-        $stm4 = "INSERT INTO universidades_detalles (ubicacion, facebook, whatsapp) SELECT '$src_videos_uni','$facebook', ''$whatsapp,MAX(id_universidad) FROM universidades";
-        $Result4 = mysqli_query($Connection, $stm4);
-        mysqli_close($Connection);
-        include('conexion.php');
-        $stm6 = "INSERT INTO conferencias (nombre_conferencia, src_conferencia) SELECT '$nombre_conferencia','$src_conferencia', MAX(id_universidad) FROM universidades";
-        $Result6 = mysqli_query($Connection, $stm6);
-        mysqli_close($Connection);
-        include('conexion.php');
-        $stm0 = "INSERT INTO oferta_educativa (tipo, carrera, descripcion, objetivo, perfil_ingreso, perfil_egreso, plan_estudio, modalidad) SELECT '$tipo', '$carrera', '$descripcion', '$objetivo', '$perfil_ingreso', '$perfil_egreso', '$plan_estudio', '$modalidad', MAX(id_universidad) FROM universidades";
-        $Result0 = mysqli_query($Connection, $stm0);
-        mysqli_close($Connection);
-        include('conexion.php');
-        $stm5 = "INSERT INTO duracion (years, meses) SELECT '$years','$meses',MAX(id_oferta) FROM oferta_educativa";
-        $Result5 = mysqli_query($Connection, $stm5);
-        mysqli_close($Connection);
+        include('conexiones/conexion.php');
+        $stm1 = "INSERT INTO universidades (nombre_uni, telefono_uni, correo_uni, id_municipio, logo_uni, id_usu_uni) VALUE ('$nombre_uni', '$telefono_uni', '$correo_uni', '$id_municipio', '$logo_uni', '$admin')";
+        $Result1 = mysqli_query($conexion, $stm1);
+        echo "<h3 class=\"ok\">Se ha creado su cuenta</h3>";
+        mysqli_close($conexion);
+        // include('conexion.php');
+        // $stm3 = "INSERT INTO universidades_video (src_videos_uni, id_universidad) SELECT '$src_videos_uni',MAX(id_universidad) FROM universidades";
+        // $Result3 = mysqli_query($Connection, $stm3);
+        // mysqli_close($Connection);
+        // include('conexion.php');
+        // $stm2 = "INSERT INTO universidades_imagen (src_imagenes_uni)SELECT '$src_imageness_uni',MAX(id_universidad) FROM universidades";
+        // $Result2 = mysqli_query($Connection, $stm2);
+        // mysqli_close($Connection);
+        // include('conexion.php');
+        // $stm4 = "INSERT INTO universidades_detalles (ubicacion, facebook, whatsapp) SELECT '$src_videos_uni','$facebook', ''$whatsapp,MAX(id_universidad) FROM universidades";
+        // $Result4 = mysqli_query($Connection, $stm4);
+        // mysqli_close($Connection);
+        // include('conexion.php');
+        // $stm6 = "INSERT INTO conferencias (nombre_conferencia, src_conferencia) SELECT '$nombre_conferencia','$src_conferencia', MAX(id_universidad) FROM universidades";
+        // $Result6 = mysqli_query($Connection, $stm6);
+        // mysqli_close($Connection);
+        // include('conexion.php');
+        // $stm0 = "INSERT INTO oferta_educativa (tipo, carrera, descripcion, objetivo, perfil_ingreso, perfil_egreso, plan_estudio, modalidad) SELECT '$tipo', '$carrera', '$descripcion', '$objetivo', '$perfil_ingreso', '$perfil_egreso', '$plan_estudio', '$modalidad', MAX(id_universidad) FROM universidades";
+        // $Result0 = mysqli_query($Connection, $stm0);
+        // mysqli_close($Connection);
+        // include('conexion.php');
+        // $stm5 = "INSERT INTO duracion (years, meses) SELECT '$years','$meses',MAX(id_oferta) FROM oferta_educativa";
+        // $Result5 = mysqli_query($Connection, $stm5);
+        // mysqli_close($Connection);
         
-        include('conexion.php');
-        $stm7 = "INSERT INTO documentos_extras (nombre_documento, src_documento) SELECT '$nombre_documento', '$src_documento',MAX(id_oferta) FROM oferta_educativa";
-        $Result7 = mysqli_query($Connection, $stm7);
-        mysqli_close($Connection);
-        include('conexion.php');
-        $stm8 = "INSERT INTO carrera_imagen (src_imagenes_carrera) SELECT '$src_imagenes_carrera',MAX(id_oferta) FROM oferta_educativa";
-        $Result8 = mysqli_query($Connection, $stm8);
-        mysqli_close($Connection);
-        include('conexion.php');
-        $stm9 = "INSERT INTO carrera_video (src_video_carrera) SELECT '$src_video_carrera',MAX(id_oferta) FROM oferta_educativa";
-        $Result9 = mysqli_query($Connection, $stm9);
-        echo "<h3 class=\"ok\">The information has been saved</h3>";
-        mysqli_close($Connection);
+        // include('conexion.php');
+        // $stm7 = "INSERT INTO documentos_extras (nombre_documento, src_documento) SELECT '$nombre_documento', '$src_documento',MAX(id_oferta) FROM oferta_educativa";
+        // $Result7 = mysqli_query($Connection, $stm7);
+        // mysqli_close($Connection);
+        // include('conexion.php');
+        // $stm8 = "INSERT INTO carrera_imagen (src_imagenes_carrera) SELECT '$src_imagenes_carrera',MAX(id_oferta) FROM oferta_educativa";
+        // $Result8 = mysqli_query($Connection, $stm8);
+        // mysqli_close($Connection);
+        // include('conexion.php');
+        // $stm9 = "INSERT INTO carrera_video (src_video_carrera) SELECT '$src_video_carrera',MAX(id_oferta) FROM oferta_educativa";
+        // $Result9 = mysqli_query($Connection, $stm9);
+        // echo "<h3 class=\"ok\">The information has been saved</h3>";
+        // mysqli_close($Connection);
 }
 ?>

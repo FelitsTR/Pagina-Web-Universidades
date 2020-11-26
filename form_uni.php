@@ -161,59 +161,12 @@ $resultado_m = $mysqli->query($query_m);
             <div name="correo_uni" class="form-group">
               <input require type="text" id="correo_uni" placeholder="Correo" class="form-control descrip" name="correo_uni" />
               </div>
-
-
-
-
-              
-
-            <!-- <div name="ubicacion" class="form-group">
-              <textarea require id="ubicacion" name="ubicacion" cols="30" rows="10" class="form-control descrip" placeholder="Ubicación"></textarea>
-            </div> -->
-            <br><br>
-            <!--<p id="geo"></p>-->
-        <p id="mapa"></p>
-           <!-- 
-        <button onclick="getLocation()" id="send">Pícale dijera el de Infinitum</button>
-        <input type="submit" value="Pícale dijera el de Infinitum">-->
-        <button onclick="return getLocation()">Pícale dijera el de Infinitum</button>
-            <script>
-                
-
-
-                var x = document.getElementById("geo");
-                var MAP = document.getElementById("mapa")
-                function getLocation(){
-                    if(navigator.geolocation){
-                        navigator.geolocation.getCurrentPosition(showPosition);
-                        
-                    }
-                    else{
-                        x.innerHTML = "Tu navegador no es compatible.";
-                    }
-                    return (false);
-                }
-                
-                function showPosition(position){
-                    var Latitud = position.coords.latitude;
-                    var Longitud = position.coords.longitude;
-                    //x.innerHTML = "Latitud: " + Latitud + "<br>Longitud: " + Longitud;
-                    var mapaGoogle = "<iframe src='http://maps.google.com/maps?q=" + Latitud + "," + Longitud + "&z=15&output=embed' width='200' height='300' frameborder='0' style='border:0'></iframe>";
-                    MAP.innerHTML = mapaGoogle;
-                }
-              
-                
-            </script>
-
-
-
-
-
-
-
-
-
-
+            <div name="longitud" class="form-group">
+              <input require id="longitud" name="longitud" cols="30" rows="10" class="form-control descrip" placeholder="Longitud"></input>
+            </div>
+            <div name="latitud" class="form-group">
+              <input require id="latitud" name="latitud" cols="30" rows="10" class="form-control descrip" placeholder="Latitud"></input>
+            </div>
             <div name="facebook" class="form-group">
               <input require type="text" id="facebook" placeholder="Facebook" class="form-control descrip" name="facebook" />
             </div>

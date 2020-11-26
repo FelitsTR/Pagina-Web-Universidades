@@ -69,7 +69,7 @@
       <label id="iconoMenu" for="btn-menu"><img src="images/icons/icono-menu.png" height="30px"></label>
       
       <ul class="menu">
-        <li><a href="estudiantes.html">Inicio</a></li>
+        <li><a href="universidades_usu.php">Inicio</a></li>
       </ul>
     </nav><!-- .nav-menu -->
 

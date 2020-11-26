@@ -64,13 +64,7 @@
 						</div>
 
 						<div class="container-login100-form-btn justify-content-center pb-4">
-								<div class="login100-form-bgbtn"></div>
-								<button class="login100-form-btn" type="submit" value="Enviar" name="Iniciar_1" id="Iniciar_1">
-									Iniciar Sesión
-								</button>
-							</div>
 						</div>
-					
 
 
 					<div class="container-login100-form-btn justify-content-center w-100">

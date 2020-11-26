@@ -71,8 +71,8 @@
       <label id="iconoMenu" for="btn-menu"><img src="images/icons/icono-menu.png" height="30px"></label>
       
       <ul class="menu">
-        <li><a href="universidades.php">Inicio</a></li>
-        <li><a href="subirinformacion.html">Subir o actualizar información</a></li>
+        <li><a href="vista_uni_uni.php">Inicio</a></li>
+        <li><a href="form_uni.php">Subir o actualizar información</a></li>
       </ul>
     </nav><!-- .nav-menu -->
 

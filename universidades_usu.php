@@ -7,7 +7,6 @@
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -78,7 +77,7 @@
         
         <ul class="menu">
           <li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
-          <li><a href="portafolio-universidad.html">Mi Universiad</a></li>
+          <!-- <li><a href="portafolio-universidad.html">Mi Universiad</a></li> -->
         </ul>
       </nav><!-- .nav-menu -->
 

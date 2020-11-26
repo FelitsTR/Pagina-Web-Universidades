@@ -14,7 +14,7 @@ if (isset($_POST['Iniciar_2'])) {
                 if($row =mysqli_fetch_assoc($query))
                 { 
                     $_SESSION['id_uni'] = $row['id_usu_uni'];
-                    header('Location: ./universidades_uni.php');
+                    header('Location:universidades_uni.php');
                 }
             }
             else

@@ -35,13 +35,13 @@
 		<div class="container-login100">
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<form  action="login-usu.php" method="POST" class="login100-form validate-form">
+				<form action="validar_usu.php" method="POST" class="login100-form validate-form">
 					<span class="login100-form-title p-b-59 text-center">
 						Iniciar sesión
 					</span>
 
                     <div class="container-login100-form-btn justify-content-center w-100 mb-5">
-                            <a href="loginuniversidad.php" class="">
+                            <a href="login_uni.php" class="">
                                 Iniciar Sesión como Universidad
                                 <i class="fa fa-long-arrow-right m-l-5"></i>
                             </a>
@@ -55,14 +55,14 @@
 						<!-- Email del estudiante -->
 						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 							<span class="label-input100">Email</span>
-							<input class="input100" type="text" name="correo_usu" placeholder="Correo electronico...">
+							<input class="input100" type="text" name="correo_usu" placeholder="Correo electronico..." required>
 							<span class="focus-input100"></span>
 						</div>
 
 						<!-- Contraseña del estudiante -->
 						<div class="wrap-input100 validate-input" data-validate = "Password is required">
 							<span class="label-input100">Contraseña</span>
-							<input class="input100" type="password" name="clave_usu" placeholder="*************">
+							<input class="input100" type="password" name="clave_usu" placeholder="*************" required>
 							<span class="focus-input100"></span>
 						</div>
 

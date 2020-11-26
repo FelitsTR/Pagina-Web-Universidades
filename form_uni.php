@@ -62,7 +62,7 @@
       <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="index.html">Feria Virtual</a></h1>
+        <h1 class="text-light"><a href="index.php">Feria Virtual</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -72,8 +72,8 @@
         <label id="iconoMenu" for="btn-menu"><img src="images/icons/icono-menu.png" height="30px"></label>
         
         <ul class="menu">
-          <li><a href="universidades.html">Inicio</a></li>
-          <li><a href="portafolio-universidad.html">Mi Universidad</a></li>
+          <li><a href="universidades_uni.php">Inicio</a></li>
+          <li><a href="vista_uni_uni.php">Mi Universidad</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -96,9 +96,9 @@
           <div class="col-lg-9">
             <p>
 
-            <?php include('conexion.php'); ?>
+            <?php include('conexiones/conexion.php'); ?>
 <?php
-require('conexion_m.php');
+require('conexiones/conexion_m.php');
 $query_m = "SELECT id_municipio, nombre_muni FROM municipio ORDER BY nombre_muni ASC";
 $resultado_m = $mysqli->query($query_m);
 ?>

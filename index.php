@@ -1,5 +1,5 @@
 <?php
-include('conexion.php');
+include('conexiones/conexion.php');
 if(isset($_POST['Mensaje'])){
     $falla = $_POST['falla'];
     $query = ("INSERT INTO comentarios (falla) VALUE ('$falla')");
@@ -81,7 +81,7 @@ if(isset($_POST['Mensaje'])){
           <label id="iconoMenu" for="btn-menu"><img src="images/icons/icono-menu.png" height="30px"></label>
           
           <ul class="menu">
-            <li><a href="loginusuarios.php">Iniciar sesión</a></li>
+            <li><a href="login_usu.php">Iniciar sesión</a></li>
             <li><a href="register.php">Registrarse</a></li>
           </ul>
       

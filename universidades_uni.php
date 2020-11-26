@@ -77,7 +77,7 @@
         
         <ul class="menu">
           <li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
-          <li><a href="portafolio-universidad.html">Mi Universiad</a></li>
+          <li><a href="vista_uni_uni.php">Mi Universiad</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 

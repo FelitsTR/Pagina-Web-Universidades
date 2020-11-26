@@ -206,10 +206,9 @@ if(isset($_POST['Mensaje'])){
               </div>
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 text-center mt-5">
                  <h3>Visitas</h3>
-                  <div>   
+                  <d>   
                     <a title="contador de visitas" class="row justify-content-center"><img src="https://counter3.stat.ovh/private/contadorvisitasgratis.php?c=fzcl3duq6pzwbs3tagf2pqkr56zcljqy" ></a>
                     
-                      <div> 
                       <meta name="viewport" content="width=device-width, initial-scale=3">
 <link href="https://fonts.googleapis.com/css?family=Releway:400,700,900" rel="stylesheet">
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -275,10 +274,8 @@ chart.draw(view, options);
 
 <!--Aqui se pone el pie de la Pagina-->
 <footer>
-<h6 a>DosPuntosTres @TodosLosDerechosReservados</h6>
+<h6 a>DOSPUNTOSTRES @DerechosReservados</h6>
 </footer>
-
-
 
 
 <style type="text/css">
@@ -287,6 +284,8 @@ input{display: inline-block;
 width: 14;
   
 </style>
+
+
                
 
                   </div>

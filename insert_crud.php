@@ -72,6 +72,13 @@ if (isset($_POST['Guardar'])){
         include('conexiones/conexion.php');
         $stm1 = "INSERT INTO universidades (id_universidad, nombre_uni, telefono_uni, correo_uni, id_municipio, logo_uni, id_usu_uni) VALUE ('$admin', '$nombre_uni', '$telefono_uni', '$correo_uni', '$id_municipio', '$logo_uni', '$admin')";
         $Result1 = mysqli_query($conexion, $stm1);
+        if(!$Result1){
+        echo $Result1
+        }
+        $stm4 = "INSERT INTO universidades_detalles (id_universidad, ubicacion, facebook, whatsapp) VALUE ('$admin', '$ubicacion','$facebook', '$whatsapp')";
+        $Result4 = mysqli_query($conexion, $stm4);
+        echo "<h3 class=\"ok\">Se ha creado su cuenta</h3>";
+        mysqli_close($conexion);
         // include('conexion.php');
         // $stm3 = "INSERT INTO universidades_video (src_videos_uni, id_universidad) SELECT '$src_videos_uni',MAX(id_universidad) FROM universidades";
         // $Result3 = mysqli_query($Connection, $stm3);
@@ -80,10 +87,7 @@ if (isset($_POST['Guardar'])){
         // $stm2 = "INSERT INTO universidades_imagen (src_imagenes_uni)SELECT '$src_imageness_uni',MAX(id_universidad) FROM universidades";
         // $Result2 = mysqli_query($Connection, $stm2);
         // mysqli_close($Connection);
-        $stm4 = "INSERT INTO universidades_detalles (id_universidad, ubicacion, facebook, whatsapp) VALUE ('$admin', '$ubicacion','$facebook', '$whatsapp')";
-        $Result4 = mysqli_query($conexion, $stm4);
-        echo "<h3 class=\"ok\">Se ha creado su cuenta</h3>";
-        mysqli_close($conexion);
+        
         // include('conexion.php');
         // $stm6 = "INSERT INTO conferencias (nombre_conferencia, src_conferencia) SELECT '$nombre_conferencia','$src_conferencia', MAX(id_universidad) FROM universidades";
         // $Result6 = mysqli_query($Connection, $stm6);

@@ -1,7 +1,7 @@
 <?php  
 if (isset($_POST['Iniciar_2'])) {
     session_start();
-    include('conexion.php');
+    include('conexiones/conexion.php');
     $correo_u = $_POST['correo_u'];
     $clave_uni = $_POST['clave_uni'];
 
@@ -14,7 +14,7 @@ if (isset($_POST['Iniciar_2'])) {
                 if($row =mysqli_fetch_assoc($query))
                 { 
                     $_SESSION['id_uni'] = $row['id_usu_uni'];
-                    header('Location: ./index.php');
+                    header('Location: ./universidades_uni.php');
                 }
             }
             else

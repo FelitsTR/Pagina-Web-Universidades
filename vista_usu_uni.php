@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  $usuario=$_SESSION['id_usu'];
+  echo '<script> alert("Bienvenido '.$usuario.'"); </script>';
+  //falta arreglarlo
+?>
 <!DOCTYPE html>
 <html lang="en">
 

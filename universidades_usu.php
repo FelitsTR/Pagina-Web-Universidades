@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  $usuario=$_SESSION['id_usu'];
+  echo '<script> alert("Bienvenido '.$usuario.'"); </script>';
+  //falta arreglarlo
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -51,14 +58,18 @@
       <img src="assets/img//topbar_logo_3.png" class="img-logo-4" alt="">
     </div>
   </div>
-  <nav class="Probandostyle=">
-
+  <nav class="Probando">
+   <!-- 
+  <header id="header"  class="fixed-top d-flex align-items-center  header-transparent ">
+    -->
     <header id="header" class="d-flex align-items-center  header-transparent">
 
       <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
         <h1 class="text-light"><a href="index.html">Feria Virtual</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav class="el-menu">
@@ -66,7 +77,9 @@
         <label id="iconoMenu" for="btn-menu"><img src="images/icons/icono-menu.png" height="30px"></label>
         
         <ul class="menu">
-          <li><a href="index.html">Cerrar sesión</a></li>
+          <li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
+          <li><a href="portafolio-universidad.html">Mi Universiad</a></li>
+        </ul>
       </nav><!-- .nav-menu -->
 
     </div>
@@ -99,7 +112,7 @@
               <h4>App 1</h4>
               <p>App</p>
               <a href="assets/img/portafolio/portafolio-1.png" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-alumno.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="portfolio-universidad.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -109,7 +122,7 @@
               <h4>Web 3</h4>
               <p>Web</p>
               <a href="assets/img/portafolio/portafolio-2.png" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-alumno.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="portfolio-universidad.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -119,7 +132,7 @@
               <h4>App 2</h4>
               <p>App</p>
               <a href="assets/img/portafolio/portafolio-3.png" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-alumno.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="portfolio-universidad.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -129,7 +142,7 @@
               <h4>Card 2</h4>
               <p>Card</p>
               <a href="assets/img/portafolio/portafolio-4.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-alumno.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="portfolio-universidad.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -138,7 +151,7 @@
       </div>
     </section> 
 
-  </main>
+  </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -154,7 +167,8 @@
         &copy; Copyright <strong><span>UPQROO</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a><br>
+
+        Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a>
         <br>¿Tienes problemas con la pagina? <a href="javascript:document.getElementById('soporte').style.display='block';void0">Mandanos un mensaje</a>
         <div id="soporte">
           <br><textarea name="textareasoporte" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
@@ -162,13 +176,16 @@
             <br><button type="submit">Enviar mensaje</button>
           </div>
         </div> 
-      </div> 
+      </div>
     </div>
+
+    <!-- ======= Top Bar ======= -->
 
   </footer>
 
   <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a> 
 
+  <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
@@ -178,6 +195,7 @@
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
 
+  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>

@@ -1,7 +1,7 @@
 <?php  
 if (isset($_POST['Iniciar_1'])) {
     session_start();
-    include('conexion.php');
+    include('conexiones/conexion.php');
     $correo_usu = $_POST['correo_usu'];
     $clave_usu = $_POST['clave_usu'];
 
@@ -15,7 +15,7 @@ if (isset($_POST['Iniciar_1'])) {
                 { 
                     $_SESSION['id_usu'] = $row['id_usuario'];
                     $_SESSION['nom_usu'] = $row['nombre_usu'];
-                    header('Location: ./universidades.php');
+                    header('Location: ./universidades_usu.php');
                 }
             }
             else

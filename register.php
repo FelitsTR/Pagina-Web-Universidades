@@ -1,6 +1,6 @@
 <?php
         if(isset($_POST['Registrarse'])){
-            include('conexion.php');
+            include('conexiones/conexion.php');
             $nombre_usu = $_POST['nombre_usu'];
             $telefono_usu = $_POST['telefono_usu'];
 			$correo_usu = $_POST['correo_usu'];
@@ -12,11 +12,11 @@
 				$Result = mysqli_query($conexion, $Query);
 				echo "<h3 class=\"ok\">Se ha creado su cuenta</h3>";
 				mysqli_close($conexion);
-			 }
-			 else {
+			}
+			else {
 				// acción en caso incorrecto
 				echo "<h3>Las claves no coinciden</h3>";
-			 } 
+			} 
 		
 
             
@@ -127,7 +127,7 @@
 		
 
 					<div class="container-login100-form-btn justify-content-center w-100">
-						<a href="loginusuarios.php" class="">
+						<a href="login_usu.php" class="">
 							Iniciar sesión
 							<i class="fa fa-long-arrow-right m-l-5"></i>
 						</a>

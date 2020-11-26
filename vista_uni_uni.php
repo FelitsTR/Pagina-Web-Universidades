@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  $admin=$_SESSION['id_uni'];
+  echo '<script> alert("Bienvenido '.$admin.'"); </script>';
+  //falta arreglarlo
+?>
 <!DOCTYPE html>
 <html lang="en">
 

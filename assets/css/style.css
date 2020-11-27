@@ -1850,3 +1850,8 @@ hr.new3subir {
   background: #27BB8C;
   text-decoration: none;
 }
+
+#carrera1-oculta
+{
+  display: none;
+}

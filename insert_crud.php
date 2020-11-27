@@ -17,7 +17,6 @@ if (isset($_POST['Guardar'])){
     $id_municipio = $_POST['id_municipio'];
     $logo_uni = $_POST['logo_uni'];
     
-    
     // Duracion
 
     $years = $_POST['years'];
@@ -40,7 +39,7 @@ if (isset($_POST['Guardar'])){
 
     $latitud = $_POST['latitud'];
     $longitud = $_POST['longitud'];
-    $ubicacion = "<iframe src='http://maps.google.com/maps?q=".$latitud.",".$longitud."&z=15&output=embed' width='500' height='600' frameborder='0' style='border:0'></iframe>";
+    $ubicacion +=  "<iframe src='http://maps.google.com/maps?q=".$latitud.",".$longitud."&z=15&output=embed' width='500' height='600' frameborder='0' style='border:0'></iframe>";
     $facebook = $_POST['facebook'];
     $whatsapp = $_POST['whatsapp'];
 

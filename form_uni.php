@@ -147,48 +147,48 @@ $resultado_m = $mysqli->query($query_m);
             </script>
           <div id="Ocultar_1">
             <div name="Nombre_Universidad" class="form-group">
-              <input require type="text" id="nombre_uni" placeholder="Nombre Universidad" class="form-control descrip" name="nombre_uni" />
+              <input required type="text" id="nombre_uni" placeholder="Nombre Universidad" class="form-control descrip" name="nombre_uni" />
             </div>
-            <select name="id_municipio" class="form-group">
+            <select required name="id_municipio" class="form-group">
               <option value="0">Municipio</option>
               <?php while($row = $resultado_m->fetch_assoc()) { ?>
                 <option value="<?php echo $row['id_municipio']; ?>"><?php echo $row['nombre_muni']; ?></option>
               <?php } ?>
             </select>
             <div name="telefono_uni" class="form-group">
-              <input require type="text" id="telefono_uni" placeholder="Telefono" class="form-control descrip" name="telefono_uni" />
+              <input required type="text" id="telefono_uni" placeholder="Telefono" class="form-control descrip" name="telefono_uni" />
             </div>
             <div name="correo_uni" class="form-group">
-              <input require type="text" id="correo_uni" placeholder="Correo" class="form-control descrip" name="correo_uni" />
+              <input required type="text" id="correo_uni" placeholder="Correo" class="form-control descrip" name="correo_uni" />
               </div>
             <div name="longitud" class="form-group">
-              <input require id="longitud" name="longitud" cols="30" rows="10" class="form-control descrip" placeholder="Longitud"></input>
+              <input required type="text" id="longitud" name="longitud" cols="30" rows="10" class="form-control descrip" placeholder="Longitud"></input>
             </div>
             <div name="latitud" class="form-group">
-              <input require id="latitud" name="latitud" cols="30" rows="10" class="form-control descrip" placeholder="Latitud"></input>
+              <input required type="text" id="latitud" name="latitud" cols="30" rows="10" class="form-control descrip" placeholder="Latitud"></input>
             </div>
             <div name="facebook" class="form-group">
-              <input require type="text" id="facebook" placeholder="Facebook" class="form-control descrip" name="facebook" />
+              <input required type="text" id="facebook" placeholder="Facebook" class="form-control descrip" name="facebook" />
             </div>
             <div name="whatsapp" class="form-group">
-              <input require type="text" id="whatsapp" placeholder="Whatsapp" class="form-control descrip" name="whatsapp" />
+              <input required type="text" id="whatsapp" placeholder="Whatsapp" class="form-control descrip" name="whatsapp" />
             </div>
             <div name="nombre_conferencia" class="form-group">
-              <input require type="text" id="nombre_conferencia" placeholder="Descripción de la conferencia" class="form-control descrip" name="nombre_conferencia" />
+              <input required type="text" id="nombre_conferencia" placeholder="Descripción de la conferencia" class="form-control descrip" name="nombre_conferencia" />
             </div>
             <div name="src_conferencia" class="form-group">
-              <input require type="text" id="src_conferencia" placeholder="Conferencia" class="form-control descrip" name="src_conferencia" />
+              <input required type="text" id="src_conferencia" placeholder="Conferencia" class="form-control descrip" name="src_conferencia" />
             </div>
           </div>
           <div id="Ocultar_2">
             <div name="logo_uni" class="form-group">
-              <input require type="text" id="logo_uni" placeholder="Logo" class="form-control descrip" name="logo_uni" />
+              <input required type="text" id="logo_uni" placeholder="Logo" class="form-control descrip" name="logo_uni" />
             </div>
             <div name="src_imagenes_uni" class="form-group">
-              <input require type="text" id="src_imagenes_uni" placeholder="Imagen" class="form-control descrip" name="src_imagenes_uni" />
+              <input required type="text" id="src_imagenes_uni" placeholder="Imagen" class="form-control descrip" name="src_imagenes_uni" />
             </div>
             <div name="src_videos_uni" class="form-group">
-              <input require type="text" id="src_videos_uni" placeholder="Video" class="form-control descrip" name="src_videos_uni" />
+              <input required type="text" id="src_videos_uni" placeholder="Video" class="form-control descrip" name="src_videos_uni" />
             </div>
           </div>
           <div class="card-header head">
@@ -220,49 +220,49 @@ $resultado_m = $mysqli->query($query_m);
               </script>
               <div id="Ocultar1">
                 <div class="form-group">
-                  <input require type="text" id="tipo" placeholder="Tipo de Universidad" class="form-control descrip" name="tipo" />
+                  <input required type="text" id="tipo" placeholder="Tipo de Universidad" class="form-control descrip" name="tipo" />
                 </div>
                 <div name="carrera" class="form-group">
-                  <input require type="text" id="carrera" placeholder="Carrera" class="form-control descrip" name="carrera" />
+                  <input required type="text" id="carrera" placeholder="Carrera" class="form-control descrip" name="carrera" />
                 </div>
                 <div name="years" class="form-group">
-                  <input require type="text" id="years" placeholder="Años" class="form-control descrip" name="years" />
+                  <input required type="text" id="years" placeholder="Años" class="form-control descrip" name="years" />
                 </div>
                 <div name="meses" class="form-group">
-                  <input require type="text" id="meses" placeholder="Meses" class="form-control descrip" name="meses" />
+                  <input required type="text" id="meses" placeholder="Meses" class="form-control descrip" name="meses" />
                 </div>
                 <div class="form-group">
-                  <textarea require id="descripcion" name="descripcion" cols="30" rows="10" class="form-control descrip" placeholder="Descripción"></textarea>
+                  <textarea required id="descripcion" name="descripcion" cols="30" rows="10" class="form-control descrip" placeholder="Descripción"></textarea>
                 </div>
                 <div  class="form-group">
-                  <textarea require id="objetivo" name="objetivo" cols="30" rows="10" class="form-control descrip" placeholder="Objetivo"></textarea>
+                  <textarea required id="objetivo" name="objetivo" cols="30" rows="10" class="form-control descrip" placeholder="Objetivo"></textarea>
                 </div>
                 <div name="perfil_ingreso" class="form-group">
-                  <input require type="text" id="perfil_ingreso" placeholder="Perfil de Ingreso" class="form-control descrip" name="perfil_ingreso" />
+                  <input required type="text" id="perfil_ingreso" placeholder="Perfil de Ingreso" class="form-control descrip" name="perfil_ingreso" />
                 </div>
                 <div name="perfil_egreso" class="form-group">
-                  <input type="text" id="perfil_egreso" placeholder="Perfil de Egreso" class="form-control descrip" name="perfil_egreso" />
+                  <input required type="text" id="perfil_egreso" placeholder="Perfil de Egreso" class="form-control descrip" name="perfil_egreso" />
                 </div>
                 <div name="plan_estudio" class="form-group">
-                  <input type="text" id="plan_estudio" placeholder="Plan de Estudio" class="form-control descrip" name="plan_estudio" />
+                  <input required type="text" id="plan_estudio" placeholder="Plan de Estudio" class="form-control descrip" name="plan_estudio" />
                 </div>
                 <div name="modalidad" class="form-group">
-                  <input type="text" id="modalidad" placeholder="Modalidad" class="form-control descrip" name="modalidad" />
+                  <input required type="text" id="modalidad" placeholder="Modalidad" class="form-control descrip" name="modalidad" />
                 </div>
               </div>
             
               <div id="Ocultar2">
                 <div name="src_imagenes_carrera" class="form-group">
-                  <textarea require id="src_imagenes_carrera" name="src_imagenes_carrera" cols="30" rows="10" class="form-control descrip" placeholder="Imagen"></textarea>
+                  <textarea required id="src_imagenes_carrera" name="src_imagenes_carrera" cols="30" rows="10" class="form-control descrip" placeholder="Imagen"></textarea>
                 </div>
                 <div name="src_video_carrera" class="form-group">
-                  <textarea require id="src_video_carrera" name="src_video_carrera" cols="30" rows="10" class="form-control descrip" placeholder="Video"></textarea>
+                  <textarea required id="src_video_carrera" name="src_video_carrera" cols="30" rows="10" class="form-control descrip" placeholder="Video"></textarea>
                 </div>
                 <div name="nombre_documento" class="form-group">
-                  <input type="text" id="nombre_documento" placeholder="Nombre del documento" class="form-control descrip" name="nombre_documento" />
+                  <input required type="text" id="nombre_documento" placeholder="Nombre del documento" class="form-control descrip" name="nombre_documento" />
                 </div>
                 <div name="src_documento" class="form-group">
-                  <textarea require id="src_documento" name="src_documento" cols="30" rows="10" class="form-control descrip" placeholder="Documento"></textarea>
+                  <textarea required id="src_documento" name="src_documento" cols="30" rows="10" class="form-control descrip" placeholder="Documento"></textarea>
                 </div>
               </div>
               <script>
@@ -295,12 +295,16 @@ $resultado_m = $mysqli->query($query_m);
         <a href="https://www.facebook.com/upqroo" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
         <a href="https://www.youtube.com/channel/UCy6VTWYIB9tay8P28cPe6Eg" class="youtube" target="_blank"><i class="bx bxl-youtube"></i></a>
       </div>
+      <div>
+      </div>
+        ¿Quieres promocionar tu universidad de Quintana Roo? <br> Contáctanos por <a href="mailto:feriauniversitariaqroo@gmail.com?">feriauniversitariaqroo@gmail.com</a>
       <div class="copyright">
-        &copy; Copyright <strong><span>UPQROO</span></strong>. All Rights Reserved
+        <br>&copy; Copyright <strong><span>UPQROO</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a>
-        <br>¿Tienes problemas con la pagina? <a href="javascript:document.getElementById('soporte').style.display='block';void0">Mandanos un mensaje</a>
+
+        Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a><br>
+        <br>¿Tienes problemas con la página? <a href="javascript:document.getElementById('soporte').style.display='block';void0">Mandanos un mensaje</a>
         <div id="soporte">
           <br><textarea name="textareasoporte" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
           <div class="boton-soporte">
@@ -310,9 +314,9 @@ $resultado_m = $mysqli->query($query_m);
       </div>
     </div>
 
-        <!-- ======= Top Bar ======= -->
+    <!-- ======= Top Bar ======= -->
 
-  </footer><!-- End Footer -->
+  </footer>
 
   <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a> 
 

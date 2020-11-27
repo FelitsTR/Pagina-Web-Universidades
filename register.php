@@ -6,20 +6,31 @@
 			$correo_usu = $_POST['correo_usu'];
 			$clave_usu = $_POST['clave_usu'];
 			$motivo_usu = $_POST['motivo_usu'];
-		if ($clave_usu == $_POST["repeat-pass"]) {
+			if ($clave_usu == $_POST["repeat-pass"]) {
 				// acción en caso correcto
 				$Query = "INSERT INTO usuarios (nombre_usu, telefono_usu, correo_usu, clave_usu, motivo_usu) VALUES ('$nombre_usu', '$telefono_usu', '$correo_usu', '$clave_usu', '$motivo_usu')";
 				$Result = mysqli_query($conexion, $Query);
 				echo "<h3 class=\"ok\">Se ha creado su cuenta</h3>";
+				$msg = "Felicidades. Te has registrado exitosamente";
+            	$header = "From: feriauniversitariaqroo@gmail.com"."\r\n";
+            	$header.= "Reply-To: noreply@example.com";
+            	$mail = mail($correo_usu,$msg,$header);
 				mysqli_close($conexion);
 			}
 			else {
 				// acción en caso incorrecto
 				echo "<h3>Las claves no coinciden</h3>";
 			} 
-		
 
+			
             
+            // if($mail){
+            //     echo "<h4> Correo enviado. </h4>";
+            // }
+            // else{
+            //     echo "ERROR";
+            // }
+
 
         }
 		?>
@@ -68,10 +79,22 @@
 					<a href="index.php">Inicio</a><br><br>	<span class="login100-form-title p-b-59 text-center">
 						Iniciar sesión
 						</span>
+						<!-- nombre del estudiante -->
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<span class="label-input100">Nombre</span>
+						<input class="input100" type="text" name="nombre_usu" placeholder="Nombre Completo..." required>
+						<span class="focus-input100"></span>
+					</div>
 					<!-- Email del estudiante -->
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<span class="label-input100">Email</span>
 						<input class="input100" type="email" name="correo_usu" placeholder="Correo electronico..." required>
+						<span class="focus-input100"></span>
+					</div>
+					<!-- telefono del estudiante -->
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<span class="label-input100">telefono_usu</span>
+						<input class="input100" type="Tel" name="telefono_usu" placeholder="Telefono..." required>
 						<span class="focus-input100"></span>
 					</div>
 
@@ -118,8 +141,6 @@
 							<i class="fa fa-long-arrow-right m-l-5"></i>
 						</a>
 					</div>
-					
-
 				</form>
 			</div>
 		</div>

@@ -7,6 +7,7 @@ if (isset($_POST['Guardar'])){
 
     session_start();
     $admin=$_SESSION['id_uni'];
+    $id_universidad = $admin;
 
     // Universidad
 
@@ -70,15 +71,41 @@ if (isset($_POST['Guardar'])){
     //Insercion de datos en la base de datos 
     
         include('conexiones/conexion.php');
-        $stm1 = "INSERT INTO universidades (id_universidad, nombre_uni, telefono_uni, correo_uni, id_municipio, logo_uni, id_usu_uni) VALUE ('$admin', '$nombre_uni', '$telefono_uni', '$correo_uni', '$id_municipio', '$logo_uni', '$admin')";
-        $Result1 = mysqli_query($conexion, $stm1);
-        if(!$Result1){
-        echo $Result1
-        }
+/*         $stm1 = "INSERT INTO universidades (id_universidad, nombre_uni, telefono_uni, correo_uni, id_municipio, logo_uni, id_usu_uni) VALUE ('$admin', '$nombre_uni', '$telefono_uni', '$correo_uni', '$id_municipio', '$logo_uni', '$admin')";
         $stm4 = "INSERT INTO universidades_detalles (id_universidad, ubicacion, facebook, whatsapp) VALUE ('$admin', '$ubicacion','$facebook', '$whatsapp')";
-        $Result4 = mysqli_query($conexion, $stm4);
-        echo "<h3 class=\"ok\">Se ha creado su cuenta</h3>";
-        mysqli_close($conexion);
+        mysqli_query($conexion, $stm1);
+        mysqli_query($conexion, $stm4); */
+
+
+
+
+ /*        $stm1 = "INSERT INTO universidades (id_universidad, nombre_uni, telefono_uni, correo_uni, id_municipio, logo_uni, id_usu_uni) VALUE ('$id_universidad', '$nombre_uni', '$telefono_uni', '$correo_uni', '$id_municipio', '$logo_uni', '$admin') AND
+        INSERT INTO universidades_detalles (id_universidad, ubicacion, facebook, whatsapp) VALUE ('$id_universidad', '$ubicacion','$facebook', '$whatsapp')";  
+        mysql_query($stm1, $conexion); */
+       
+
+
+
+        $stm1 = "INSERT INTO universidades (id_universidad, nombre_uni, telefono_uni, correo_uni, id_municipio, logo_uni, id_usu_uni) VALUES ('$id_universidad', '$nombre_uni', '$telefono_uni', '$correo_uni', '$id_municipio', '$logo_uni', '$admin')";
+        
+        $tabla1=mysqli_query($conexion, $stm1);
+        if($tabla1){
+
+            // $stm4 = "INSERT INTO universidades_detalles (id_universidad, ubicacion, facebook, whatsapp) VALUES ('$id_universidad', '$ubicacion','$facebook', '$whatsapp')";
+            $stm4 = "INSERT INTO universidades_detalles (id_universidad, ubicacion, facebook, whatsapp) VALUES ($admin,'$ubicacion','$facebook', '$whatsapp')";
+            $tabla2=mysqli_query($conexion, $stm4);
+            if($tabla2){
+                echo "Se han insertado correctamente los datos";
+            }
+            else{
+                echo "No servimos para nada x1";
+            }
+        }
+        else{
+            echo "No servimos para nada x2";
+        }
+       
+
         // include('conexion.php');
         // $stm3 = "INSERT INTO universidades_video (src_videos_uni, id_universidad) SELECT '$src_videos_uni',MAX(id_universidad) FROM universidades";
         // $Result3 = mysqli_query($Connection, $stm3);
@@ -88,6 +115,7 @@ if (isset($_POST['Guardar'])){
         // $Result2 = mysqli_query($Connection, $stm2);
         // mysqli_close($Connection);
         
+        mysqli_close($conexion);
         // include('conexion.php');
         // $stm6 = "INSERT INTO conferencias (nombre_conferencia, src_conferencia) SELECT '$nombre_conferencia','$src_conferencia', MAX(id_universidad) FROM universidades";
         // $Result6 = mysqli_query($Connection, $stm6);

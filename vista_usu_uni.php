@@ -150,7 +150,7 @@
 
   </main><!-- End #main -->
 
-       <!-- ======= Footer ======= -->
+  <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
       <h3>UPQROO</h3>
@@ -160,12 +160,16 @@
         <a href="https://www.facebook.com/upqroo" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
         <a href="https://www.youtube.com/channel/UCy6VTWYIB9tay8P28cPe6Eg" class="youtube" target="_blank"><i class="bx bxl-youtube"></i></a>
       </div>
+      <div>
+      </div>
+        ¿Quieres promocionar tu universidad de Quintana Roo? <br> Contáctanos por <a href="mailto:feriauniversitariaqroo@gmail.com?">feriauniversitariaqroo@gmail.com</a>
       <div class="copyright">
-        &copy; Copyright <strong><span>UPQROO</span></strong>. Todos los derechos reservados
+        <br>&copy; Copyright <strong><span>UPQROO</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a>
-        <br>¿Tienes problemas con la pagina? <a href="javascript:document.getElementById('soporte').style.display='block';void0">Mandanos un mensaje</a>
+
+        Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a><br>
+        <br>¿Tienes problemas con la página? <a href="javascript:document.getElementById('soporte').style.display='block';void0">Mandanos un mensaje</a>
         <div id="soporte">
           <br><textarea name="textareasoporte" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
           <div class="boton-soporte">
@@ -174,7 +178,10 @@
         </div> 
       </div>
     </div>
-  </footer> <!-- End Footer -->
+
+    <!-- ======= Top Bar ======= -->
+
+  </footer>
 
   <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
 

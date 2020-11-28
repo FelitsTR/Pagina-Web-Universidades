@@ -54,19 +54,19 @@ if (isset($_POST['Guardar'])){
     //Insercion de datos en la base de datos 
     
     include('conexiones/conexion.php');
-    $stm1 = "INSERT INTO universidades (id_universidad, nombre_uni, telefono_uni, correo_uni, id_municipio, logo_uni, id_usu_uni, latitud, longitud, facebook, whatsapp, src_video) VALUES ('$id_universidad','$nombre_uni','$telefono_uni','$correo_uni','$id_municipio','$logo_uni','$id_usu_uni','$latitud','$longitud','$facebook','$whatsapp','$src_video')";
+    $stm1 = "INSERT INTO universidades (id_universidad, nombre_uni, telefono_uni, correo_uni, id_municipio, logo_uni, id_usu_uni, latitud, longitud, facebook, whatsapp, src_video) VALUES ('$id_universidad','$nombre_uni','$telefono_uni','$correo_uni','$id_municipio','$logo_uni','$admin','$latitud','$longitud','$facebook','$whatsapp','$src_video')";
     $query1=mysqli_query($conexion, $stm1);
     if($query1){
-        $stm2 = "INSERT INTO conferencias (id_conferencia, id_universidad, nombre_conferencia, src_conferencia) VALUES ('$id_conferencia','$id_universidad','$nombre_conferencia','$src_conferencia')";
+        $stm2 = "INSERT INTO conferencias (id_universidad, nombre_conferencia, src_conferencia) VALUES ('$id_universidad','$nombre_conferencia','$src_conferencia')";
         $query2 = mysqli_query($conexion, $stm2);
         if($query2){
             $stm3 = "INSERT INTO universidades_imagen (id_universidad, src_imagenes_uni) VALUES ('$id_universidad','$src_imagenes_uni')";
             $query3 = mysqli_query($conexion, $stm3);
             if($query3){
-                $stm4 = "INSERT INTO oferta_educativa (id_universidad, periodo_academico, carrera, descripcion, objetivo, perfil_ingreso, perfil_egreso, plan_estudio, id_duracion, carrera_video, tipo_carrera, src_doc, years, meses) VALUES ($id_universidad','$periodo_academico','$carrera','$descripcion','$objetivo','$perfil_ingreso','$perfil_egreso','$plan_estudio','$id_duracion','$carrera_video','$tipo_carrera','$src_doc','$years','$meses')";
+                $stm4 = "INSERT INTO oferta_educativa (id_universidad, periodo_academico, carrera, descripcion, objetivo, perfil_ingreso, perfil_egreso, plan_estudio, carrera_video, tipo_carrera, src_doc, years, meses) VALUES ('$id_universidad','$periodo_academico','$carrera','$descripcion','$objetivo','$perfil_ingreso','$perfil_egreso','$plan_estudio','$carrera_video','$tipo_carrera','$src_doc','$years','$meses')";
                 $query4 = mysqli_query($conexion, $stm4);
                 if($query4){
-                    $stm5 = "INSERT INTO carrera_imagen(id_oferta, src_imagenes_carrera) VALUES ('$id_oferta','$src_imagenes_carrera')";
+                    $stm5 = "INSERT INTO carrera_imagen (src_imagenes_carrera, id_universidad) VALUES ('$src_imagenes_carrera','$id_universidad')";
                     $query5 = mysqli_query($conexion, $stm5);
                     if($query5){
                         echo "Se han insertado correctamente los datos";

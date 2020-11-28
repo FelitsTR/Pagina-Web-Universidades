@@ -1,7 +1,6 @@
 <?php
   session_start();
   $admin=$_SESSION['id_uni'];
-  echo '<script> alert("Bienvenido '.$admin.'"); </script>';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -60,24 +59,24 @@
 
       <div class="container d-flex align-items-center">
 
-      <div class="logo mr-auto">
-        <h1 class="text-light"><a href="index.php">Feria Virtual</a></h1>
+        <div class="logo mr-auto">
+          <h1 class="text-light"><a href="index.php">Feria Virtual</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
+        </div>
 
-      <nav class="el-menu">
-        <input type="checkbox" id="btn-menu">
-        <label id="iconoMenu" for="btn-menu"><img src="images/icons/icono-menu.png" height="30px"></label>
+        <nav class="el-menu">
+          <input type="checkbox" id="btn-menu">
+          <label id="iconoMenu" for="btn-menu"><img src="images/icons/icono-menu.png" height="30px"></label>
         
-        <ul class="menu">
-          <li><a href="universidades_uni.php">Inicio</a></li>
-          <li><a href="vista_uni_uni.php">Mi Universidad</a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
+          <ul class="menu">
+            <li><a href="universidades_uni.php">Inicio</a></li>
+            <li><a href="vista_uni_uni.php">Mi Universidad</a></li>
+          </ul>
+        </nav><!-- .nav-menu -->
 
-    </div>
-  </header><!-- End Header -->
+      </div>
+    </header><!-- End Header -->
    </nav>
 
   <main id="main">
@@ -93,30 +92,14 @@
 
         <div class="row content" data-aos="fade-up">
           <div class="col-lg-9">
-            <p>
+            
 
             <?php include('conexiones/conexion.php'); ?>
-<?php
-require('conexiones/conexion_m.php');
-$query_m = "SELECT id_municipio, nombre_muni FROM municipio ORDER BY nombre_muni ASC";
-$resultado_m = $mysqli->query($query_m);
-?>
-<div class="container">
- <!--APPLICATION-->
-  <div id="App" class="row pt-5">
-    <div class="col-md-6 cont" style="text-align:center; margin: 0 auto">
-      <?php
-      if (isset($_SESSION['message'])) {
-        ?>
-          <div class="alert alert-<?= $_SESSION['message_type'] ?> alert-dismissible fade show" role="alert">
-        <?= $_SESSION['message'] ?>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      <?php session_unset();
-      } //clear data session
-      ?>
+            <?php
+              require('conexiones/conexion_m.php');
+                $query_m = "SELECT id_municipio, nombre_muni FROM municipio ORDER BY nombre_muni ASC";
+                $resultado_m = $mysqli->query($query_m);
+            ?>
       <!-- Datos Generales -->
 
       <div class="card box mt-4 card-child">
@@ -173,12 +156,6 @@ $resultado_m = $mysqli->query($query_m);
             <div name="whatsapp" class="form-group">
               <input required type="text" id="whatsapp" placeholder="Whatsapp" class="form-control descrip" name="whatsapp" />
             </div>
-            <div name="nombre_conferencia" class="form-group">
-              <input required type="text" id="nombre_conferencia" placeholder="Descripción de la conferencia" class="form-control descrip" name="nombre_conferencia" />
-            </div>
-            <div name="src_conferencia" class="form-group">
-              <input required type="text" id="src_conferencia" placeholder="Conferencia" class="form-control descrip" name="src_conferencia" />
-            </div>
           </div>
           <div id="Ocultar_2">
             <div name="logo_uni" class="form-group">
@@ -187,8 +164,14 @@ $resultado_m = $mysqli->query($query_m);
             <div name="src_imagenes_uni" class="form-group">
               <input required type="text" id="src_imagenes_uni" placeholder="Imagen" class="form-control descrip" name="src_imagenes_uni" />
             </div>
-            <div name="src_videos_uni" class="form-group">
-              <input required type="text" id="src_videos_uni" placeholder="Video" class="form-control descrip" name="src_videos_uni" />
+            <div name="src_video" class="form-group">
+              <input required type="text" id="src_video" placeholder="Video" class="form-control descrip" name="src_video" />
+            </div>
+            <div name="nombre_conferencia" class="form-group">
+              <input required type="text" id="nombre_conferencia" placeholder="Descripción de la conferencia" class="form-control descrip" name="nombre_conferencia" />
+            </div>
+            <div name="src_conferencia" class="form-group">
+              <input required type="text" id="src_conferencia" placeholder="Conferencia" class="form-control descrip" name="src_conferencia" />
             </div>
           </div>
           <div class="card-header head">
@@ -219,11 +202,11 @@ $resultado_m = $mysqli->query($query_m);
                 }
               </script>
               <div id="Ocultar1">
-                <div class="form-group">
-                  <input required type="text" id="tipo" placeholder="Tipo de Universidad" class="form-control descrip" name="tipo" />
-                </div>
                 <div name="carrera" class="form-group">
                   <input required type="text" id="carrera" placeholder="Carrera" class="form-control descrip" name="carrera" />
+                </div>
+                <div class="form-group">
+                  <input required type="text" id="periodo_academico" placeholder="Periodo Academico" class="form-control descrip" name="periodo_academico" />
                 </div>
                 <div name="years" class="form-group">
                   <input required type="text" id="years" placeholder="Años" class="form-control descrip" name="years" />
@@ -232,10 +215,18 @@ $resultado_m = $mysqli->query($query_m);
                   <input required type="text" id="meses" placeholder="Meses" class="form-control descrip" name="meses" />
                 </div>
                 <div class="form-group">
-                  <textarea required id="descripcion" name="descripcion" cols="30" rows="10" class="form-control descrip" placeholder="Descripción"></textarea>
+                  <textarea required id="descripcion" name="descripcion" cols="30" rows="10" class="form-control descrip" placeholder="Descripción de la carrera"></textarea>
                 </div>
                 <div  class="form-group">
-                  <textarea required id="objetivo" name="objetivo" cols="30" rows="10" class="form-control descrip" placeholder="Objetivo"></textarea>
+                  <textarea required id="objetivo" name="objetivo" cols="30" rows="10" class="form-control descrip" placeholder="Objetivo de la carrera"></textarea>
+                </div>
+                <div name="tipo_carrera" class="form-group">
+                  <input required type="text" id="tipo_carrera" placeholder="Tipo de carrera" class="form-control descrip" name="tipo_carrera" />
+                </div>
+              </div>
+              <div id="Ocultar2">
+                <div name="src_imagenes_carrera" class="form-group">
+                  <textarea required id="src_imagenes_carrera" name="src_imagenes_carrera" cols="30" rows="10" class="form-control descrip" placeholder="Imagen"></textarea>
                 </div>
                 <div name="perfil_ingreso" class="form-group">
                   <input required type="text" id="perfil_ingreso" placeholder="Perfil de Ingreso" class="form-control descrip" name="perfil_ingreso" />
@@ -246,25 +237,14 @@ $resultado_m = $mysqli->query($query_m);
                 <div name="plan_estudio" class="form-group">
                   <input required type="text" id="plan_estudio" placeholder="Plan de Estudio" class="form-control descrip" name="plan_estudio" />
                 </div>
-                <div name="modalidad" class="form-group">
-                  <input required type="text" id="modalidad" placeholder="Modalidad" class="form-control descrip" name="modalidad" />
+                <div name="carrera_video" class="form-group">
+                  <input required type="text" id="carrera_video" placeholder="Video" class="form-control descrip" name="carrera_video" />
+                </div>
+                <div name="src_doc" class="form-group">
+                  <input required type="text" id="src_doc" placeholder="Documento" class="form-control descrip" name="src_doc" />
                 </div>
               </div>
-            
-              <div id="Ocultar2">
-                <div name="src_imagenes_carrera" class="form-group">
-                  <textarea required id="src_imagenes_carrera" name="src_imagenes_carrera" cols="30" rows="10" class="form-control descrip" placeholder="Imagen"></textarea>
-                </div>
-                <div name="src_video_carrera" class="form-group">
-                  <textarea required id="src_video_carrera" name="src_video_carrera" cols="30" rows="10" class="form-control descrip" placeholder="Video"></textarea>
-                </div>
-                <div name="nombre_documento" class="form-group">
-                  <input required type="text" id="nombre_documento" placeholder="Nombre del documento" class="form-control descrip" name="nombre_documento" />
-                </div>
-                <div name="src_documento" class="form-group">
-                  <textarea required id="src_documento" name="src_documento" cols="30" rows="10" class="form-control descrip" placeholder="Documento"></textarea>
-                </div>
-              </div>
+            </div>
               <script>
                 document.getElementById("Ocultar_1").style.display = "none";
                 document.getElementById("Ocultar_2").style.display = "none";
@@ -272,11 +252,11 @@ $resultado_m = $mysqli->query($query_m);
                 document.getElementById("Ocultar2").style.display = "none";
               </script>
               <input type="submit" value="Guardar" class="btn btn-primary btn-block button-submit" name="Guardar" />
-        </form>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
           </div>
         </div>

@@ -5,7 +5,7 @@
   //falta arreglarlo
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
@@ -78,12 +78,12 @@
 
   </div>
 <!-- </header> End Header -->
- </nav>
+</nav>
   
   </header> <!-- End Header -->
 
   <main id="main">
- 
+
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
 
@@ -137,11 +137,16 @@
         </div>
         <div class="portfolio-description">
           <h2>Oferta educativa</h2>
-          <h5><a href="javascript:document.getElementById('carrera1-oculta').style.display='block';void0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Licenciatura en Administración</a></h5>
-          <div id="carrera1-oculta">
-            <p>
-              Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-            </p>
+          <div id="carrera1">
+            <div id="carrera1-muestra">
+              <h5><a href="javascript:document.getElementById('carrera1-oculta').style.display='block'; document.getElementById('carrera1-muestra').style.display='none';void0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Licenciatura en Administración</a></h5>
+            </div>
+            <div id="carrera1-oculta">
+              <h5><a href="javascript:document.getElementById('carrera1-oculta').style.display='none'; document.getElementById('carrera1-muestra').style.display='block';void0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Licenciatura en Administración</a></h5>
+              <p>
+                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+              </p>
+            </div>
           </div>
           <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ingenieria en Software</h5>
           <p>

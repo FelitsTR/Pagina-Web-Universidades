@@ -80,184 +80,202 @@
    </nav>
 
   <main id="main">
-
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
-
         <div class="section-title" data-aos="zoom-out">
           <h2>INFORMACIÓN</h2>
           <p>ADMINISTRA TU INFORMACIóN AQUÍ</p>
         </div>
-
         <div class="row content" data-aos="fade-up">
           <div class="col-lg-9">
-            
-
             <?php include('conexiones/conexion.php'); ?>
             <?php
               require('conexiones/conexion_m.php');
                 $query_m = "SELECT id_municipio, nombre_muni FROM municipio ORDER BY nombre_muni ASC";
                 $resultado_m = $mysqli->query($query_m);
             ?>
-      <!-- Datos Generales -->
-
-      <div class="card box mt-4 card-child">
-        <div class="card-header head">
-          <h4 class="h4">Datos Generales</h4>
-        </div>
-        <form action="insert_crud.php" method="POST" id="note-form" class="card-body">
-          <input id="opc_1" name="Opciones1" type="radio" value="Opciones" onchange="funcion1()">
-          Información
-          <input id="opc_2" name="Opciones1" type="radio" value="Opciones" onchange="funcion1()">
-          Archivos y documentos
-          <div id="changeForm"></div>
-            <script>
-              function funcion1(){
-                document.getElementById("Ocultar_1").style.display = "none";
-                document.getElementById("Ocultar_2").style.display = "none";
-                var opc_1 = document.getElementById("opc_1");
-                var opc_2 = document.getElementById("opc_2");
-                if(opc_1.checked){
-                  document.getElementById("Ocultar_1").style.display = "block";
-                  //document.getElementById("changeForm").innerHTML = "Ano";
-                }
-                if(opc_2.checked){
-                  document.getElementById("Ocultar_2").style.display = "block";
-                  //document.getElementById("changeForm").innerHTML = "A";
-                }
-              }
-            </script>
-          <div id="Ocultar_1">
-            <div name="Nombre_Universidad" class="form-group">
-              <input required type="text" id="nombre_uni" placeholder="Nombre Universidad" class="form-control descrip" name="nombre_uni" />
-            </div>
-            <select required name="id_municipio" class="form-group">
-              <option value="0">Municipio</option>
-              <?php while($row = $resultado_m->fetch_assoc()) { ?>
-                <option value="<?php echo $row['id_municipio']; ?>"><?php echo $row['nombre_muni']; ?></option>
-              <?php } ?>
-            </select>
-            <div name="telefono_uni" class="form-group">
-              <input required type="text" id="telefono_uni" placeholder="Telefono" class="form-control descrip" name="telefono_uni" />
-            </div>
-            <div name="correo_uni" class="form-group">
-              <input required type="text" id="correo_uni" placeholder="Correo" class="form-control descrip" name="correo_uni" />
+            <!-- Datos Generales -->
+            <div class="card box mt-4 card-child">
+              <div class="card-header head">
+                <h4 class="h4">Datos Generales</h4>
               </div>
-            <div name="longitud" class="form-group">
-              <input required type="text" id="longitud" name="longitud" cols="30" rows="10" class="form-control descrip" placeholder="Longitud"></input>
-            </div>
-            <div name="latitud" class="form-group">
-              <input required type="text" id="latitud" name="latitud" cols="30" rows="10" class="form-control descrip" placeholder="Latitud"></input>
-            </div>
-            <div name="facebook" class="form-group">
-              <input required type="text" id="facebook" placeholder="Facebook" class="form-control descrip" name="facebook" />
-            </div>
-            <div name="whatsapp" class="form-group">
-              <input required type="text" id="whatsapp" placeholder="Whatsapp" class="form-control descrip" name="whatsapp" />
-            </div>
-          </div>
-          <div id="Ocultar_2">
-            <div name="logo_uni" class="form-group">
-              <input required type="text" id="logo_uni" placeholder="Logo" class="form-control descrip" name="logo_uni" />
-            </div>
-            <div name="src_imagenes_uni" class="form-group">
-              <input required type="text" id="src_imagenes_uni" placeholder="Imagen" class="form-control descrip" name="src_imagenes_uni" />
-            </div>
-            <div name="src_video" class="form-group">
-              <input required type="text" id="src_video" placeholder="Video" class="form-control descrip" name="src_video" />
-            </div>
-            <div name="nombre_conferencia" class="form-group">
-              <input required type="text" id="nombre_conferencia" placeholder="Descripción de la conferencia" class="form-control descrip" name="nombre_conferencia" />
-            </div>
-            <div name="src_conferencia" class="form-group">
-              <input required type="text" id="src_conferencia" placeholder="Conferencia" class="form-control descrip" name="src_conferencia" />
-            </div>
-          </div>
-          <div class="card-header head">
+              <form action="insert_crud.php" method="POST" id="note-form" class="card-body">
+                <input id="opc_1" name="Opciones1" type="radio" value="Opciones" onchange="funcion1()">
+                Información
+                <input id="opc_2" name="Opciones1" type="radio" value="Opciones" onchange="funcion1()">
+                Archivos y documentos
+                <div id="changeForm"></div>
+                  <script>
+                    function funcion1(){
+                      document.getElementById("Ocultar_1").style.display = "none";
+                      document.getElementById("Ocultar_2").style.display = "none";
+                      var opc_1 = document.getElementById("opc_1");
+                      var opc_2 = document.getElementById("opc_2");
+                      if(opc_1.checked){
+                      document.getElementById("Ocultar_1").style.display = "block";
+                      //document.getElementById("changeForm").innerHTML = "Ano";
+                      }
+                      if(opc_2.checked){
+                        document.getElementById("Ocultar_2").style.display = "block";
+                        //document.getElementById("changeForm").innerHTML = "A";
+                      }
+                    }
+                  </script>
+                <div id="Ocultar_1">
+                  <div name="Nombre_Universidad" class="form-group">
+                    <input required type="text" id="nombre_uni" placeholder="Nombre Universidad" class="form-control descrip" name="nombre_uni" />
+                  </div>
+                  <div class="form-group">
+                    <select required name="id_municipio" class="form-control descrip">
+                      <option value="0">Municipio</option>
+                      <?php while($row = $resultado_m->fetch_assoc()) { ?>
+                        <option value="<?php echo $row['id_municipio']; ?>"><?php echo $row['nombre_muni']; ?></option>
+                      <?php } ?>
+                    </select>
+                  </div>
+                  <div name="telefono_uni" class="form-group">
+                    <input required type="text" id="telefono_uni" placeholder="Telefono" class="form-control descrip" name="telefono_uni" />
+                  </div>
+                  <div name="correo_uni" class="form-group">
+                    <input required type="text" id="correo_uni" placeholder="Correo" class="form-control descrip" name="correo_uni" />
+                  </div>
+                  <div name="longitud" class="form-group">
+                    <input required type="text" id="longitud" name="longitud" cols="30" rows="10" class="form-control descrip" placeholder="Longitud"></input>
+                  </div>
+                  <div name="latitud" class="form-group">
+                    <input required type="text" id="latitud" name="latitud" cols="30" rows="10" class="form-control descrip" placeholder="Latitud"></input>
+                  </div>
+                  <div name="facebook" class="form-group">
+                    <input required type="text" id="facebook" placeholder="Facebook" class="form-control descrip" name="facebook" />
+                  </div>
+                  <div name="whatsapp" class="form-group">
+                    <input required type="text" id="whatsapp" placeholder="Whatsapp" class="form-control descrip" name="whatsapp" />
+                  </div>
+                </div>
+                <div id="Ocultar_2">
+                  <div name="logo_uni" class="form-group">
+                    <input required type="text" id="logo_uni" placeholder="Logo" class="form-control descrip" name="logo_uni" />
+                  </div>
+                  <!-- Imagenes de la universidad -->
+                  <div name="img_uni_1" class="form-group">
+                      <input required type="url" id="img_uni_1" placeholder="Imagen 1" class="form-control descrip" name="img_uni_1" />
+                    </div>
+                    <div name="img_uni_2" class="form-group">
+                      <input required type="url" id="img_uni_2" placeholder="Imagen 2" class="form-control descrip" name="img_uni_2" />
+                    </div>
+                    <div name="img_uni_3" class="form-group">
+                      <input required type="url" id="img_uni_3" placeholder="Imagen 3" class="form-control descrip" name="img_uni_3" />
+                    </div>
+                    <!-- Fin -->
+                  <div name="src_video" class="form-group">
+                    <input required type="text" id="src_video" placeholder="Video" class="form-control descrip" name="src_video" />
+                  </div>
+                  <div name="nombre_conferencia" class="form-group">
+                    <input required type="text" id="nombre_conferencia" placeholder="Descripción de la conferencia" class="form-control descrip" name="nombre_conferencia" />
+                  </div>
+                  <div name="src_conferencia" class="form-group">
+                    <input required type="text" id="src_conferencia" placeholder="Conferencia" class="form-control descrip" name="src_conferencia" />
+                  </div>
+                </div>
+                
 
-          <!-- Oferta Educativa -->
+                <div class="card-header head">
+                  <!-- Oferta Educativa -->
+                  <h4 class="h4">Oferta Educativa</h4>
+                </div><br>
+                <input id="opc1" name="Opciones2" type="radio" value="Opciones" onchange="funcion()">
+                  Información
+                <input id="opc2" name="Opciones2" type="radio" value="Opciones" onchange="funcion()">
+                  Archivos y documentos
+                <div id="changeForm"></div>
+                  <script>
+                    function funcion(){
+                      document.getElementById("Ocultar1").style.display = "none";
+                      document.getElementById("Ocultar2").style.display = "none";
+                      var opc1 = document.getElementById("opc1");
+                      var opc2 = document.getElementById("opc2");
+                      if(opc1.checked){
+                        document.getElementById("Ocultar1").style.display = "block";
+                        //document.getElementById("changeForm").innerHTML = "Ano";
+                      }
+                      if(opc2.checked){
+                        document.getElementById("Ocultar2").style.display = "block";
+                        //document.getElementById("changeForm").innerHTML = "A";
+                      }
+                    }
+                  </script>
+                </div>
+                  <div id="Ocultar1">
+                    <div name="carrera" class="form-group">
+                      <input required type="text" id="carrera" placeholder="Carrera" class="form-control descrip" name="carrera" />
+                    </div>
+                    <div class="form-group">
+                      <input required type="text" id="periodo_academico" placeholder="Periodo Academico" class="form-control descrip" name="periodo_academico" />
+                    </div>
+                    <div name="years" class="form-group">
+                      <input required type="text" id="years" placeholder="Años" class="form-control descrip" name="years" />
+                    </div>
+                    <div name="meses" class="form-group">
+                      <input required type="text" id="meses" placeholder="Meses" class="form-control descrip" name="meses" />
+                    </div>
+                    <div class="form-group">
+                      <textarea required id="descripcion" name="descripcion" cols="30" rows="10" class="form-control descrip" placeholder="Descripción de la carrera"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <textarea required id="objetivo" name="objetivo" cols="30" rows="10" class="form-control descrip" placeholder="Objetivo de la carrera"></textarea>
+                    </div>
+                    <div name="tipo_carrera" class="form-group">
+                      <input required type="text" id="tipo_carrera" placeholder="Tipo de carrera" class="form-control descrip" name="tipo_carrera" />
+                    </div>
+                     <!-- Imagenes de la oferta educativa -->
+                    <div name="img_ofer_1" class="form-group">
+                      <input required type="url" id="img_ofer_1" placeholder="Imagen 1" class="form-control descrip" name="img_ofer_1" />
+                    </div>
+                    <div name="img_ofer_2" class="form-group">
+                      <input required type="url" id="img_ofer_2" placeholder="Imagen 2" class="form-control descrip" name="img_ofer_2" />
+                    </div>
+                    <div name="img_ofer_3" class="form-group">
+                      <input required type="url" id="img_ofer_3" placeholder="Imagen 3" class="form-control descrip" name="img_ofer_3" />
+                    </div>
+                    <!-- Fin -->
+                  </div>
+                  <div id="Ocultar2">
+                    <div name="src_imagenes_carrera" class="form-group">
+                      <textarea required id="src_imagenes_carrera" name="src_imagenes_carrera" cols="30" rows="10" class="form-control descrip" placeholder="Imagen"></textarea>
+                    </div>
+                    <div name="perfil_ingreso" class="form-group">
+                      <input required type="text" id="perfil_ingreso" placeholder="Perfil de Ingreso" class="form-control descrip" name="perfil_ingreso" />
+                    </div>
+                    <div name="perfil_egreso" class="form-group">
+                      <input required type="text" id="perfil_egreso" placeholder="Perfil de Egreso" class="form-control descrip" name="perfil_egreso" />
+                    </div>
+                    <div name="plan_estudio" class="form-group">
+                      <input required type="text" id="plan_estudio" placeholder="Plan de Estudio" class="form-control descrip" name="plan_estudio" />
+                    </div>
+                    <div name="carrera_video" class="form-group">
+                      <input required type="text" id="carrera_video" placeholder="Video" class="form-control descrip" name="carrera_video" />
+                    </div>
+                    <div name="src_doc" class="form-group">
+                      <input required type="text" id="src_doc" placeholder="Documento" class="form-control descrip" name="src_doc" />
+                    </div>
+                  </div><br>
 
-          <h4 class="h4">Oferta Educativa</h4>
-          </div><br>
-            <input id="opc1" name="Opciones2" type="radio" value="Opciones" onchange="funcion()">
-            Información
-            <input id="opc2" name="Opciones2" type="radio" value="Opciones" onchange="funcion()">
-            Archivos y documentos
-            <div id="changeForm"></div>
-              <script>
-                function funcion(){
+
+
+
+
+
+
+                <input type="submit" value="Guardar" class="btn btn-primary btn-block button-submit" name="Guardar" />
+                <script>
+                  document.getElementById("Ocultar_1").style.display = "none";
+                  document.getElementById("Ocultar_2").style.display = "none";
                   document.getElementById("Ocultar1").style.display = "none";
                   document.getElementById("Ocultar2").style.display = "none";
-                  var opc1 = document.getElementById("opc1");
-                  var opc2 = document.getElementById("opc2");
-                  if(opc1.checked){
-                    document.getElementById("Ocultar1").style.display = "block";
-                    //document.getElementById("changeForm").innerHTML = "Ano";
-                  }
-                  if(opc2.checked){
-                  document.getElementById("Ocultar2").style.display = "block";
-                  //document.getElementById("changeForm").innerHTML = "A";
-                  }
-                }
-              </script>
-              <div id="Ocultar1">
-                <div name="carrera" class="form-group">
-                  <input required type="text" id="carrera" placeholder="Carrera" class="form-control descrip" name="carrera" />
-                </div>
-                <div class="form-group">
-                  <input required type="text" id="periodo_academico" placeholder="Periodo Academico" class="form-control descrip" name="periodo_academico" />
-                </div>
-                <div name="years" class="form-group">
-                  <input required type="text" id="years" placeholder="Años" class="form-control descrip" name="years" />
-                </div>
-                <div name="meses" class="form-group">
-                  <input required type="text" id="meses" placeholder="Meses" class="form-control descrip" name="meses" />
-                </div>
-                <div class="form-group">
-                  <textarea required id="descripcion" name="descripcion" cols="30" rows="10" class="form-control descrip" placeholder="Descripción de la carrera"></textarea>
-                </div>
-                <div  class="form-group">
-                  <textarea required id="objetivo" name="objetivo" cols="30" rows="10" class="form-control descrip" placeholder="Objetivo de la carrera"></textarea>
-                </div>
-                <div name="tipo_carrera" class="form-group">
-                  <input required type="text" id="tipo_carrera" placeholder="Tipo de carrera" class="form-control descrip" name="tipo_carrera" />
-                </div>
-              </div>
-              <div id="Ocultar2">
-                <div name="src_imagenes_carrera" class="form-group">
-                  <textarea required id="src_imagenes_carrera" name="src_imagenes_carrera" cols="30" rows="10" class="form-control descrip" placeholder="Imagen"></textarea>
-                </div>
-                <div name="perfil_ingreso" class="form-group">
-                  <input required type="text" id="perfil_ingreso" placeholder="Perfil de Ingreso" class="form-control descrip" name="perfil_ingreso" />
-                </div>
-                <div name="perfil_egreso" class="form-group">
-                  <input required type="text" id="perfil_egreso" placeholder="Perfil de Egreso" class="form-control descrip" name="perfil_egreso" />
-                </div>
-                <div name="plan_estudio" class="form-group">
-                  <input required type="text" id="plan_estudio" placeholder="Plan de Estudio" class="form-control descrip" name="plan_estudio" />
-                </div>
-                <div name="carrera_video" class="form-group">
-                  <input required type="text" id="carrera_video" placeholder="Video" class="form-control descrip" name="carrera_video" />
-                </div>
-                <div name="src_doc" class="form-group">
-                  <input required type="text" id="src_doc" placeholder="Documento" class="form-control descrip" name="src_doc" />
-                </div>
-              </div>
+                </script>
+              </form>
             </div>
-              <script>
-                document.getElementById("Ocultar_1").style.display = "none";
-                document.getElementById("Ocultar_2").style.display = "none";
-                document.getElementById("Ocultar1").style.display = "none";
-                document.getElementById("Ocultar2").style.display = "none";
-              </script>
-              <input type="submit" value="Guardar" class="btn btn-primary btn-block button-submit" name="Guardar" />
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
           </div>
         </div>
       </div>

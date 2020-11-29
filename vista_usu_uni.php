@@ -1,8 +1,13 @@
 <?php
   session_start();
   $usuario=$_SESSION['id_usu'];
-  echo '<script> alert("Bienvenido '.$usuario.'"); </script>';
-  //falta arreglarlo
+  include('conexiones/conexion.php');
+  if(isset($_POST['Mensaje'])){
+    $falla = $_POST['falla'];
+    $query = ("INSERT INTO comentarios (falla) VALUE ('$falla')");
+    $Result = mysqli_query($conexion, $query);
+    echo '<script> alert("Mensaje enviado, gracias por notificar"); </script>';
+  }
 ?>
 <!DOCTYPE html>
 <html lang="es">

@@ -1,11 +1,11 @@
 <?php
-include('conexiones/conexion.php');
-if(isset($_POST['Mensaje'])){
+  include('conexiones/conexion.php');
+  if(isset($_POST['Mensaje'])){
     $falla = $_POST['falla'];
     $query = ("INSERT INTO comentarios (falla) VALUE ('$falla')");
     $Result = mysqli_query($conexion, $query);
     echo '<script> alert("Mensaje enviado, gracias por notificar"); </script>';
-    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +70,7 @@ if(isset($_POST['Mensaje'])){
       <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="index.html">Feria Virtual</a></h1>
+        <h1 class="text-light">Feria Virtual</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -97,7 +97,8 @@ if(isset($_POST['Mensaje'])){
       <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Imagen 1</h2>
+          <img class="animate__animated animate__fadeInDown" src="images/bg-01.png"></img>
+          <!-- <h2 class="animate__animated animate__fadeInDown">Imagen 1</h2> -->
           <p class="animate__animated fanimate__adeInUp">Lorem sdfsdfsdfsdf</p>
           <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Ver más</a>
         </div>

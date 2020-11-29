@@ -58,12 +58,7 @@
 						<input class="input100" type="password" name="clave_usu" placeholder="*************" required>
 						<span class="focus-input100"></span>
 					</div>
-					<div class="container-login100-form-btn justify-content-center w-100">
-						<a href="register.php" class="">
-							Registrarse
-							<i class="fa fa-long-arrow-right m-l-5"></i>
-						</a>
-					</div>
+					
 					<div class="container-login100-form-btn justify-content-center pb-4">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
@@ -71,7 +66,14 @@
                                     Iniciar Sesión
 								</button>
 							</div>
+							
                         </div>
+						<div class="container-login100-form-btn justify-content-center w-100">
+						<a href="register.php" class="">
+							Registrarse
+							<i class="fa fa-long-arrow-right m-l-5"></i>
+						</a>
+					</div>
 					</div>
 					
 				</form>

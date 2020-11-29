@@ -19,6 +19,7 @@ if (isset($_POST['Iniciar_2'])) {
             }
             else
             {
+                header('Location:login_uni.php');
                 echo '<script> alert("Usuario o contraseña incorrectos."); </script>';
             }
         }

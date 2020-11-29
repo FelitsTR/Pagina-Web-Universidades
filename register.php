@@ -14,27 +14,21 @@
 				$msg = "Felicidades. Te has registrado exitosamente";
             	$header = "From: feriauniversitariaqroo@gmail.com"."\r\n";
             	$header.= "Reply-To: noreply@example.com";
-            	$mail = mail($correo_usu,$msg,$header);
+            	$mail = @mail($correo_usu,$msg,$header);
 				mysqli_close($conexion);
 			}
 			else {
 				// acción en caso incorrecto
 				echo "<h3>Las claves no coinciden</h3>";
-			} 
-
-			
-            
+			}
             // if($mail){
             //     echo "<h4> Correo enviado. </h4>";
             // }
             // else{
             //     echo "ERROR";
             // }
-
-
         }
 		?>
-		
 <!DOCTYPE html>
 <html lang="es">
 <head>

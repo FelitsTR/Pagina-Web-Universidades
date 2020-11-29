@@ -20,7 +20,9 @@ if (isset($_POST['Iniciar_1'])) {
             }
             else
             {
+                header('Location:login_usu.php');
                 echo '<script> alert("Usuario o contraseña incorrectos."); </script>';
+                
             }
         }
     }

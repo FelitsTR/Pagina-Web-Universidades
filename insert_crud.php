@@ -36,7 +36,6 @@ if (isset($_POST['Guardar'])){
 
     // Carrera_imagenes
 
-    $src_imagenes_carrera = $_POST['src_imagenes_carrera'];
     
     // Oferta educativa
 
@@ -69,7 +68,7 @@ if (isset($_POST['Guardar'])){
                 $stm3 = "INSERT INTO oferta_educativa (id_universidad, periodo_academico, carrera, descripcion, objetivo, perfil_ingreso, perfil_egreso, plan_estudio, carrera_video, tipo_carrera, src_doc, years, meses, img_ofer_1, img_ofer_2, img_ofer_3) VALUES ('$id_universidad','$periodo_academico','$carrera','$descripcion','$objetivo','$perfil_ingreso','$perfil_egreso','$plan_estudio','$carrera_video','$tipo_carrera','$src_doc','$years','$meses','$img_ofer_1','$img_ofer_2','$img_ofer_3')";
                 $query3 = mysqli_query($conexion, $stm3);
                 if($query3){
-                    echo "Se han insertado los datos correctamente";
+                    header('Location:universidades_usu.php');
                 }
                 else{
                     echo "No servimos para nada x3";

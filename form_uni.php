@@ -135,29 +135,28 @@
                     </select>
                   </div>
                   <div name="telefono_uni" class="form-group">
-                    <input required type="text" id="telefono_uni" placeholder="Telefono" class="form-control descrip" name="telefono_uni" />
+                    <input required type="tel" id="telefono_uni" placeholder="Telefono" class="form-control descrip" name="telefono_uni" />
                   </div>
                   <div name="correo_uni" class="form-group">
-                    <input required type="text" id="correo_uni" placeholder="Correo" class="form-control descrip" name="correo_uni" />
+                    <input required type="email" id="correo_uni" placeholder="Correo" class="form-control descrip" name="correo_uni" />
                   </div>
                   <div name="longitud" class="form-group">
-                    <input required type="text" id="longitud" name="longitud" cols="30" rows="10" class="form-control descrip" placeholder="Longitud"></input>
+                    <input required type="text" id="longitud" name="longitud" class="form-control descrip" placeholder="Longitud"></input>
                   </div>
                   <div name="latitud" class="form-group">
-                    <input required type="text" id="latitud" name="latitud" cols="30" rows="10" class="form-control descrip" placeholder="Latitud"></input>
+                    <input required type="text" id="latitud" name="latitud" class="form-control descrip" placeholder="Latitud"></input>
                   </div>
                   <div name="facebook" class="form-group">
-                    <input required type="text" id="facebook" placeholder="Facebook" class="form-control descrip" name="facebook" />
+                    <input required type="url" id="facebook" placeholder="Facebook" class="form-control descrip" name="facebook" />
                   </div>
                   <div name="whatsapp" class="form-group">
-                    <input required type="text" id="whatsapp" placeholder="Whatsapp" class="form-control descrip" name="whatsapp" />
+                    <input required type="tel" id="whatsapp" placeholder="Whatsapp" class="form-control descrip" name="whatsapp" />
                   </div>
                 </div>
                 <div id="Ocultar_2">
                   <div name="logo_uni" class="form-group">
-                    <input required type="text" id="logo_uni" placeholder="Logo" class="form-control descrip" name="logo_uni" />
+                    <input required type="url" id="logo_uni" placeholder="Logo" class="form-control descrip" name="logo_uni" />
                   </div>
-                  <!-- Imagenes de la universidad -->
                   <div name="img_uni_1" class="form-group">
                       <input required type="url" id="img_uni_1" placeholder="Imagen 1" class="form-control descrip" name="img_uni_1" />
                     </div>
@@ -167,15 +166,14 @@
                     <div name="img_uni_3" class="form-group">
                       <input required type="url" id="img_uni_3" placeholder="Imagen 3" class="form-control descrip" name="img_uni_3" />
                     </div>
-                    <!-- Fin -->
                   <div name="src_video" class="form-group">
-                    <input required type="text" id="src_video" placeholder="Video" class="form-control descrip" name="src_video" />
+                    <input required type="url" id="src_video" placeholder="Video" class="form-control descrip" name="src_video" />
                   </div>
                   <div name="nombre_conferencia" class="form-group">
                     <input required type="text" id="nombre_conferencia" placeholder="Descripción de la conferencia" class="form-control descrip" name="nombre_conferencia" />
                   </div>
                   <div name="src_conferencia" class="form-group">
-                    <input required type="text" id="src_conferencia" placeholder="Conferencia" class="form-control descrip" name="src_conferencia" />
+                    <input required type="url" id="src_conferencia" placeholder="Conferencia" class="form-control descrip" name="src_conferencia" />
                   </div>
                 </div>
                 
@@ -217,7 +215,7 @@
                       <input required type="text" id="years" placeholder="Años" class="form-control descrip" name="years" />
                     </div>
                     <div name="meses" class="form-group">
-                      <input required type="text" id="meses" placeholder="Meses" class="form-control descrip" name="meses" />
+                      <input required type="number" id="meses" placeholder="Meses" class="form-control descrip" name="meses" />
                     </div>
                     <div class="form-group">
                       <textarea required id="descripcion" name="descripcion" cols="30" rows="10" class="form-control descrip" placeholder="Descripción de la carrera"></textarea>
@@ -225,10 +223,17 @@
                     <div class="form-group">
                       <textarea required id="objetivo" name="objetivo" cols="30" rows="10" class="form-control descrip" placeholder="Objetivo de la carrera"></textarea>
                     </div>
+                    <div class="form-group">
+                      <textarea required id="perfil_ingreso" name="perfil_ingreso" cols="30" rows="10" class="form-control descrip" placeholder="Perfil ingreso"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <textarea required id="perfil_egreso" name="perfil_egreso" cols="30" rows="10" class="form-control descrip" placeholder="Perfil egreso"></textarea>
+                    </div>
                     <div name="tipo_carrera" class="form-group">
                       <input required type="text" id="tipo_carrera" placeholder="Tipo de carrera" class="form-control descrip" name="tipo_carrera" />
                     </div>
-                     <!-- Imagenes de la oferta educativa -->
+                  </div>
+                  <div id="Ocultar2">
                     <div name="img_ofer_1" class="form-group">
                       <input required type="url" id="img_ofer_1" placeholder="Imagen 1" class="form-control descrip" name="img_ofer_1" />
                     </div>
@@ -238,26 +243,11 @@
                     <div name="img_ofer_3" class="form-group">
                       <input required type="url" id="img_ofer_3" placeholder="Imagen 3" class="form-control descrip" name="img_ofer_3" />
                     </div>
-                    <!-- Fin -->
-                  </div>
-                  <div id="Ocultar2">
-                    <div name="src_imagenes_carrera" class="form-group">
-                      <textarea required id="src_imagenes_carrera" name="src_imagenes_carrera" cols="30" rows="10" class="form-control descrip" placeholder="Imagen"></textarea>
-                    </div>
-                    <div name="perfil_ingreso" class="form-group">
-                      <input required type="text" id="perfil_ingreso" placeholder="Perfil de Ingreso" class="form-control descrip" name="perfil_ingreso" />
-                    </div>
-                    <div name="perfil_egreso" class="form-group">
-                      <input required type="text" id="perfil_egreso" placeholder="Perfil de Egreso" class="form-control descrip" name="perfil_egreso" />
-                    </div>
-                    <div name="plan_estudio" class="form-group">
-                      <input required type="text" id="plan_estudio" placeholder="Plan de Estudio" class="form-control descrip" name="plan_estudio" />
-                    </div>
                     <div name="carrera_video" class="form-group">
-                      <input required type="text" id="carrera_video" placeholder="Video" class="form-control descrip" name="carrera_video" />
+                      <input required type="url" id="carrera_video" placeholder="Video" class="form-control descrip" name="carrera_video" />
                     </div>
                     <div name="src_doc" class="form-group">
-                      <input required type="text" id="src_doc" placeholder="Documento" class="form-control descrip" name="src_doc" />
+                      <input required type="url" id="src_doc" placeholder="Documento" class="form-control descrip" name="src_doc" />
                     </div>
                   </div><br>
 

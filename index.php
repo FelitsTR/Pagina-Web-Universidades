@@ -175,7 +175,7 @@ if(isset($_POST['Mensaje'])){
           </div>
           <div class="col-lg-3">
             <br><br>
-            <a href="login.html" class="btn-learn-more">Saber más</a>
+            <a href="login_usu.php" class="btn-learn-more">Saber más</a>
           </div>
 
         </div>
@@ -183,206 +183,171 @@ if(isset($_POST['Mensaje'])){
       </div>
     </section><!-- End About Section -->
     
-    <!-- ======= Features Section =======-->
-    <section id="features" class="features">
-      <div class="container">
-
-        
-
-        <div class="tab-content" data-aos="fade-up">
-          <div class="tab-pane active show" id="tab-1">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-1 mt-lg-0">
-                <h3>Test Vocacional</h3>
-                <p class="font-italic">
-                  ¿Aún no sabes qué estudiar?
-                </p>
-                <ul> 
-                  <li><i class="ri-check-double-line"></i> El test de orientación vocacional ayuda a esclarecer las mejores opciones para tu futuro, basándose en intereses, aptitudes, debilidades, entre otras características personales </li>              
-                  <li><i class="ri-check-double-line"></i> El objetivo de esta herramienta es guiar y señalar dónde podrías prosperar profesionalmente.</li>
-                </ul>
-                <center><a class="btn btn-info btn-lg" href="http://www.decidetusestudios.sep.gob.mx/vista/test-vocacional/" target="_blank" -role="button" >Realizar Test</a></center>
-                <!--<img src="assets/img/features-1.png" alt="" class="img-fluid"> -->
-              </div>
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 text-center mt-5">
-                 <h3>Visitas</h3>
-                  <d>   
-                    <a title="contador de visitas" class="row justify-content-center"><img src="https://counter3.stat.ovh/private/contadorvisitasgratis.php?c=fzcl3duq6pzwbs3tagf2pqkr56zcljqy" ></a>
-                    
-                      <meta name="viewport" content="width=device-width, initial-scale=3">
-<link href="https://fonts.googleapis.com/css?family=Releway:400,700,900" rel="stylesheet">
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                      
-                   <?php
-   
-
-require('contador_de_visitas.php');
-include('visitas.php');
-//Se obtinen los votos 
-//PRI
-$pri_archivo = fopen("visitas.txt", "r");
-$pri =  fgets($pri_archivo);	
-fclose($pri_archivo);
-//PAN
-//$pan_archivo = fopen("usuario.txt", "r");
-//$pan =  fgets($pan_archivo);	
-//fclose($pan_archivo);
-//PRD
-$prd_archivo = fopen("contar_dia.dat", "r");
-$prd =  fgets($prd_archivo);	
-fclose($prd_archivo);
-//MORENA
-$morena_archivo = fopen("contar_mes.dat", "r");
-$morena =  fgets($morena_archivo);	
-fclose($morena_archivo);
-
-?>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-google.charts.load("current", {packages:['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-function drawChart() {
-var data = google.visualization.arrayToDataTable([
-["Partido", "VISIATAS", { role: "style" } ],
-["VISITAS TOTALES", <?php echo $pri; ?>, "#27BB8C"],
-["AL DIA", <?php echo $prd; ?>, "#2771BB"],
-["AL MES", <?php echo $morena; ?>, "#27BB8C"]
-]);
-
-var view = new google.visualization.DataView(data);
-view.setColumns([0, 1,
-{ calc: "stringify",
-sourceColumn: 1,
-type: "string",
-role: "annotation" },
-2]);
-
-var options = {
-title: "Estadisticas Del Sitio",
-width: 500,
-height: 440,
-bar: {groupWidth: "85%"},
-legend: { position: "none" },
-};
-var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
-chart.draw(view, options);
-}
-</script>
-<div id="columnchart_values" style="width: 600%; height: 200%; "></div>
-
-
-
-<!--Aqui se pone el pie de la Pagina-->
-<footer>
-<h6 a>DOSPUNTOSTRES @DerechosReservados</h6>
-</footer>
-
-
-<style type="text/css">
-input{display: inline-block;
-   background-color:#444444;
-width: 14;
-  
-</style>
-
-
-               
-
-                  </div>
-                
-                
-              </div>
-               
-            </div>
-          </div>
-
-          <!-- ======= Team Section ======= -->
-     <section id="team" class="team">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Equipo</h2>
-         <!--  <p>Nuestro Equipo de Desarrollo</p>-->
-             <div class="row content" data-aos="fade-up">
-          <div class="col-lg-9">
-          <p>  <h3>
-            Responsables del desarrollo del sitio
-            </h3></p>
-          <p><h6>
-             ¿Deseas conocer más acerca de nuestro equipo?
-            </h6></p> 
-            
-          </div>
-          <div class="col-lg-9">
-            <br><br>
-            <a href="equipo.php" class="btn-learn-more">Ver más</a>
-          </div>
-
-        </div>
-
-        <div class="row">
+      <!-- ======= Features Section =======-->
+      <section id="features" class="features">
+        <div class="container">
 
           
 
-        </div>
+          <div class="tab-content" data-aos="fade-up">
+            <div class="tab-pane active show" id="tab-1">
+              <div class="row">
+                <div class="col-lg-6 order-2 order-lg-1 mt-1 mt-lg-0">
+                  <h3>Test Vocacional</h3>
+                  <p class="font-italic">
+                    ¿Aún no sabes qué estudiar?
+                  </p>
+                  <ul> 
+                    <li><i class="ri-check-double-line"></i> El test de orientación vocacional ayuda a esclarecer las mejores opciones para tu futuro, basándose en intereses, aptitudes, debilidades, entre otras características personales </li>              
+                    <li><i class="ri-check-double-line"></i> El objetivo de esta herramienta es guiar y señalar dónde podrías prosperar profesionalmente.</li>
+                  </ul>
+                  <center><a class="btn btn-info btn-lg" href="http://www.decidetusestudios.sep.gob.mx/vista/test-vocacional/" target="_blank" -role="button" >Realizar Test</a></center>
+                  <!--<img src="assets/img/features-1.png" alt="" class="img-fluid"> -->
+               </div>
+                 <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 text-center mt-5">
+                  <h3>Visitas</h3>
+                    <d>   
+                      <!--<a title="contador de visitas" class="row justify-content-center"><img src="https://counter3.stat.ovh/private/contadorvisitasgratis.php?c=fzcl3duq6pzwbs3tagf2pqkr56zcljqy" ></a>-->
+                      
+                          <meta name="viewport" content="width=device-width, initial-scale=3">
+                            <link href="https://fonts.googleapis.com/css?family=Releway:400,700,900" rel="stylesheet">
+                            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                        
+                              <?php
+                                require('contador_de_visitas.php');
+                                  include('visitas.php');
+                                    //Se obtinen las visitas 
+                                  //totales
+                                    $pri_archivo = fopen("visitas.txt", "r");
+                                    $pri =  fgets($pri_archivo);	
+                                    fclose($pri_archivo);
+                                  //ESTE NO
+                                    //$pan_archivo = fopen("usuario.txt", "r");
+                                    //$pan =  fgets($pan_archivo);	
+                                    //fclose($pan_archivo);
+                                  //Al dia
+                                    $prd_archivo = fopen("contar_dia.dat", "r");
+                                    $prd =  fgets($prd_archivo);	
+                                    fclose($prd_archivo);
+                                  //Al mes
+                                  $morena_archivo = fopen("contar_mes.dat", "r");
+                                  $morena =  fgets($morena_archivo);	
+                                  fclose($morena_archivo);
+                              ?>
+                                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
+                                 </script>
+                                 <script type="text/javascript">
+                                    google.charts.load("current", {packages:['corechart']});
+                                     google.charts.setOnLoadCallback(drawChart);
+                                      function drawChart() 
+                                        {
+                                          var data = google.visualization.arrayToDataTable([
+                                          ["Partido", "VISIATAS", { role: "style" } ],
+                                          ["VISITAS TOTALES", <?php echo $pri; ?>, "#27BB8C"],
+                                          ["AL DIA", <?php echo $prd; ?>, "#2771BB"],
+                                          ["AL MES", <?php echo $morena; ?>, "#27BB8C"]
+                                          ]);
 
-      </div>
-    </section> <!-- End Team Section -->
+                                            var view = new google.visualization.DataView(data);
+                                            view.setColumns([0, 1,
+                                            { calc: "stringify",
+                                              sourceColumn: 1,
+                                              type: "string",
+                                              role: "annotation"
+                                            }, 2]);
 
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <h3>UPQROO</h3>
-      <p>Av. Arco Bicentenario, Mza. 11, Lote 1119-33, SM. 255. Cancún, Quintana Roo, México. C.P. 77500</p>
-      <div class="social-links">
-        <a href="https://twitter.com/upqroo" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
-        <a href="https://www.facebook.com/upqroo" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.youtube.com/channel/UCy6VTWYIB9tay8P28cPe6Eg" class="youtube" target="_blank"><i class="bx bxl-youtube"></i></a>
-      </div>
-      <div class="copyright">
-        &copy; Copyright <strong><span>UPQROO</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a>
-        <form method="POST">
-          <br>¿Tienes problemas con la pagina? <a href="javascript:document.getElementById('soporte').style.display='block';void0">Mandanos un mensaje</a>
-          <div id="soporte">
-            <br><textarea name="falla" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
-            <div class="boton-soporte">
-              <br><button name="Mensaje" type="submit">Enviar mensaje</button>
+                                              var options =
+                                              {
+                                                title: "Estadisticas Del Sitio",
+                                                width: 500,
+                                                height: 440,
+                                                bar: {groupWidth: "85%"},
+                                                legend: { position: "none" },
+                                              };
+                                              var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+                                              chart.draw(view, options);
+                                        }
+                                </script>
+                    <div id="columnchart_values" style="width: 600%; height: 200%; "></div>
+                       <!--Aqui se pone el pie de la Pagina-->
+                        <footer>
+                            <h6 a>DOSPUNTOSTRES @DerechosReservados</h6>
+                        </footer>
+                </div> 
+              </div>    
             </div>
-          </div>      <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/selecao-bootstrap-template/ -->
-        </form>
+          </div>
+                <!-- ======= Team Section ======= -->
+                <section id="team" class="team">
+                      <div class="container">
+                        <div class="section-title" data-aos="zoom-out">
+                          <h2>Equipo</h2>
+                        <!--  <p>Nuestro Equipo de Desarrollo</p>-->
+                            <div class="row content" data-aos="fade-up">
+                          <div class="col-lg-9">
+                          <p>  <h3>
+                            Responsables del desarrollo del sitio
+                            </h3></p>
+                          <p><h6>
+                            ¿Deseas conocer más acerca de nuestro equipo?
+                            </h6></p>     
+                          </div>
+                          <div class="col-lg-9">
+                            <br><br>
+                            <a href="equipo.php" class="btn-learn-more">Ver más</a>
+                          </div>
+                        </div>
+                        <div class="row">
+                        </div>
+                      </div>
+                </section> <!-- End Team Section -->
+  </main><!-- End #main -->
+                <!-- ======= Footer ======= -->
+                <footer id="footer">
+                  <div class="container">
+                    <h3>UPQROO</h3>
+                    <p>Av. Arco Bicentenario, Mza. 11, Lote 1119-33, SM. 255. Cancún, Quintana Roo, México. C.P. 77500</p>
+                    <div class="social-links">
+                      <a href="https://twitter.com/upqroo" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
+                      <a href="https://www.facebook.com/upqroo" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+                      <a href="https://www.youtube.com/channel/UCy6VTWYIB9tay8P28cPe6Eg" class="youtube" target="_blank"><i class="bx bxl-youtube"></i></a>
+                    </div>
+                    <div>
+                    </div>
+                      ¿Quieres promocionar tu universidad de Quintana Roo? <br> Contáctanos por <a href="mailto:feriauniversitariaqroo@gmail.com?">feriauniversitariaqroo@gmail.com</a>
+                    <div class="copyright">
+                      <br>&copy; Copyright <strong><span>UPQROO</span></strong>. All Rights Reserved
+                    </div>
+                    <div class="credits">
 
-      </div>
-    </div>
-
-    <!-- ======= Top Bar ======= -->
-
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a> 
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
+                      Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a><br>
+                      <br>¿Tienes problemas con la página? <a href="javascript:document.getElementById('soporte').style.display='block';void0">Mandanos un mensaje</a>
+                      <div id="soporte">
+                        <br><textarea name="textareasoporte" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
+                        <div class="boton-soporte">
+                          <br><button type="submit">Enviar mensaje</button>
+                        </div>
+                      </div> 
+                    </div>
+                  </div>
+                                 <!-- ======= Top Bar ======= -->
+                </footer>
+       <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a> 
+        <!-- Vendor JS Files -->
+         <script src="assets/vendor/jquery/jquery.min.js"></script>
+          <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+          <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+          <script src="assets/vendor/php-email-form/validate.js"></script>
+          <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+          <script src="assets/vendor/venobox/venobox.min.js"></script>
+          <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+          <script src="assets/vendor/aos/aos.js"></script>
+         <!-- Template Main JS File -->
+           <script src="assets/js/main.js"></script>
+   </body>
+    <style type="text/css">
+      input{display: inline-block;
+       background-color:#444444;
+        width: 14;
+    </style>
 </html>

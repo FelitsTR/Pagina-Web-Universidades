@@ -5,7 +5,7 @@
   //falta arreglarlo
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
@@ -78,12 +78,12 @@
 
   </div>
 <!-- </header> End Header -->
- </nav>
+</nav>
   
   </header> <!-- End Header -->
 
   <main id="main">
- 
+
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
 
@@ -137,10 +137,17 @@
         </div>
         <div class="portfolio-description">
           <h2>Oferta educativa</h2>
-          <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Licenciatura en Administración</h5>
-          <p>
-            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-          </p>
+          <div id="carrera1">
+            <div id="carrera1-muestra">
+              <h5><a href="javascript:document.getElementById('carrera1-oculta').style.display='block'; document.getElementById('carrera1-muestra').style.display='none';void0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Licenciatura en Administración</a></h5>
+            </div>
+            <div id="carrera1-oculta">
+              <h5><a href="javascript:document.getElementById('carrera1-oculta').style.display='none'; document.getElementById('carrera1-muestra').style.display='block';void0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Licenciatura en Administración</a></h5>
+              <p>
+                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+              </p>
+            </div>
+          </div>
           <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ingenieria en Software</h5>
           <p>
             Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
@@ -152,7 +159,8 @@
 
   </main><!-- End #main -->
 
-  <footer id="footer">
+   <!-- ======= Footer ======= -->
+   <footer id="footer">
     <div class="container">
       <h3>UPQROO</h3>
       <p>Av. Arco Bicentenario, Mza. 11, Lote 1119-33, SM. 255. Cancún, Quintana Roo, México. C.P. 77500</p>
@@ -161,13 +169,16 @@
         <a href="https://www.facebook.com/upqroo" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
         <a href="https://www.youtube.com/channel/UCy6VTWYIB9tay8P28cPe6Eg" class="youtube" target="_blank"><i class="bx bxl-youtube"></i></a>
       </div>
+      <div>
+      </div>
+        ¿Quieres promocionar tu universidad de Quintana Roo? <br> Contáctanos por <a href="mailto:feriauniversitariaqroo@gmail.com?">feriauniversitariaqroo@gmail.com</a>
       <div class="copyright">
-        &copy; Copyright <strong><span>UPQROO</span></strong>. Todos los derechos reservados
+        <br>&copy; Copyright <strong><span>UPQROO</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
 
-        Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a>
-        <br>¿Tienes problemas con la pagina? <a href="javascript:document.getElementById('soporte').style.display='block';void0">Mandanos un mensaje</a>
+        Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a><br>
+        <br>¿Tienes problemas con la página? <a href="javascript:document.getElementById('soporte').style.display='block';void0">Mandanos un mensaje</a>
         <div id="soporte">
           <br><textarea name="textareasoporte" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
           <div class="boton-soporte">
@@ -176,7 +187,10 @@
         </div> 
       </div>
     </div>
-  </footer> <!-- End Footer -->
+
+    <!-- ======= Top Bar ======= -->
+
+  </footer>
 
   <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
 

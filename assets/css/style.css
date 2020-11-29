@@ -1483,7 +1483,7 @@ section {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 15px 0;
-  margin-top: 70px;
+  margin-top: 0px;
   background: #f7f8f9;
   min-height: 40px;
 }
@@ -1782,4 +1782,71 @@ vertical-align: middle;
     flex-direction: column;
 
   }
+}
+
+hr.new1subir {
+  border-top: 1px solid #36C28F ;
+   width: 25%;
+}
+hr.new2subir {
+     border-top: 1px solid #36C28F ;
+    width: 35%;
+}
+hr.new3subir {
+     border-top: 1px solid #36C28F ;
+    width: 40%;
+}
+
+.leftsubir { 
+    float: left; 
+    width: 15%; 
+    text-align: left; 
+    margin: 2% 15%; 
+    display: inline; 
+  align-self:auto;
+} 
+
+.rightsubir { 
+    float: left; 
+    text-align: left; 
+    margin: 2% 8%; 
+    display: inline; 
+    align-self: auto;
+} 
+
+.videosubir{
+   text-align: left; 
+    margin: 2% 8%;  
+     display:inline-block;
+    
+}
+.fotosubir{
+   text-align: left; 
+    margin: 2% 8%;  
+     display: inline-block;
+}
+
+#soporte
+{
+  display: none;
+}
+
+.boton-soporte button
+{
+  background-color: transparent;
+  border-color: transparent;
+  position: relative;
+  color: #fff;
+  padding: 5px 15px 7px 15px;
+  margin-left: 5px;
+  transition: 0.3s;
+  font-size: 14px;
+  border-radius: 50px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.boton-soporte button:hover
+{
+  background: #27BB8C;
+  text-decoration: none;
 }

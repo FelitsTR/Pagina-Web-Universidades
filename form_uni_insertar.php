@@ -1,12 +1,9 @@
 <?php
   session_start();
   $admin=$_SESSION['id_uni'];
-  if($admin >0){
-    header('Locate:index.php');
-  }
    include('conexiones/conexion.php');
-  
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -87,16 +84,13 @@
   <main id="main">
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-    <div class="container">
-        <div class="section-title text-center" data-aos="zoom-out" >
+      <div class="container">
+        <div class="section-title" data-aos="zoom-out">
           <h2>INFORMACIÓN</h2>
-          <div class="text-center">
           <p>ADMINISTRA TU INFORMACIóN AQUÍ</p>
-          </div>
-          
         </div>
-        <div class="row col-12 justify-content-center " data-aos="fade-up">
-          
+        <div class="row content" data-aos="fade-up">
+          <div class="col-lg-9">
             <?php include('conexiones/conexion.php'); ?>
             <?php
               require('conexiones/conexion_m.php');
@@ -104,19 +98,105 @@
                 $resultado_m = $mysqli->query($query_m);
             ?>
             <!-- Datos Generales -->
-            
-              
-                <div>
-                  <button type="button" class="btn btn-primary btn-lg" onclick="window.location='form_uni_insertar.php' ">Insertar</button>
-                  <button type="button" class="btn btn-primary btn-lg" onclick="window.location='form_uni_actualizar.php' ">Actualizar</button>
-                  <button type="button" class="btn btn-primary btn-lg" onclick="window.location='form_ofe.php' ">Carreras</button>
+            <div class="card box mt-4 card-child">
+              <div class="card-header head">
+                <h4 class="h4">Datos Generales</h4>
+              </div>
+              <form action="insert_crud.php" method="POST" id="note-form" class="card-body">
+                <input id="opc_1" name="Opciones1" type="radio" value="Opciones" onchange="funcion1()">
+                Información
+                <input id="opc_2" name="Opciones1" type="radio" value="Opciones" onchange="funcion1()">
+                Archivos y documentos
+                <div id="changeForm"></div>
+                  <script>
+                    function funcion1(){
+                      document.getElementById("Ocultar_1").style.display = "none";
+                      document.getElementById("Ocultar_2").style.display = "none";
+                      var opc_1 = document.getElementById("opc_1");
+                      var opc_2 = document.getElementById("opc_2");
+                      if(opc_1.checked){
+                      document.getElementById("Ocultar_1").style.display = "block";
+                      //document.getElementById("changeForm").innerHTML = "Ano";
+                      }
+                      if(opc_2.checked){
+                        document.getElementById("Ocultar_2").style.display = "block";
+                        //document.getElementById("changeForm").innerHTML = "A";
+                      }
+                    }
+                  </script>
+                <div id="Ocultar_1">
+                  <div name="Nombre_Universidad" class="form-group">
+                    <input required type="text" id="nombre_uni" placeholder="Nombre Universidad" class="form-control descrip" name="nombre_uni" />
+                  </div>
+                  <div class="form-group">
+                    <select required name="id_municipio" class="form-control descrip">
+                   
+                      <?php while($row = $resultado_m->fetch_assoc()) { ?>
+                        <option value="<?php echo $row['id_municipio']; ?>"><?php echo $row['nombre_muni']; ?></option>
+                      <?php } ?>
+                    </select>
+                  </div>
+                  <div name="telefono_uni" class="form-group">
+                    <input required type="tel" id="telefono_uni" placeholder="Telefono" class="form-control descrip" name="telefono_uni" />
+                  </div>
+                  <div name="correo_uni" class="form-group">
+                    <input required type="email" id="correo_uni" placeholder="Correo" class="form-control descrip" name="correo_uni" />
+                  </div>
+                  <div name="longitud" class="form-group">
+                    <input required type="text" id="longitud" name="longitud" class="form-control descrip" placeholder="Longitud"></input>
+                  </div>
+                  <div name="latitud" class="form-group">
+                    <input required type="text" id="latitud" name="latitud" class="form-control descrip" placeholder="Latitud"></input>
+                  </div>
+                  <div name="facebook" class="form-group">
+                    <input required type="url" id="facebook" placeholder="Facebook" class="form-control descrip" name="facebook" />
+                  </div>
+                  <div name="whatsapp" class="form-group">
+                    <input required type="tel" id="whatsapp" placeholder="Whatsapp" class="form-control descrip" name="whatsapp" />
+                  </div>
                 </div>
-              
-            
+                <div id="Ocultar_2">
+                  <div name="logo_uni" class="form-group">
+                    <input required type="url" id="logo_uni" placeholder="Logo" class="form-control descrip" name="logo_uni" />
+                  </div>
+                  <div name="img_uni_1" class="form-group">
+                      <input required type="url" id="img_uni_1" placeholder="Imagen 1" class="form-control descrip" name="img_uni_1" />
+                    </div>
+                    <div name="img_uni_2" class="form-group">
+                      <input required type="url" id="img_uni_2" placeholder="Imagen 2" class="form-control descrip" name="img_uni_2" />
+                    </div>
+                    <div name="img_uni_3" class="form-group">
+                      <input required type="url" id="img_uni_3" placeholder="Imagen 3" class="form-control descrip" name="img_uni_3" />
+                    </div>
+                  <div name="src_video" class="form-group">
+                    <input required type="url" id="src_video" placeholder="Video" class="form-control descrip" name="src_video" />
+                  </div>
+                  <!-- <div name="nombre_conferencia" class="form-group">
+                    <input required type="text" id="nombre_conferencia" value="<?php echo $nombre_conferencia?>" placeholder="Descripción de la conferencia" class="form-control descrip" name="nombre_conferencia" />
+                  </div>
+                  <div name="src_conferencia" class="form-group">
+                    <input required type="url" id="src_conferencia" value="<?php echo $src_conferencia?>" placeholder="Conferencia" class="form-control descrip" name="src_conferencia" />
+                  </div> -->
+                </div>
+                <input type="submit" value="Insertar" class="btn btn-primary btn-block button-submit" name="Insertar" />
+
+                <!-- Inicio Editar -->
+
+
+                <br>
+
+
+                
+                <script>
+                  document.getElementById("Ocultar_1").style.display = "none";
+                  document.getElementById("Ocultar_2").style.display = "none";
+                </script>
+              </form>
+            </div>
           </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
   </main><!-- End #main -->
 

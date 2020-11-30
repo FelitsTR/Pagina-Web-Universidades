@@ -111,11 +111,14 @@
 
           <div class="owl-carousel portfolio-details-carousel">
           <?php
-              $imagen1 = mysqli_query($conexion, "SELECT img_uni_1 FROM 'universidades'");
-              echo ("<img src='$imagen1' class='img-fluid' alt=''>");
+              $consulta="SELECT img_uni_1 FROM universidades WHERE id_universidad='$admin'";
+              $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+              $columna=mysqli_fetch_array($ejecutar);
+              $img_uni_1=$columna['img_uni_1'];
+              echo ("<img src='$img_uni_1' class='img-fluid'>");
             ?>
-            <img src="assets/img/portafolio/portfolio-details-2.jpg" class="img-fluid" alt="">
-            <img src="assets/img/portafolio/portfolio-details-3.jpg" class="img-fluid" alt="">
+            <img src="assets/img/portafolio/portfolio-details-2.jpg" class="img-fluid">
+            <img src="assets/img/portafolio/portfolio-details-3.jpg" class="img-fluid">
           </div>
 
           <div class="portfolio-info">

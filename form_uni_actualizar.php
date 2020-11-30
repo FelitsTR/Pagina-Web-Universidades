@@ -4,13 +4,28 @@
   if($admin >0){
     header('Locate:index.php');
   }
-  include('conexiones/conexion.php');
-  if(isset($_POST['Mensaje'])){
-    $falla = $_POST['falla'];
-    $query = ("INSERT INTO comentarios (falla) VALUE ('$falla')");
-    $Result = mysqli_query($conexion, $query);
-    echo '<script> alert("Mensaje enviado, gracias por notificar"); </script>';
-  }
+   include('conexiones/conexion.php');
+  
+                  
+      $consulta="SELECT * FROM universidades WHERE id_universidad='$admin'";
+      $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+
+      $columna=mysqli_fetch_array($ejecutar);
+      $nombre_uni = $columna['nombre_uni'];
+      $telefono_uni = $columna['telefono_uni'];
+      $correo_uni = $columna['correo_uni'];
+      $id_municipio = $columna['id_municipio'];
+      $logo_uni = $columna['logo_uni'];
+      $latitud = $columna['latitud'];
+      $longitud = $columna['longitud'];
+      $facebook = $columna['facebook'];
+      $whatsapp = $columna['whatsapp'];
+      $src_video = $columna['src_video'];
+      $img_uni_1=$columna['img_uni_1'];
+      $img_uni_2=$columna['img_uni_2'];
+      $img_uni_3=$columna['img_uni_3'];
+      //$nombre_conferencia = $columna['nombre_conferencia'];
+      //$src_conferencia = $columna['src_conferencia'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -43,8 +58,12 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+ 
 </head>
+
 <body>
+
+
   <!-- ======= Header ======= -->
   <div class="row align-items-center justify-content-center  w-100" id="container-fluid">
     <div class="col-sm-4 align-items-center">
@@ -83,53 +102,16 @@
 
       </div>
     </header><!-- End Header -->
-  </nav>
+   </nav>
 
   <main id="main">
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
-        
         <div class="section-title" data-aos="zoom-out">
           <h2>INFORMACIÓN</h2>
           <p>ADMINISTRA TU INFORMACIóN AQUÍ</p>
         </div>
-        <table class="table table-hover table-bordered table-responsive-md" id="tabla1">
-    <thead class="thead-green">
-        <tr>
-            <th>Carrera</th>
-            <th>Periodo Academico</th>
-            <th>Tipo de carrera</th>
-            <th>Borrar</th>
-            <th>Editar</th>
-        </tr>
-    </thead>
-    <?php
-        include('conexiones/conexion.php');
-        $carrera=array();
-        $periodo_academico=array();
-        $tipo_carrera=array();
-        
-        $consulta="SELECT * FROM oferta_educativa WHERE id_universidad = '$admin'";
-        $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la
-        consulta a la base de datos");
-        
-        while($columna=mysqli_fetch_array($ejecutar)){
-          $id_oferta=$columna['id_oferta'];
-          $carrera=$columna['carrera'];
-          $periodo_academico=$columna['periodo_academico'];
-          $tipo_carrera=$columna['tipo_carrera'];
-    ?>
-    <tr align="center">
-    <td><?php echo $carrera; ?></td>
-    <td><?php echo $periodo_academico; ?></td>
-    <td><?php echo $tipo_carrera; ?></td>
-    <td><a href="form_ofe.php?borrar=<?php echo $id_oferta; ?>">Borrar</a></td>
-    <td><a href="form_ofe.php?editar=<?php echo $id_oferta; ?>">Editar</a></td>
-    </tr>
-        <?php } ?>
-    </table>
-    
         <div class="row content" data-aos="fade-up">
           <div class="col-lg-9">
             <?php include('conexiones/conexion.php'); ?>
@@ -141,9 +123,9 @@
             <!-- Datos Generales -->
             <div class="card box mt-4 card-child">
               <div class="card-header head">
-                <h4 class="h4">Oferta Educativa</h4>
+                <h4 class="h4">Datos Generales</h4>
               </div>
-              <form action="" method="POST" id="note-form" class="card-body">
+              <form action="update_crud.php" method="POST" id="note-form" class="card-body">
                 <input id="opc_1" name="Opciones1" type="radio" value="Opciones" onchange="funcion1()">
                 Información
                 <input id="opc_2" name="Opciones1" type="radio" value="Opciones" onchange="funcion1()">
@@ -166,114 +148,87 @@
                     }
                   </script>
                 <div id="Ocultar_1">
-                    <div name="carrera" class="form-group">
-                      <input required type="text" id="carrera" placeholder="Carrera" class="form-control descrip" name="carrera" />
-                    </div>
-                    <div class="form-group">
-                      <input required type="text" id="periodo_academico" placeholder="Periodo Academico" class="form-control descrip" name="periodo_academico" />
-                    </div>
-                    <div name="years" class="form-group">
-                      <input required type="text" id="years" placeholder="Años" class="form-control descrip" name="years" />
-                    </div>
-                    <div name="meses" class="form-group">
-                      <input required type="number" id="meses" placeholder="Meses" class="form-control descrip" name="meses" />
-                    </div>
-                    <div class="form-group">
-                      <textarea required id="descripcion" name="descripcion" cols="30" rows="10" class="form-control descrip" placeholder="Descripción de la carrera"></textarea>
-                    </div>
-                    <div class="form-group">
-                      <textarea required id="objetivo" name="objetivo" cols="30" rows="10" class="form-control descrip" placeholder="Objetivo de la carrera"></textarea>
-                    </div>
-                    <div class="form-group">
-                      <textarea required id="perfil_ingreso" name="perfil_ingreso" cols="30" rows="10" class="form-control descrip" placeholder="Perfil ingreso"></textarea>
-                    </div>
-                    <div class="form-group">
-                      <textarea required id="perfil_egreso" name="perfil_egreso" cols="30" rows="10" class="form-control descrip" placeholder="Perfil egreso"></textarea>
-                    </div>
-                    <div name="tipo_carrera" class="form-group">
-                      <input required type="text" id="tipo_carrera" placeholder="Tipo de carrera" class="form-control descrip" name="tipo_carrera" />
-                    </div>
+                  <div name="Nombre_Universidad" class="form-group">
+                    <input required type="text" id="nombre_uni" value="<?php echo $nombre_uni?>" placeholder="Nombre Universidad" class="form-control descrip" name="nombre_uni" />
                   </div>
-                  <div id="Ocultar_2">
-                    <div name="img_ofer_1" class="form-group">
-                      <input required type="url" id="img_ofer_1" placeholder="Imagen 1" class="form-control descrip" name="img_ofer_1" />
-                    </div>
-                    <div name="img_ofer_2" class="form-group">
-                      <input required type="url" id="img_ofer_2" placeholder="Imagen 2" class="form-control descrip" name="img_ofer_2" />
-                    </div>
-                    <div name="img_ofer_3" class="form-group">
-                      <input required type="url" id="img_ofer_3" placeholder="Imagen 3" class="form-control descrip" name="img_ofer_3" />
-                    </div>
-                    <div name="carrera_video" class="form-group">
-                      <input required type="url" id="carrera_video" placeholder="Video" class="form-control descrip" name="carrera_video" />
-                    </div>
-                    <div name="src_doc" class="form-group">
-                      <input required type="url" id="src_doc" placeholder="Documento" class="form-control descrip" name="src_doc" />
-                    </div>
-                    <div name="plan_estudio" class="form-group">
-                      <input required type="url" id="plan_estudio" placeholder="Plan de estudio" class="form-control descrip" name="plan_estudio" />
-                    </div>
+                  <div class="form-group">
+                    <select required name="id_municipio" class="form-control descrip">
+                      
+                      <?php while($row = $resultado_m->fetch_assoc()) { ?>
+                        <option value="<?php echo $row['id_municipio']; ?>"><?php echo $row['nombre_muni']; ?></option>
+                      <?php } ?>
+                    </select>
                   </div>
-                <input type="submit" value="Guardar" class="btn btn-primary btn-block button-submit" name="Guardar2" />
+                  <div name="telefono_uni" class="form-group">
+                    <input required type="tel" id="telefono_uni" value="<?php echo $telefono_uni?>" placeholder="Telefono" class="form-control descrip" name="telefono_uni" />
+                  </div>
+                  <div name="correo_uni" class="form-group">
+                    <input required type="email" id="correo_uni" value="<?php echo $correo_uni?>" placeholder="Correo" class="form-control descrip" name="correo_uni" />
+                  </div>
+                  <div name="longitud" class="form-group">
+                    <input required type="text" id="longitud" value="<?php echo $longitud?>" name="longitud" class="form-control descrip" placeholder="Longitud"></input>
+                  </div>
+                  <div name="latitud" class="form-group">
+                    <input required type="text" id="latitud" value="<?php echo $latitud?>" name="latitud" class="form-control descrip" placeholder="Latitud"></input>
+                  </div>
+                  <div name="facebook" class="form-group">
+                    <input required type="url" id="facebook" value="<?php echo $facebook?>" placeholder="Facebook" class="form-control descrip" name="facebook" />
+                  </div>
+                  <div name="whatsapp" class="form-group">
+                    <input required type="tel" id="whatsapp" value="<?php echo $whatsapp?>" placeholder="Whatsapp" class="form-control descrip" name="whatsapp" />
+                  </div>
+                </div>
+                <div id="Ocultar_2">
+                  <div name="logo_uni" class="form-group">
+                    <input required type="url" id="logo_uni" value="<?php echo $logo_uni?>" placeholder="Logo" class="form-control descrip" name="logo_uni" />
+                  </div>
+                  <div name="img_uni_1" class="form-group">
+                      <input required type="url" id="img_uni_1" value="<?php echo $img_uni_1?>" placeholder="Imagen 1" class="form-control descrip" name="img_uni_1" />
+                    </div>
+                    <div name="img_uni_2" class="form-group">
+                      <input required type="url" id="img_uni_2" value="<?php echo $img_uni_2?>" placeholder="Imagen 2" class="form-control descrip" name="img_uni_2" />
+                    </div>
+                    <div name="img_uni_3" class="form-group">
+                      <input required type="url" id="img_uni_3" value="<?php echo $img_uni_3?>" placeholder="Imagen 3" class="form-control descrip" name="img_uni_3" />
+                    </div>
+                  <div name="src_video" class="form-group">
+                    <input required type="url" id="src_video" value="<?php echo $src_video?>" placeholder="Video" class="form-control descrip" name="src_video" />
+                  </div>
+                  <!-- <div name="nombre_conferencia" class="form-group">
+                    <input required type="text" id="nombre_conferencia" value="<?php echo $nombre_conferencia?>" placeholder="Descripción de la conferencia" class="form-control descrip" name="nombre_conferencia" />
+                  </div>
+                  <div name="src_conferencia" class="form-group">
+                    <input required type="url" id="src_conferencia" value="<?php echo $src_conferencia?>" placeholder="Conferencia" class="form-control descrip" name="src_conferencia" />
+                  </div> -->
+                </div>
+                <input type="submit" value="Actualizar" class="btn btn-primary btn-block button-submit" name="Actualizar" />
+
+                <!-- Inicio Editar -->
+
+
+                <br>
+<!--                 <form method="POST" action="" class="form-inline" id="form2">
+                    <input type="number" name="id" class="form-control mb-2 mr-sm-2" value=<?php //echo $id; ?>">
+                    <input type="text" name="nombre" class="form-control mb-2 mr-sm-2" value="<?php //echo $nombre; ?>">
+                    <input type="text" name="telefono" class="form-control mb-2 mr-sm-2" value="<?php //echo $telefono; ?>">
+                    <input type="text" name="email" class="form-control mb-2 mr-sm-2" value="<?php //echo $email; ?>">
+                    <input type="number" name="costoinscrip" class="form-control mb-2 mr-sm-2" value="<?php //echo $costoinscrip; ?>">
+                    <input type="number" name="costoreins" class="form-control mb-2 mr-sm-2" value="<?php //echo $costoreins; ?>">
+                    <input type="submit" name="actualizar" class="btn btn-primary mb-2 mr-sm-2" value="Actualizar datos">
+
+                </form> -->
+
+                
                 <script>
                   document.getElementById("Ocultar_1").style.display = "none";
                   document.getElementById("Ocultar_2").style.display = "none";
                 </script>
               </form>
-              
             </div>
           </div>
         </div>
       </div>
-      <br>
-  
     </section>
-    <?php
-    if(isset($_POST['Guardar2']))
-    {
-          $id_universidad = $admin;
-          $periodo_academico = $_POST['periodo_academico'];
-          $carrera = $_POST['carrera'];
-          $descripcion = $_POST['descripcion'];
-          $objetivo = $_POST['objetivo'];
-          $perfil_ingreso = $_POST['perfil_ingreso'];
-          $perfil_egreso = $_POST['perfil_egreso'];
-          $plan_estudio = $_POST['plan_estudio'];
-          $carrera_video = $_POST['carrera_video'];
-          $tipo_carrera = $_POST['tipo_carrera'];
-          $src_doc = $_POST['src_doc'];
-          $years = $_POST['years'];
-          $meses = $_POST['meses'];
-          $img_ofer_1=$_POST['img_ofer_1'];
-          $img_ofer_2=$_POST['img_ofer_2'];
-          $img_ofer_3=$_POST['img_ofer_3'];
-        $stm3 = "INSERT INTO oferta_educativa (id_universidad, periodo_academico, carrera, descripcion, objetivo, perfil_ingreso, perfil_egreso, plan_estudio, carrera_video, tipo_carrera, src_doc, years, meses, img_ofer_1, img_ofer_2, img_ofer_3) VALUES ('$id_universidad','$periodo_academico','$carrera','$descripcion','$objetivo','$perfil_ingreso','$perfil_egreso','$plan_estudio','$carrera_video','$tipo_carrera','$src_doc','$years','$meses','$img_ofer_1','$img_ofer_2','$img_ofer_3')";
-        $query3 = mysqli_query($conexion, $stm3);
-        if($query3){
-          echo "Se han insertado correcatamento los datos";
-        }
-        else{
-          echo "Error en la insercion";
-        }
-    }
-    ?>
-    <?php
-        if(isset($_GET['editar'])){
-            include("editar.php");
-        }
-    ?>
-    
-    <?php
-        if(isset($_GET['borrar'])){
-            $borrar_id=$_GET['borrar'];
-            $borrar="DELETE FROM oferta_educativa WHERE id_oferta ='$borrar_id'";
-            $ejecutar=mysqli_query($conexion,$borrar);
-            if($ejecutar){                
-                echo "<script>alert('Universidad eliminada')</script>";
-                echo "<script>window.open('form_ofe.php','_self')</script>";
-            }
-        }
-    ?> 
 
   </main><!-- End #main -->
 

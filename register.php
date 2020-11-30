@@ -11,16 +11,23 @@
 				$Query = "INSERT INTO usuarios (nombre_usu, telefono_usu, correo_usu, clave_usu, motivo_usu) VALUES ('$nombre_usu', '$telefono_usu', '$correo_usu', '$clave_usu', '$motivo_usu')";
 				$Result = mysqli_query($conexion, $Query);
 				echo "<h3 class=\"ok\">Se ha creado su cuenta</h3>";
-				$msg = "Felicidades. Te has registrado exitosamente";
+				$asunto = "Felicidades, te has registrado exitosamente.";
+				$msg = "Nos alegra que estes aquí.
+
+Te damos la bienvenida a la Feria Universitaria Virtual, sitio ideal para consultar y trasmitir información de educación superior.
+
+Contamos con la participacion de las diversas universidades existentes a lo largo de Quintana Roo e información detallada de cada una, además de tener una variedad de herramientas con la que esperamos hacer tu experiencia más agradable, insentivando así, la continuación de los estudios superiores.
+
+Gracias por tu confianza.";
             	$header = "From: feriauniversitariaqroo@gmail.com"."\r\n";
-            	$header.= "Reply-To: noreply@example.com";
-            	$mail = @mail($correo_usu,$msg,$header);
+            	$header.= "Reply-To: ".$correo_usu;
+            	$mail = @mail($correo_usu,$asunto,$msg,$header);
 				mysqli_close($conexion);
 			}
 			else {
 				// acción en caso incorrecto
 				echo "<h3>Las claves no coinciden</h3>";
-			}
+			} 
             // if($mail){
             //     echo "<h4> Correo enviado. </h4>";
             // }

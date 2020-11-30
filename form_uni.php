@@ -4,13 +4,35 @@
   if($admin >0){
     header('Locate:index.php');
   }
-  include('conexiones/conexion.php');
-  if(isset($_POST['Mensaje'])){
-    $falla = $_POST['falla'];
-    $query = ("INSERT INTO comentarios (falla) VALUE ('$falla')");
-    $Result = mysqli_query($conexion, $query);
-    echo '<script> alert("Mensaje enviado, gracias por notificar"); </script>';
-  }
+   include('conexiones/conexion.php');
+  // if(isset($_POST['Mensaje'])){
+  //   $falla = $_POST['falla'];
+  //   $query = "INSERT INTO comentarios (falla) VALUE ('$falla')";
+  //   $Result = mysqli_query($conexion, $query);
+  //   echo '<script> alert("Mensaje enviado, gracias por notificar"); </script>';
+  // }
+      /* if(isset($_GET['editar'])){
+         $editor_id=$_GET['editar']; */
+                  
+      $consulta="SELECT * FROM universidades WHERE id_universidad='$admin'";
+      $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+
+      $columna=mysqli_fetch_array($ejecutar);
+      $nombre_uni = $columna['nombre_uni'];
+      $telefono_uni = $columna['telefono_uni'];
+      $correo_uni = $columna['correo_uni'];
+      $id_municipio = $columna['id_municipio'];
+      $logo_uni = $columna['logo_uni'];
+      $latitud = $columna['latitud'];
+      $longitud = $columna['longitud'];
+      $facebook = $columna['facebook'];
+      $whatsapp = $columna['whatsapp'];
+      $src_video = $columna['src_video'];
+      $img_uni_1=$columna['img_uni_1'];
+      $img_uni_2=$columna['img_uni_2'];
+      $img_uni_3=$columna['img_uni_3'];
+      //$nombre_conferencia = $columna['nombre_conferencia'];
+      //$src_conferencia = $columna['src_conferencia'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -179,107 +201,34 @@
                   <div name="src_video" class="form-group">
                     <input required type="url" id="src_video" value="<?php echo $src_video?>" placeholder="Video" class="form-control descrip" name="src_video" />
                   </div>
-                  <div name="nombre_conferencia" class="form-group">
+                  <!-- <div name="nombre_conferencia" class="form-group">
                     <input required type="text" id="nombre_conferencia" value="<?php echo $nombre_conferencia?>" placeholder="Descripción de la conferencia" class="form-control descrip" name="nombre_conferencia" />
                   </div>
                   <div name="src_conferencia" class="form-group">
                     <input required type="url" id="src_conferencia" value="<?php echo $src_conferencia?>" placeholder="Conferencia" class="form-control descrip" name="src_conferencia" />
-                  </div>
+                  </div> -->
                 </div>
                 <input type="submit" value="Guardar" class="btn btn-primary btn-block button-submit" name="Guardar" />
 
                 <!-- Inicio Editar -->
-                <?php
-                  /* if(isset($_GET['editar'])){
-                      $editor_id=$_GET['editar']; */
-                  
 
-                  $consulta="SELECT * FROM universidad WHERE id_universidad='$admin' ";
-                  $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la
-                      consulta a la base de datos");
-
-                  $columna=mysqli_fetch_array($ejecutar);
-                    $nombre_uni = $_POST['nombre_uni'];
-                    $telefono_uni = $_POST['telefono_uni'];
-                    $correo_uni = $_POST['correo_uni'];
-                    $id_municipio = $_POST['id_municipio'];
-                    $logo_uni = $_POST['logo_uni'];
-                    $latitud = $_POST['latitud'];
-                    $longitud = $_POST['longitud'];
-                    $facebook = $_POST['facebook'];
-                    $whatsapp = $_POST['whatsapp'];
-                    $src_video = $_POST['src_video'];
-                    $img_uni_1=$_POST['img_uni_1'];
-                    $img_uni_2=$_POST['img_uni_2'];
-                    $img_uni_3=$_POST['img_uni_3'];
-                    $nombre_conferencia = $_POST['nombre_conferencia'];
-                    $src_conferencia = $_POST['src_conferencia'];
-                      
-                  
-                  ?>
 
                 <br>
 <!--                 <form method="POST" action="" class="form-inline" id="form2">
-                    <input type="number" name="id" class="form-control mb-2 mr-sm-2" value="<?php echo $id; ?>">
-                    <input type="text" name="nombre" class="form-control mb-2 mr-sm-2" value="<?php echo $nombre; ?>">
-                    <input type="text" name="telefono" class="form-control mb-2 mr-sm-2" value="<?php echo $telefono; ?>">
-                    <input type="text" name="email" class="form-control mb-2 mr-sm-2" value="<?php echo $email; ?>">
-                    <input type="number" name="costoinscrip" class="form-control mb-2 mr-sm-2" value="<?php echo $costoinscrip; ?>">
-                    <input type="number" name="costoreins" class="form-control mb-2 mr-sm-2" value="<?php echo $costoreins; ?>">
+                    <input type="number" name="id" class="form-control mb-2 mr-sm-2" value=<?php //echo $id; ?>">
+                    <input type="text" name="nombre" class="form-control mb-2 mr-sm-2" value="<?php //echo $nombre; ?>">
+                    <input type="text" name="telefono" class="form-control mb-2 mr-sm-2" value="<?php //echo $telefono; ?>">
+                    <input type="text" name="email" class="form-control mb-2 mr-sm-2" value="<?php //echo $email; ?>">
+                    <input type="number" name="costoinscrip" class="form-control mb-2 mr-sm-2" value="<?php //echo $costoinscrip; ?>">
+                    <input type="number" name="costoreins" class="form-control mb-2 mr-sm-2" value="<?php //echo $costoreins; ?>">
                     <input type="submit" name="actualizar" class="btn btn-primary mb-2 mr-sm-2" value="Actualizar datos">
 
                 </form> -->
 
-                <?php
-                    if(isset($_POST['actualizar'])){
-                      $nombre_uni = $_POST['nombre_uni'];
-                      $telefono_uni = $_POST['telefono_uni'];
-                      $correo_uni = $_POST['correo_uni'];
-                      $id_municipio = $_POST['id_municipio'];
-                      $logo_uni = $_POST['logo_uni'];
-                      $latitud = $_POST['latitud'];
-                      $longitud = $_POST['longitud'];
-                      $facebook = $_POST['facebook'];
-                      $whatsapp = $_POST['whatsapp'];
-                      $src_video = $_POST['src_video'];
-                      $img_uni_1=$_POST['img_uni_1'];
-                      $img_uni_2=$_POST['img_uni_2'];
-                      $img_uni_3=$_POST['img_uni_3'];
-                      // $nombre_conferencia = $_POST['nombre_conferencia'];
-                      // $src_conferencia = $_POST['src_conferencia'];
-                    
-
-                    $actualizar="UPDATE universidad SET id_universidad='$admin', nombre_uni='$nombre_uni', telefono_uni='$telefono_uni', correo_uni='$correo_uni',
-                    id_municipio='$id_municipio', logo_uni='$logo_uni',id_usu_uni='$admin', latitud='$latitud'
-                    , longitud='$longitud', facebook='$facebook' , whatsapp='$whatsapp' , src_video='$src_video', img_uni_1='$img_uni_1'
-                    , img_uni_2='$img_uni_2', img_uni_3='$facebook' WHERE id_universidad='$admin'";
-                    
-                    $ejecutar=mysqli_query($conexion,$actualizar) or die ("Error en la
-                        consulta a la base de datos");
-                    
-                    if($ejecutar){
-                      
-                      $actualizar2 = "UPDATE conferencias SET nombre_conferencia='$nombre_conferencia', src_conferencia ='$src_conferencia' WHERE id_universidad = $admin";
-                      $ejecutar2=mysqli_query($conexion,$actualizar2) or die ("Error en la
-                      consulta a la base de datos");
-                      if($ejecutar2){
-                        echo "<script>alert('Se han insertado los datos correctamente')</script>";
-                        echo "<script>window.open('form_ofe.php','_self')</script>";
-                      }
-                      else{
-                        echo "<script>alert('No se han insertado los datos correctamente x2')</script>";
-                      }
-                    }
-                    else{
-                      echo "<script>alert('No se han insertado los datos correctamente x1')</script>";
-                    }
-                  }
-                ?>
+                
                 <script>
                   document.getElementById("Ocultar_1").style.display = "none";
                   document.getElementById("Ocultar_2").style.display = "none";
-                  document.getElementById("Ocultar1").style.display = "none";
-                  document.getElementById("Ocultar2").style.display = "none";
                 </script>
               </form>
             </div>

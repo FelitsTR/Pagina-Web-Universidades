@@ -110,7 +110,10 @@
         <div class="portfolio-details-container" data-aos="fade-up">
 
           <div class="owl-carousel portfolio-details-carousel">
-            <img src="assets/img/portafolio/portfolio-details-1.jpg" class="img-fluid" alt="">
+          <?php
+              $imagen1 = mysqli_query($conexion, "SELECT img_uni_1 FROM 'universidades'");
+              echo ("<img src='$imagen1' class='img-fluid' alt=''>");
+            ?>
             <img src="assets/img/portafolio/portfolio-details-2.jpg" class="img-fluid" alt="">
             <img src="assets/img/portafolio/portfolio-details-3.jpg" class="img-fluid" alt="">
           </div>

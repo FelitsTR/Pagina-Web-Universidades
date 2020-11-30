@@ -101,19 +101,53 @@
                       // $nombre_conferencia = $_POST['nombre_conferencia'];
                       // $src_conferencia = $_POST['src_conferencia'];
                         include('conexiones/conexion.php');
-
-                        $actualizar="UPDATE universidades SET id_universidad = '$admin', nombre_uni='$nombre_uni', telefono_uni = '$telefono_uni', correo_uni='$correo_uni',
+                      /* $actualizar="UPDATE universidades SET id_universidad = '$admin', nombre_uni='$nombre_uni', telefono_uni = '$telefono_uni', correo_uni='$correo_uni',
                         id_municipio='$id_municipio', logo_uni='$logo_uni',id_usu_uni='$admin', latitud = '$latitud', longitud = '$longitud', facebook='$facebook' , whatsapp='$whatsapp',
-                        src_video='$src_video', img_uni_1='$img_uni_1', img_uni_2='$img_uni_2', img_uni_3 = '$img_uni_3' WHERE id_universidad='$admin'";
+                        src_video='$src_video', img_uni_1='$img_uni_1', img_uni_2='$img_uni_2', img_uni_3 = '$img_uni_3' WHERE id_universidad='$admin'"; */
+                        $existe = "SELECT COUNT(*) FROM universidades WHERE id_universidad = '$admin'";
+                       //$existe = "SELECT id_universidad FROM universidades WHERE EXISTS id_universidad = $admin";
+                      $prueba=mysqli_query($conexion,$existe);
+                     
+                      if(!$prueba==true)
+                      {
+                       echo "Actualizado";
+                      $actualizar="UPDATE universidades SET id_universidad='$admin',nombre_uni='$nombre_uni',telefono_uni='$telefono_uni',correo_uni='$correo_uni',id_municipio='$id_municipio',
+                      logo_uni='$logo_uni', id_usu_uni='$admin',latitud='$latitud',longitud='$longitud',facebook='$facebook',whatsapp='$whatsapp',src_video='$src_video',img_uni_1='$img_uni_1',
+                      img_uni_2='$img_uni_2', img_uni_3='$img_uni_3' WHERE id_universidad='$admin'";
+                      $ejecutar=mysqli_query($conexion,$actualizar);
+                      if($ejecutar){
+                        echo "Si actualizo el hdsptm";
+                      }else{
+                        echo "True para el select";
+                      } 
+                      }
+                      else{
+                        echo "Insertado";
+                        $insertar2="INSERT INTO universidades (id_universidad, nombre_uni, telefono_uni, correo_uni, id_municipio, logo_uni, id_usu_uni, latitud, longitud, facebook, whatsapp, src_video,
+                      img_uni_1, img_uni_2, img_uni_3) VALUES ('$admin', '$nombre_uni', '$telefono_uni','$correo_uni','$id_municipio','$logo_uni','$admin','$latitud','$longitud','$facebook','$whatsapp',
+                      '$src_video','$img_uni_1','$img_uni_2','$img_uni_3')";
+                        $ejecutar2=mysqli_query($conexion,$insertar2);
+                        if($ejecutar2){
+                          echo "Si inserto el hdsptm";
 
+                        }
+                        else{
+                          echo "False para el select";
+                        }
+                      } 
+                      
+                      
 
- $actualizar="UPDATE universidades SET id_universidad='$admin',nombre_uni='$nombre_uni',telefono_uni='$telefono_uni',correo_uni='$correo_uni',id_municipio='$id_municipio',logo_uni='$logo_uni',id_usu_uni='$admin',
-latitud='$latitud',longitud='$longitud',facebook='$facebook',whatsapp='$whatsapp',src_video='$src_video',img_uni_1='$img_uni_1',img_uni_2='$img_uni_2',img_uni_3='$img_uni_3' WHERE id_universidad='$admin'"; */
+                      /* $insertar2="INSERT INTO universidades (id_universidad, nombre_uni, telefono_uni, correo_uni, id_municipio, logo_uni, id_usu_uni, latitud, longitud, facebook, whatsapp, src_video,
+                      img_uni_1, img_uni_2, img_uni_3) VALUES ('$admin', '$nombre_uni', '$telefono_uni','$correo_uni','$id_municipio','$logo_uni','$admin','$latitud','$longitud','$facebook','$whatsapp',
+                      '$src_video','$img_uni_1','$img_uni_2','$img_uni_3')"; */
                     
-                        $ejecutar=mysqli_query($conexion,$actualizar) or die ("Error en la consulta a la base de datos x1");
+                       
+
+                        /* $ejecutar2=mysqli_query($conexion,$insertar2) or die ("Error en la consulta a la base de datos x1"); */
                         
-                        if($ejecutar){
-                            echo "sdfghjkl";
+                        //if($ejecutar){
+                            //echo "sdfghjkl";
                           //$actualizar2 = "UPDATE conferencias SET nombre_conferencia='$nombre_conferencia', src_conferencia ='$src_conferencia' WHERE id_universidad = $admin";
                           //$ejecutar2=mysqli_query($conexion,$actualizar2) or die ("Error en la consulta a la base de datos");
                           //if($ejecutar2){
@@ -123,9 +157,9 @@ latitud='$latitud',longitud='$longitud',facebook='$facebook',whatsapp='$whatsapp
                           //else{
                             //echo "<script>alert('No se han insertado los datos correctamente x2')</script>";
                           //}
-                        }else{
-                            echo "<script>alert('No se han insertado los datos correctamente x1')</script>";
-                        }
+                        //}else{
+                            //echo "<script>alert('No se han insertado los datos correctamente x1')</script>";
+                        //}
                     }
                 
 ?>

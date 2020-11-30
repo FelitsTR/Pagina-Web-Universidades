@@ -159,8 +159,8 @@
                     <input required type="text" id="nombre_uni" value="<?php echo $nombre_uni?>" placeholder="Nombre Universidad" class="form-control descrip" name="nombre_uni" />
                   </div>
                   <div class="form-group">
-                    <select required name="id_municipio" value="<?php echo $id_municipio?>" class="form-control descrip">
-                      <option value="0">Municipio</option>
+                    <select required name="id_municipio" class="form-control descrip">
+                      <option value="1">Municipio</option><!-- Arreglar esto -->
                       <?php while($row = $resultado_m->fetch_assoc()) { ?>
                         <option value="<?php echo $row['id_municipio']; ?>"><?php echo $row['nombre_muni']; ?></option>
                       <?php } ?>

@@ -162,15 +162,6 @@
           ?>
           </div>
         </div>
-
-        <div class="portfolio-description">
-          <h2>Introducción a la Universidad</h2>
-          <p>
-            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-          </p>
-        </div>
         <div class="portfolio-description">
           <h2>Contenido Multimedia</h2>
           <div class="embed-responsive embed-responsive-4by3">
@@ -222,7 +213,7 @@
                 $img_ofer_11 = $columna['img_ofer_1'];
                 $img_ofer_21 = $columna['img_ofer_2'];
                 $img_ofer_31 = $columna['img_ofer_3'];
-                echo ("<p><h5>Pediodo Academico: $periodo1</h5></p><p><h5>Duración de la Carrera: $years1 años y $meses1 meses</h5></p><p><h5>Descrición de la carrera:</h5> <br> $descripcion1</p><p><h5>Objetivo:</h5> <br> $objetivo1</p><p><h5>Perfil de Ingreso:</h5> <br> $perfil_ingreso1</p><p><h5>Perfil de Egreso: </h5><br> $perfil_egreso1</p><p><a href='$plan_estudio1' target='_blank'><h5>Plan de Estudios</h5></a></p><p><a href='$src_doc1' target='_blank'><h5>Documento Informativo</h5></a></p><p><iframe class='embed-responsive-item' src='$carrera_video1'></iframe> <br><img src='$img_ofer_11' width='300' height='200'><img src='$img_ofer_21' width='300' height='200'><img src='$img_ofer_31' width='300' height='200'></p>");
+                echo ("<p><h5>Pediodo Academico: $periodo1</h5></p><p><h5>Duración de la Carrera: $years1 años y $meses1 meses</h5></p><p><h5>Descrición de la carrera:</h5> <br> $descripcion1</p><p><h5>Objetivo:</h5> <br> $objetivo1</p><p><h5>Perfil de Ingreso:</h5> <br> $perfil_ingreso1</p><p><h5>Perfil de Egreso: </h5><br> $perfil_egreso1</p><p><a href='$plan_estudio1' target='_blank'><h5>Plan de Estudios</h5></a></p><p><a href='$src_doc1' target='_blank'><h5>Documento Informativo</h5></a></p><p><center><iframe class='embed-responsive-item' src='$carrera_video1'></iframe></center><br><img id='imgcarr' src='$img_ofer_11' width='300' height='200'><img id='imgcarr' src='$img_ofer_21' width='300' height='200'><img id='imgcarr' src='$img_ofer_31' width='300' height='200'></p>");
               ?>
             </div>
             <div id="carrera2">
@@ -262,7 +253,7 @@
                 $img_ofer_22 = $columna['img_ofer_1'];
                 $img_ofer_22 = $columna['img_ofer_2'];
                 $img_ofer_32 = $columna['img_ofer_3'];
-                echo ("<p><h5>Pediodo Academico: $periodo2</h5></p><p><h5>Duración de la Carrera: $years2 años y $meses2 meses</h5></p><p><h5>Descrición de la carrera:</h5> <br> $descripcion2</p><p><h5>Objetivo:</h5> <br> $objetivo2</p><p><h5>Perfil de Ingreso:</h5> <br> $perfil_ingreso2</p><p><h5>Perfil de Egreso: </h5><br> $perfil_egreso2</p><p><a href='$plan_estudio2' target='_blank'><h5>Plan de Estudios</h5></a></p><p><a href='$src_doc2' target='_blank'><h5>Documento Informativo</h5></a></p><p><iframe class='embed-responsive-item' src='$carrera_video2'></iframe> <br><img src='$img_ofer_22' width='300' height='200'><img src='$img_ofer_22' width='300' height='200'><img src='$img_ofer_32' width='300' height='200'></p>");
+                echo ("<p><h5>Pediodo Academico: $periodo2</h5></p><p><h5>Duración de la Carrera: $years2 años y $meses2 meses</h5></p><p><h5>Descrición de la carrera:</h5> <br> $descripcion2</p><p><h5>Objetivo:</h5> <br> $objetivo2</p><p><h5>Perfil de Ingreso:</h5> <br> $perfil_ingreso2</p><p><h5>Perfil de Egreso: </h5><br> $perfil_egreso2</p><p><a href='$plan_estudio2' target='_blank'><h5>Plan de Estudios</h5></a></p><p><a href='$src_doc2' target='_blank'><h5>Documento Informativo</h5></a></p><p><center><iframe class='embed-responsive-item' src='$carrera_video2'></iframe></center> <br><img id='imgcarr' src='$img_ofer_22' width='300' height='200'><img id='imgcarr' src='$img_ofer_22' width='300' height='200'><img id='imgcarr' src='$img_ofer_32' width='300' height='200'></p>");
               ?>
             </div>
           </div>
@@ -274,7 +265,7 @@
             $columna=mysqli_fetch_array($ejecutar);
             $conferencia = $columna['nombre_conferencia'];
             $srcconferencia = $columna['src_conferencia'];
-            echo ("<h5>Conferencia: $conferencia</h5><p><iframe class='embed-responsive-item' src='$srcconferencia'></iframe></p>");
+            echo ("<h5>Conferencia: $conferencia</h5><p><center><iframe class='embed-responsive-item' src='$srcconferencia'></iframe></center></p>");
           ?>
         </div>
       </div>

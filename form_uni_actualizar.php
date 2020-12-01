@@ -9,7 +9,7 @@
                   
       $consulta="SELECT * FROM universidades WHERE id_universidad='$admin'";
       $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
-
+      mysqli_set_charset($conexion,"utf8");
       $columna=mysqli_fetch_array($ejecutar);
       $nombre_uni = $columna['nombre_uni'];
       $telefono_uni = $columna['telefono_uni'];
@@ -26,6 +26,7 @@
       $img_uni_3=$columna['img_uni_3'];
       //$nombre_conferencia = $columna['nombre_conferencia'];
       //$src_conferencia = $columna['src_conferencia'];
+      
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -252,12 +253,14 @@
 
         Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a><br>
         <br>¿Tienes problemas con la página? <a href="javascript:document.getElementById('soporte').style.display='block';void0">Mandanos un mensaje</a>
-        <div id="soporte">
-          <br><textarea name="textareasoporte" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
-          <div class="boton-soporte">
-            <br><button type="submit">Enviar mensaje</button>
-          </div>
-        </div> 
+        <form method="POST">
+                      <div id="soporte">
+                        <br><textarea name="falla" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
+                        <div class="boton-soporte">
+                          <br><button name="Mensaje" type="submit">Enviar mensaje</button>
+                        </div>
+                      </div> 
+                      </form>
       </div>
     </div>
 

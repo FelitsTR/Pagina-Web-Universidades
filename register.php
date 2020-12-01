@@ -10,6 +10,7 @@
 				// acción en caso correcto
 				$Query = "INSERT INTO usuarios (nombre_usu, telefono_usu, correo_usu, clave_usu, motivo_usu) VALUES ('$nombre_usu', '$telefono_usu', '$correo_usu', '$clave_usu', '$motivo_usu')";
 				$Result = mysqli_query($conexion, $Query);
+				mysqli_set_charset($conexion,"utf8");
 				echo "<h3 class=\"ok\">Se ha creado su cuenta</h3>";
 				$asunto = "Felicidades, te has registrado exitosamente.";
 				$msg = "Nos alegra que estes aquí.

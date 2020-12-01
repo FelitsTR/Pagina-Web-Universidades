@@ -7,6 +7,7 @@ if (isset($_POST['Iniciar_1'])) {
 
     $consulta = "SELECT * FROM usuarios WHERE correo_usu='$correo_usu' and clave_usu='$clave_usu'";
     $query = mysqli_query($conexion,$consulta);
+    mysqli_set_charset($conexion,"utf8");
         if(isset($_POST['correo_usu']) && isset($_POST['clave_usu'])){
         {
             if(mysqli_num_rows($query) > 0)

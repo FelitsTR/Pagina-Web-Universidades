@@ -9,6 +9,7 @@
     $falla = $_POST['falla'];
     $query = ("INSERT INTO comentarios (falla) VALUE ('$falla')");
     $Result = mysqli_query($conexion, $query);
+    mysqli_set_charset($conexion,"utf8");
     echo '<script> alert("Mensaje enviado, gracias por notificar"); </script>';
   }
 ?>
@@ -68,7 +69,7 @@
     <div class="container d-flex align-items-center">
 
     <div class="logo mr-auto">
-      <h1 class="text-light"><a href="index.html">Feria Virtual</a></h1>
+      <h1 class="text-light">Feria Virtual</a></h1>
 
     </div>
 
@@ -96,12 +97,13 @@
           <?php
               $consulta="SELECT nombre_uni FROM universidades WHERE id_universidad='$iduni'";
               $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+              mysqli_set_charset($conexion,"utf8");
               $columna=mysqli_fetch_array($ejecutar);
               $nombre_uni = $columna['nombre_uni'];
               echo ("<h2>$nombre_uni</h2>");
             ?>
           <ol>
-            <li><a href="index.html">Home</a></li>
+            
             <li>Mi universidad</li>
           </ol>
         </div>
@@ -119,6 +121,7 @@
           <?php
               $consulta="SELECT img_uni_1, img_uni_2, img_uni_3 FROM universidades WHERE id_universidad='$iduni'";
               $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+              mysqli_set_charset($conexion,"utf8");
               $columna=mysqli_fetch_array($ejecutar);
               $img_uni_1=$columna['img_uni_1'];
               $img_uni_2=$columna['img_uni_2'];
@@ -135,6 +138,7 @@
             <?php
                 $consulta="SELECT telefono_uni, correo_uni FROM universidades WHERE id_universidad='$iduni'";
                 $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+                mysqli_set_charset($conexion,"utf8");
                 $columna=mysqli_fetch_array($ejecutar);
                 $telefono_uni = $columna['telefono_uni'];
                 $correo_uni = $columna['correo_uni'];
@@ -151,11 +155,13 @@
           <?php
             $consulta1="SELECT longitud FROM universidades WHERE id_universidad='$iduni'";
             $ejecutar1=mysqli_query($conexion,$consulta1) or die ("Error en la consulta a la base de datos x1");
+            mysqli_set_charset($conexion,"utf8");
             $columna1=mysqli_fetch_array($ejecutar1);
             $longitud=$columna1['longitud'];
 
             $consulta2="SELECT latitud FROM universidades WHERE id_universidad='$iduni'";
             $ejecutar2=mysqli_query($conexion,$consulta2) or die ("Error en la consulta a la base de datos x1");
+            mysqli_set_charset($conexion,"utf8");
             $columna2=mysqli_fetch_array($ejecutar2);
             $latitud=$columna2['latitud'];
             echo "<iframe src='http://maps.google.com/maps?q=".$longitud.",".$latitud."&z=15&output=embed' width='500' height='600' frameborder='0' style='border:0'></iframe>";
@@ -168,6 +174,7 @@
             <?php
                 $consulta="SELECT src_video FROM universidades WHERE id_universidad='$iduni'";
                 $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+                mysqli_set_charset($conexion,"utf8");
                 $columna=mysqli_fetch_array($ejecutar);
                 $src_video = $columna['src_video'];
                 echo ("<iframe class='embed-responsive-item' src='$src_video'></iframe>");
@@ -182,6 +189,7 @@
               <?php
                 $consulta="SELECT carrera FROM oferta_educativa WHERE id_universidad='$iduni' AND id_oferta='$idofer1'";
                 $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+                mysqli_set_charset($conexion,"utf8");
                 $columna=mysqli_fetch_array($ejecutar);
                 $carrera1 = $columna['carrera'];
                 echo ("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$carrera1</a></h5>");
@@ -192,6 +200,7 @@
               <?php
                 $consulta="SELECT carrera FROM oferta_educativa WHERE id_universidad='$iduni' AND id_oferta='$idofer1'";
                 $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+                mysqli_set_charset($conexion,"utf8");
                 $columna=mysqli_fetch_array($ejecutar);
                 $carrera1 = $columna['carrera'];
                 echo ("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$carrera1</a></h5>");
@@ -199,6 +208,7 @@
               <?php
                 $consulta="SELECT descripcion, periodo_academico, objetivo, perfil_ingreso, perfil_egreso, plan_estudio, carrera_video, src_doc, years, meses, img_ofer_1, img_ofer_2, img_ofer_3 FROM oferta_educativa WHERE id_universidad='$iduni' AND id_oferta='$idofer1'";
                 $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+                mysqli_set_charset($conexion,"utf8");
                 $columna=mysqli_fetch_array($ejecutar);
                 $descripcion1 = $columna['descripcion'];
                 $periodo1 = $columna['periodo_academico'];
@@ -222,6 +232,7 @@
               <?php
                 $consulta="SELECT carrera FROM oferta_educativa WHERE id_universidad='$iduni' AND id_oferta='$idofer2'";
                 $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+                mysqli_set_charset($conexion,"utf8");
                 $columna=mysqli_fetch_array($ejecutar);
                 $carrera2 = $columna['carrera'];
                 echo ("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$carrera2</a></h5>");
@@ -232,6 +243,7 @@
               <?php
                 $consulta="SELECT carrera FROM oferta_educativa WHERE id_universidad='$iduni' AND id_oferta='$idofer2'";
                 $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+                mysqli_set_charset($conexion,"utf8");
                 $columna=mysqli_fetch_array($ejecutar);
                 $carrera2 = $columna['carrera'];
                 echo ("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$carrera2</a></h5>");
@@ -239,6 +251,7 @@
               <?php
                 $consulta="SELECT descripcion, periodo_academico, objetivo, perfil_ingreso, perfil_egreso, plan_estudio, carrera_video, src_doc, years, meses, img_ofer_1, img_ofer_2, img_ofer_3 FROM oferta_educativa WHERE id_universidad='$iduni' AND id_oferta='$idofer2'";
                 $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+                mysqli_set_charset($conexion,"utf8");
                 $columna=mysqli_fetch_array($ejecutar);
                 $descripcion2 = $columna['descripcion'];
                 $periodo2 = $columna['periodo_academico'];
@@ -262,6 +275,7 @@
           <?php
             $consulta="SELECT nombre_conferencia, src_conferencia FROM conferencias WHERE id_universidad='$iduni'";
             $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+            mysqli_set_charset($conexion,"utf8");
             $columna=mysqli_fetch_array($ejecutar);
             $conferencia = $columna['nombre_conferencia'];
             $srcconferencia = $columna['src_conferencia'];
@@ -295,12 +309,14 @@
 
         Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a><br>
         <br>¿Tienes problemas con la página? <a href="javascript:document.getElementById('soporte').style.display='block';void0">Mandanos un mensaje</a>
-        <div id="soporte">
-          <br><textarea name="textareasoporte" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
-          <div class="boton-soporte">
-            <br><button type="submit">Enviar mensaje</button>
-          </div>
-        </div> 
+        <form method="POST">
+                      <div id="soporte">
+                        <br><textarea name="falla" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
+                        <div class="boton-soporte">
+                          <br><button name="Mensaje" type="submit">Enviar mensaje</button>
+                        </div>
+                      </div> 
+                      </form>
       </div>
     </div>
 

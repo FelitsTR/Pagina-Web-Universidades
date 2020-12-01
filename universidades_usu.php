@@ -6,6 +6,7 @@
     $falla = $_POST['falla'];
     $query = ("INSERT INTO comentarios (falla) VALUE ('$falla')");
     $Result = mysqli_query($conexion, $query);
+    mysqli_set_charset($conexion,"utf8");
     echo '<script> alert("Mensaje enviado, gracias por notificar"); </script>';
   }
 ?>
@@ -71,7 +72,7 @@
       <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="index.html">Feria Virtual</a></h1>
+      <h1 class="text-light">Feria Virtual</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -102,39 +103,37 @@
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-end" data-aos="fade-up">
-          <li data-filter="*" class="filter-active">TODAS</li>
-          <li data-filter=".filter-municipio">Municipio</li>
-          <li data-filter=".filter-carrera">Carrera</li>
+          <li data-filter="*" class="filter-active">Todas</li>
           <li data-filter=".filter-favoritos">Favoritas</li>
         </ul>
 
         <div class="row portfolio-container" data-aos="fade-up">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-municipio filter-favoritos">
-            <div class="portfolio-img"><img src="assets/img/portafolio/portafolio-1.png" class="img-fluid" ></div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-favoritos">
+            <div class="portfolio-img"><img src="https://lh3.googleusercontent.com/proxy/GIYdpsMVvPyGQm0_ugbZiNe2MeZ-MkkqMYwN3SUbx5k2n39KHhBfPIRheqhep8CNvUCPAL5qzAMCwjXkZlg1J1zMrOULrDDGxfwMeLyI6uC_nO6sIZCEjHaYZ1uyhYsdiLw-o7LVgtQSx7tArlzQOq0" class="img-fluid" ></div>
             <div class="portfolio-info">
               <h4>Universidad Politécnica de Quintana Roo</h4>
-              <a href="assets/img/portafolio/portafolio-1.png" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="https://lh3.googleusercontent.com/proxy/GIYdpsMVvPyGQm0_ugbZiNe2MeZ-MkkqMYwN3SUbx5k2n39KHhBfPIRheqhep8CNvUCPAL5qzAMCwjXkZlg1J1zMrOULrDDGxfwMeLyI6uC_nO6sIZCEjHaYZ1uyhYsdiLw-o7LVgtQSx7tArlzQOq0" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
               <a href="vista_usu_uni.php?iduni=1&idofer1=1&idofer2=2" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-carrera">
-            <div class="portfolio-img"><img src="assets/img/portafolio/portafolio-2.png" class="img-fluid" alt=""></div>
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-img"><img src="https://lh3.googleusercontent.com/proxy/fFlAB5CozH0JnShs2jSG8-NCsO5rw0R_taD15nSmgDrYW8RaBiKM6Jg4fxTSFxstzpO3SSuopDFKUiDI5jRklO0PCeF0o5_Gvq2dkBMBxA98AyNwaKMhBmvqoB7C2u0" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Universidad Tecnológica de la Riviera Maya</h4>
-              <a href="assets/img/portafolio/" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="https://lh3.googleusercontent.com/proxy/fFlAB5CozH0JnShs2jSG8-NCsO5rw0R_taD15nSmgDrYW8RaBiKM6Jg4fxTSFxstzpO3SSuopDFKUiDI5jRklO0PCeF0o5_Gvq2dkBMBxA98AyNwaKMhBmvqoB7C2u0" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
               <a href="vista_usu_uni.php?iduni=3&idofer1=5&idofer2=6" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
 
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-municipio">
-            <div class="portfolio-img"><img src="assets/img/portafolio/portafolio-4.jpeg" class="img-fluid" alt=""></div>
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-img"><img src="https://universidadesdemexico.mx/logos/original/logo-universidad-intercultural-maya-de-quintana-roo.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>Universidad Intercultural Maya de Quintana Roo</h4>
-              <a href="assets/img/portafolio/portafolio-4.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+              <a href="https://universidadesdemexico.mx/logos/original/logo-universidad-intercultural-maya-de-quintana-roo.png" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
               <a href="vista_usu_uni.php?iduni=2&idofer1=3&idofer2=4" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
@@ -166,12 +165,14 @@
 
         Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a><br>
         <br>¿Tienes problemas con la página? <a href="javascript:document.getElementById('soporte').style.display='block';void0">Mandanos un mensaje</a>
-        <div id="soporte">
-          <br><textarea name="textareasoporte" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
-          <div class="boton-soporte">
-            <br><button type="submit">Enviar mensaje</button>
-          </div>
-        </div> 
+        <form method="POST">
+                      <div id="soporte">
+                        <br><textarea name="falla" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
+                        <div class="boton-soporte">
+                          <br><button name="Mensaje" type="submit">Enviar mensaje</button>
+                        </div>
+                      </div> 
+                      </form>
       </div>
     </div>
 

@@ -4,6 +4,7 @@
     $falla = $_POST['falla'];
     $query = ("INSERT INTO comentarios (falla) VALUE ('$falla')");
     $Result = mysqli_query($conexion, $query);
+    mysqli_set_charset($conexion,"utf8");
     echo '<script> alert("Mensaje enviado, gracias por notificar"); </script>';
   }
 ?>
@@ -89,9 +90,10 @@
       <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="carousel-container">
-          <img class="animate__animated animate__fadeInDown" src="images/bg-01.png"></img>
+        <p class="animate__animated fanimate__adeInUp">Universidad Politécnica de Quintana Roo</p>
+          <img class="animate__animated animate__fadeInDown" src="https://lh3.googleusercontent.com/proxy/GIYdpsMVvPyGQm0_ugbZiNe2MeZ-MkkqMYwN3SUbx5k2n39KHhBfPIRheqhep8CNvUCPAL5qzAMCwjXkZlg1J1zMrOULrDDGxfwMeLyI6uC_nO6sIZCEjHaYZ1uyhYsdiLw-o7LVgtQSx7tArlzQOq0" ></img>
           <!-- <h2 class="animate__animated animate__fadeInDown">Imagen 1</h2> -->
-          <p class="animate__animated fanimate__adeInUp">Lorem sdfsdfsdfsdf</p>
+          
           <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Ver más</a>
         </div>
       </div>
@@ -99,17 +101,17 @@
       <!-- Slide 2 -->
       <div class="carousel-item">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Imagen 2</h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+        <p class="animate__animated fanimate__adeInUp">Universidad Intercultural Maya de Quintana Roo</p>
+          <img class="animate__animated animate__fadeInDown" src="https://universidadesdemexico.mx/logos/original/logo-universidad-intercultural-maya-de-quintana-roo.png"></img>
           <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Ver más</a>
         </div>
       </div>
 
       <!-- Slide 3 -->
       <div class="carousel-item">
-        <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Imagen 3</h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+         <div class="carousel-container"> 
+        <p class="animate__animated fanimate__adeInUp">Universidad Tecnológica de la Riviera Maya</p>
+          <img class="animate__animated animate__fadeInDown" src="https://lh3.googleusercontent.com/proxy/fFlAB5CozH0JnShs2jSG8-NCsO5rw0R_taD15nSmgDrYW8RaBiKM6Jg4fxTSFxstzpO3SSuopDFKUiDI5jRklO0PCeF0o5_Gvq2dkBMBxA98AyNwaKMhBmvqoB7C2u0" ></img>
           <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Ver más</a>
         </div>
       </div>

@@ -21,6 +21,7 @@
      img_uni_1, img_uni_2, img_uni_3) VALUES ('$admin', '$nombre_uni', '$telefono_uni','$correo_uni','$id_municipio','$logo_uni','$admin','$latitud','$longitud','$facebook','$whatsapp',
      '$src_video','$img_uni_1','$img_uni_2','$img_uni_3')";
       $query_insertar=mysqli_query($conexion,$insertar);
+      mysqli_set_charset($conexion,"utf8");
       if($query_insertar){
         echo "Se han insertado correctamente los datos de la universidad";
       }else{

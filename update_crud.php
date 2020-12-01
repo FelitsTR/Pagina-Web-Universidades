@@ -22,6 +22,7 @@
         logo_uni='$logo_uni', id_usu_uni='$admin',latitud='$latitud',longitud='$longitud',facebook='$facebook',whatsapp='$whatsapp',src_video='$src_video',img_uni_1='$img_uni_1',
         img_uni_2='$img_uni_2', img_uni_3='$img_uni_3' WHERE id_universidad='$admin'";
         $query_actualizar=mysqli_query($conexion,$actualizar);
+        mysqli_set_charset($conexion,"utf8");
         if($query_actualizar){
           echo "Se han actualizado correctamente los datos de la universidad";
         }else{

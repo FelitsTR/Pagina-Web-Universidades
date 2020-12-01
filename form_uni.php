@@ -135,12 +135,14 @@
 
         Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a><br>
         <br>¿Tienes problemas con la página? <a href="javascript:document.getElementById('soporte').style.display='block';void0">Mandanos un mensaje</a>
-        <div id="soporte">
-          <br><textarea name="textareasoporte" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
-          <div class="boton-soporte">
-            <br><button type="submit">Enviar mensaje</button>
-          </div>
-        </div> 
+        <form method="POST">
+                      <div id="soporte">
+                        <br><textarea name="falla" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
+                        <div class="boton-soporte">
+                          <br><button name="Mensaje" type="submit">Enviar mensaje</button>
+                        </div>
+                      </div> 
+                      </form>
       </div>
     </div>
 

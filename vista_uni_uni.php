@@ -116,34 +116,73 @@
               $columna=mysqli_fetch_array($ejecutar);
               $img_uni_1=$columna['img_uni_1'];
               echo ("<img src='$img_uni_1' class='img-fluid'>");
+
+              $consulta="SELECT img_uni_2 FROM universidades WHERE id_universidad='$admin'";
+              $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+              $columna=mysqli_fetch_array($ejecutar);
+              $img_uni_2=$columna['img_uni_2'];
+              echo ("<img src='$img_uni_2' class='img-fluid'>");
+
+              $consulta="SELECT img_uni_3 FROM universidades WHERE id_universidad='$admin'";
+              $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+              $columna=mysqli_fetch_array($ejecutar);
+              $img_uni_3=$columna['img_uni_3'];
+              echo ("<img src='$img_uni_3' class='img-fluid'>");
             ?>
-            <img src="assets/img/portafolio/portfolio-details-2.jpg" class="img-fluid">
-            <img src="assets/img/portafolio/portfolio-details-3.jpg" class="img-fluid">
+            <!--<img src="assets/img/portafolio/portfolio-details-2.jpg" class="img-fluid">
+            <img src="assets/img/portafolio/portfolio-details-3.jpg" class="img-fluid">-->
           </div>
 
           <div class="portfolio-info">
             <h3>Contacto</h3>
             <ul>
-              <li><strong>Teléfono</strong>: 9982153515</li>
-              <li><strong>Direccion</strong>: Dirección Ejemplo</li>
-              <li><strong>Correo Electronico</strong>: <a href="#">CorreoEjemplo@ejemplo.eje</a></li>
+            <?php
+          $consulta1="SELECT telefono_uni FROM universidades WHERE id_universidad='$admin'";
+          $ejecutar1=mysqli_query($conexion,$consulta1) or die ("Error en la consulta a la base de datos x1");
+          $columna1=mysqli_fetch_array($ejecutar1);
+          $telefono=$columna1['telefono_uni'];
+
+          $consulta2="SELECT correo_uni FROM universidades WHERE id_universidad='$admin'";
+              $ejecutar2=mysqli_query($conexion,$consulta2) or die ("Error en la consulta a la base de datos x1");
+              $columna2=mysqli_fetch_array($ejecutar2);
+              $correo=$columna2['correo_uni'];
+          ?>
+              <li><strong>Teléfono</strong>: <?php echo $telefono; ?></li>
+              <li><strong>Correo Electronico</strong>: <a href="#"><?php echo $correo; ?></a></li>
             </ul>
           </div>
 
         </div>
-
         <div class="portfolio-description">
-          <h2>Ejemplo de introducción a universidad</h2>
-          <p>
-            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-          </p>
+          <h2>Ubicación</h2>
+          <div class="embed-responsive embed-responsive-4by3">
+          <?php
+          $consulta1="SELECT longitud FROM universidades WHERE id_universidad='$admin'";
+          $ejecutar1=mysqli_query($conexion,$consulta1) or die ("Error en la consulta a la base de datos x1");
+          $columna1=mysqli_fetch_array($ejecutar1);
+          $longitud=$columna1['longitud'];
+
+          $consulta2="SELECT latitud FROM universidades WHERE id_universidad='$admin'";
+              $ejecutar2=mysqli_query($conexion,$consulta2) or die ("Error en la consulta a la base de datos x1");
+              $columna2=mysqli_fetch_array($ejecutar2);
+              $latitud=$columna2['latitud'];
+            echo "<iframe src='http://maps.google.com/maps?q=".$longitud.",".$latitud."&z=15&output=embed' width='500' height='600' frameborder='0' style='border:0'></iframe>";
+          ?>
+          </div>
         </div>
+
+
         <div class="portfolio-description">
           <h2>Contenido Multimedia</h2>
           <div class="embed-responsive embed-responsive-4by3">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/W5EWhwrf1R4"></iframe>
+          <?php
+          $consulta1="SELECT src_video FROM universidades WHERE id_universidad='$admin'";
+          $ejecutar1=mysqli_query($conexion,$consulta1) or die ("Error en la consulta a la base de datos x1");
+          $columna1=mysqli_fetch_array($ejecutar1);
+          $video=$columna1['src_video'];
+          ?>
+          <!--<iframe src="https://drive.google.com/file/d/1sf5Us0AoSnv2UR_MCSwMHn51uYhdfOwh/preview" width="640" height="480"></iframe>-->
+            <iframe class="embed-responsive-item" src="<?php echo $video; ?>"></iframe>
           </div>
         </div>
         <div class="portfolio-description">

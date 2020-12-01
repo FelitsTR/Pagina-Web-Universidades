@@ -95,7 +95,7 @@
           <label id="iconoMenu" for="btn-menu"><img src="images/icons/icono-menu.png" height="30px"></label>
         
           <ul class="menu">
-            <li><a href="universidades_uni.php">Inicio</a></li>
+            <li><a href="cerrar_sesion.php">Cerrrar sesión</a></li>
             <li><a href="vista_uni_uni.php">Mi Universidad</a></li>
           </ul>
         </nav><!-- .nav-menu -->

@@ -39,7 +39,7 @@
             <!-- Datos Generales -->
             <div class="card box mt-4 card-child">
               <div class="card-header head">
-                <h4 class="h4">Oferta Educativa</h4>
+                <h4 class="h4">Actualizar Carrera</h4>
               </div>
               <form action="" method="POST" id="note-form" class="card-body">
                 <input id="opc_1" name="Opciones1" type="radio" value="Opciones" onchange="funcion1()">
@@ -113,7 +113,7 @@
                       <input required type="url" id="plan_estudio" placeholder="Plan de estudio" class="form-control descrip" value="<?php echo $plan_estudio ?>" name="plan_estudio" />
                     </div>
                   </div>
-                <input type="submit" value="Guardar" class="btn btn-primary btn-block button-submit" name="actualizar" />
+                <input type="submit" value="Actualizar" class="btn btn-primary btn-block button-submit" name="actualizar" />
                 <script>
                   document.getElementById("Ocultar_1").style.display = "none";
                   document.getElementById("Ocultar_2").style.display = "none";

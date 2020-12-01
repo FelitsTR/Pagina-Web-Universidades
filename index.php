@@ -66,31 +66,23 @@
   <header id="header"  class="fixed-top d-flex align-items-center  header-transparent ">
     -->
     <header id="header" class="d-flex align-items-center  header-transparent">
-
       <div class="container d-flex align-items-center">
-
       <div class="logo mr-auto">
         <h1 class="text-light">Feria Virtual</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
-
       <!--<nav class="nav-menu d-none d-lg-block">-->
         <nav class="el-menu">
           <input type="checkbox" id="btn-menu">
           <label id="iconoMenu" for="btn-menu"><img src="images/icons/icono-menu.png" height="30px"></label>
-          
           <ul class="menu">
             <li><a href="login_usu.php">Iniciar sesión</a></li>
             <li><a href="register.php">Registrarse</a></li>
           </ul>
-      
-      
         </nav><!-- .nav-menu -->
-
       </div>
     </header><!-- End Header -->
-      
   <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
     <div id="heroCarousel" class="container carousel carousel-fade" data-ride="carousel">
 
@@ -323,15 +315,17 @@
 
                       Diseñado por la <a href="http://www.upqroo.edu.mx/" target="_blank">Universidad Politecnica de Quintana Roo</a><br>
                       <br>¿Tienes problemas con la página? <a href="javascript:document.getElementById('soporte').style.display='block';void0">Mandanos un mensaje</a>
+                      <form method="POST">
                       <div id="soporte">
-                        <br><textarea name="textareasoporte" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
+                        <br><textarea name="falla" id="" cols="50" rows="5" placeholder="Describe tu problema"></textarea>
                         <div class="boton-soporte">
-                          <br><button type="submit">Enviar mensaje</button>
+                          <br><button name="Mensaje" type="submit">Enviar mensaje</button>
                         </div>
                       </div> 
+                      </form>
                     </div>
                   </div>
-                                 <!-- ======= Top Bar ======= -->
+                  <!-- ======= Top Bar ======= -->
                 </footer>
        <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a> 
         <!-- Vendor JS Files -->
@@ -350,5 +344,6 @@
       input{display: inline-block;
        background-color:#444444;
         width: 14;
+      }
     </style>
 </html>

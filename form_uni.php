@@ -75,7 +75,7 @@
           <label id="iconoMenu" for="btn-menu"><img src="images/icons/icono-menu.png" height="30px"></label>
         
           <ul class="menu">
-            <li><a href="universidades_uni.php">Inicio</a></li>
+            <li><a href="cerrar_sesion.php">Cerrrar sesión</a></li>
             <li><a href="vista_uni_uni.php">Mi Universidad</a></li>
           </ul>
         </nav><!-- .nav-menu -->
@@ -93,7 +93,6 @@
           <div class="text-center">
           <p>ADMINISTRA TU INFORMACIóN AQUÍ</p>
           </div>
-          
         </div>
         <div class="row col-12 justify-content-center " data-aos="fade-up">
           
@@ -104,15 +103,11 @@
                 $resultado_m = $mysqli->query($query_m);
             ?>
             <!-- Datos Generales -->
-            
-              
                 <div>
                   <button type="button" class="btn btn-primary btn-lg" onclick="window.location='form_uni_insertar.php' ">Insertar</button>
                   <button type="button" class="btn btn-primary btn-lg" onclick="window.location='form_uni_actualizar.php' ">Actualizar</button>
                   <button type="button" class="btn btn-primary btn-lg" onclick="window.location='form_ofe.php' ">Carreras</button>
                 </div>
-              
-            
           </div>
         </div>
     </div>

@@ -67,7 +67,7 @@
     <div class="container d-flex align-items-center">
 
     <div class="logo mr-auto">
-      <h1 class="text-light">Feria Virtual</h1>
+      <h1 class="text-light"><a href="index.html">Feria Virtual</a></h1>
 
     </div>
 
@@ -76,7 +76,6 @@
       <label id="iconoMenu" for="btn-menu"><img src="images/icons/icono-menu.png" height="30px"></label>
       
       <ul class="menu">
-        <li><a href="cerrar_sesion.php">Cerrrar sesión</a></li>
         <li><a href="form_uni.php">Subir o actualizar información</a></li>
       </ul>
     </nav><!-- .nav-menu -->
@@ -93,9 +92,15 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Universidad Ejemplo</h2>
+          <?php
+              $consulta="SELECT nombre_uni FROM universidades WHERE id_universidad='$admin'";
+              $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+              $columna=mysqli_fetch_array($ejecutar);
+              $nombre_uni = $columna['nombre_uni'];
+              echo ("<h2>$nombre_uni</h2>");
+            ?>
           <ol>
-            
+            <li><a href="index.html">Home</a></li>
             <li>Mi universidad</li>
           </ol>
         </div>
@@ -110,49 +115,35 @@
         <div class="portfolio-details-container" data-aos="fade-up">
 
           <div class="owl-carousel portfolio-details-carousel">
-          <?php
-              $consulta="SELECT img_uni_1 FROM universidades WHERE id_universidad='$admin'";
+            <?php
+              $consulta="SELECT img_uni_1, img_uni_2, img_uni_3 FROM universidades WHERE id_universidad='$admin'";
               $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
               $columna=mysqli_fetch_array($ejecutar);
               $img_uni_1=$columna['img_uni_1'];
-              echo ("<img src='$img_uni_1' class='img-fluid'>");
-
-              $consulta="SELECT img_uni_2 FROM universidades WHERE id_universidad='$admin'";
-              $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
-              $columna=mysqli_fetch_array($ejecutar);
               $img_uni_2=$columna['img_uni_2'];
-              echo ("<img src='$img_uni_2' class='img-fluid'>");
-
-              $consulta="SELECT img_uni_3 FROM universidades WHERE id_universidad='$admin'";
-              $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
-              $columna=mysqli_fetch_array($ejecutar);
               $img_uni_3=$columna['img_uni_3'];
+              echo ("<img src='$img_uni_1' class='img-fluid'>");
+              echo ("<img src='$img_uni_2' class='img-fluid'>");
               echo ("<img src='$img_uni_3' class='img-fluid'>");
             ?>
-            <!--<img src="assets/img/portafolio/portfolio-details-2.jpg" class="img-fluid">
-            <img src="assets/img/portafolio/portfolio-details-3.jpg" class="img-fluid">-->
           </div>
 
           <div class="portfolio-info">
             <h3>Contacto</h3>
             <ul>
-            <?php
-          $consulta1="SELECT telefono_uni FROM universidades WHERE id_universidad='$admin'";
-          $ejecutar1=mysqli_query($conexion,$consulta1) or die ("Error en la consulta a la base de datos x1");
-          $columna1=mysqli_fetch_array($ejecutar1);
-          $telefono=$columna1['telefono_uni'];
-
-          $consulta2="SELECT correo_uni FROM universidades WHERE id_universidad='$admin'";
-              $ejecutar2=mysqli_query($conexion,$consulta2) or die ("Error en la consulta a la base de datos x1");
-              $columna2=mysqli_fetch_array($ejecutar2);
-              $correo=$columna2['correo_uni'];
-          ?>
-              <li><strong>Teléfono</strong>: <?php echo $telefono; ?></li>
-              <li><strong>Correo Electronico</strong>: <a href="#"><?php echo $correo; ?></a></li>
+              <?php
+                $consulta="SELECT telefono_uni, correo_uni FROM universidades WHERE id_universidad='$admin'";
+                $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+                $columna=mysqli_fetch_array($ejecutar);
+                $telefono_uni = $columna['telefono_uni'];
+                $correo_uni = $columna['correo_uni'];
+                echo ("<li><strong>Teléfono</strong>: $telefono_uni</li>");
+                echo ("<li><strong>Correo Electronico</strong>: <a href='#'>$correo_uni</a></li>");
+              ?>
             </ul>
           </div>
-
         </div>
+
         <div class="portfolio-description">
           <h2>Ubicación</h2>
           <div class="embed-responsive embed-responsive-4by3">
@@ -168,40 +159,114 @@
               $latitud=$columna2['latitud'];
             echo "<iframe src='http://maps.google.com/maps?q=".$longitud.",".$latitud."&z=15&output=embed' width='500' height='600' frameborder='0' style='border:0'></iframe>";
           ?>
-          </div>
         </div>
-
 
         <div class="portfolio-description">
           <h2>Contenido Multimedia</h2>
           <div class="embed-responsive embed-responsive-4by3">
-          <?php
-          $consulta1="SELECT src_video FROM universidades WHERE id_universidad='$admin'";
-          $ejecutar1=mysqli_query($conexion,$consulta1) or die ("Error en la consulta a la base de datos x1");
-          $columna1=mysqli_fetch_array($ejecutar1);
-          $video=$columna1['src_video'];
-          ?>
-          <!--<iframe src="https://drive.google.com/file/d/1sf5Us0AoSnv2UR_MCSwMHn51uYhdfOwh/preview" width="640" height="480"></iframe>-->
-            <iframe class="embed-responsive-item" src="<?php echo $video; ?>"></iframe>
+            <?php
+                $consulta="SELECT src_video FROM universidades WHERE id_universidad='$admin'";
+                $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+                $columna=mysqli_fetch_array($ejecutar);
+                $src_video = $columna['src_video'];
+                echo ("<iframe class='embed-responsive-item' src='$src_video'></iframe>");
+              ?>
           </div>
         </div>
+
         <div class="portfolio-description">
           <h2>Oferta educativa</h2>
           <div id="carrera1">
             <div id="carrera1-muestra">
-              <h5><a href="javascript:document.getElementById('carrera1-oculta').style.display='block'; document.getElementById('carrera1-muestra').style.display='none';void0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Licenciatura en Administración</a></h5>
+              <h5><a href="javascript:document.getElementById('carrera1-oculta').style.display='block'; document.getElementById('carrera1-muestra').style.display='none';void0">
+              <?php
+                $consulta="SELECT carrera FROM oferta_educativa WHERE id_universidad='$admin' AND id_oferta='1'";
+                $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+                $columna=mysqli_fetch_array($ejecutar);
+                $carrera1 = $columna['carrera'];
+                echo ("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$carrera1</a></h5>");
+              ?>
             </div>
             <div id="carrera1-oculta">
-              <h5><a href="javascript:document.getElementById('carrera1-oculta').style.display='none'; document.getElementById('carrera1-muestra').style.display='block';void0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Licenciatura en Administración</a></h5>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
+              <h5><a href="javascript:document.getElementById('carrera1-oculta').style.display='none'; document.getElementById('carrera1-muestra').style.display='block';void0">
+              <?php
+                $consulta="SELECT carrera FROM oferta_educativa WHERE id_universidad='$admin' AND id_oferta='1'";
+                $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+                $columna=mysqli_fetch_array($ejecutar);
+                $carrera1 = $columna['carrera'];
+                echo ("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$carrera1</a></h5>");
+              ?>
+              <?php
+                $consulta="SELECT descripcion, periodo_academico, objetivo, perfil_ingreso, perfil_egreso, plan_estudio, carrera_video, src_doc, years, meses, img_ofer_1, img_ofer_2, img_ofer_3 FROM oferta_educativa WHERE id_universidad='$admin' AND id_oferta='1'";
+                $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+                $columna=mysqli_fetch_array($ejecutar);
+                $descripcion1 = $columna['descripcion'];
+                $periodo1 = $columna['periodo_academico'];
+                $objetivo1 = $columna['objetivo'];
+                $perfil_ingreso1 = $columna['perfil_ingreso'];
+                $perfil_egreso1 = $columna['perfil_egreso'];
+                $plan_estudio1 = $columna['plan_estudio'];
+                $carrera_video1 = $columna['carrera_video'];
+                $src_doc1 = $columna['src_doc'];
+                $years1 = $columna['years'];
+                $meses1 = $columna['meses'];
+                $img_ofer_11 = $columna['img_ofer_1'];
+                $img_ofer_21 = $columna['img_ofer_2'];
+                $img_ofer_31 = $columna['img_ofer_3'];
+                echo ("<p><h5>Pediodo Academico: $periodo1</h5></p><p><h5>Duración de la Carrera: $years1 años y $meses1 meses</h5></p><p><h5>Descrición de la carrera:</h5> <br> $descripcion1</p><p><h5>Objetivo:</h5> <br> $objetivo1</p><p><h5>Perfil de Ingreso:</h5> <br> $perfil_ingreso1</p><p><h5>Perfil de Egreso: </h5><br> $perfil_egreso1</p><p><a href='$plan_estudio1' target='_blank'><h5>Plan de Estudios</h5></a></p><p><a href='$src_doc1' target='_blank'><h5>Documento Informativo</h5></a></p><p><iframe class='embed-responsive-item' src='$carrera_video1'></iframe> <br><img src='$img_ofer_11' width='300' height='200'><img src='$img_ofer_21' width='300' height='200'><img src='$img_ofer_31' width='300' height='200'></p>");
+              ?>
+            </div>
+            <div id="carrera2">
+            <div id="carrera2-muestra">
+              <h5><a href="javascript:document.getElementById('carrera2-oculta').style.display='block'; document.getElementById('carrera2-muestra').style.display='none';void0">
+              <?php
+                $consulta="SELECT carrera FROM oferta_educativa WHERE id_universidad='$admin' AND id_oferta='2'";
+                $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+                $columna=mysqli_fetch_array($ejecutar);
+                $carrera2 = $columna['carrera'];
+                echo ("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$carrera2</a></h5>");
+              ?>
+            </div>
+            <div id="carrera2-oculta">
+              <h5><a href="javascript:document.getElementById('carrera2-oculta').style.display='none'; document.getElementById('carrera2-muestra').style.display='block';void0">
+              <?php
+                $consulta="SELECT carrera FROM oferta_educativa WHERE id_universidad='$admin' AND id_oferta='2'";
+                $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+                $columna=mysqli_fetch_array($ejecutar);
+                $carrera2 = $columna['carrera'];
+                echo ("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$carrera2</a></h5>");
+              ?>
+              <?php
+                $consulta="SELECT descripcion, periodo_academico, objetivo, perfil_ingreso, perfil_egreso, plan_estudio, carrera_video, src_doc, years, meses, img_ofer_1, img_ofer_2, img_ofer_3 FROM oferta_educativa WHERE id_universidad='$admin' AND id_oferta='2'";
+                $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+                $columna=mysqli_fetch_array($ejecutar);
+                $descripcion2 = $columna['descripcion'];
+                $periodo2 = $columna['periodo_academico'];
+                $objetivo2 = $columna['objetivo'];
+                $perfil_ingreso2 = $columna['perfil_ingreso'];
+                $perfil_egreso2 = $columna['perfil_egreso'];
+                $plan_estudio2 = $columna['plan_estudio'];
+                $carrera_video2 = $columna['carrera_video'];
+                $src_doc2 = $columna['src_doc'];
+                $years2 = $columna['years'];
+                $meses2 = $columna['meses'];
+                $img_ofer_22 = $columna['img_ofer_1'];
+                $img_ofer_22 = $columna['img_ofer_2'];
+                $img_ofer_32 = $columna['img_ofer_3'];
+                echo ("<p><h5>Pediodo Academico: $periodo2</h5></p><p><h5>Duración de la Carrera: $years2 años y $meses2 meses</h5></p><p><h5>Descrición de la carrera:</h5> <br> $descripcion2</p><p><h5>Objetivo:</h5> <br> $objetivo2</p><p><h5>Perfil de Ingreso:</h5> <br> $perfil_ingreso2</p><p><h5>Perfil de Egreso: </h5><br> $perfil_egreso2</p><p><a href='$plan_estudio2' target='_blank'><h5>Plan de Estudios</h5></a></p><p><a href='$src_doc2' target='_blank'><h5>Documento Informativo</h5></a></p><p><iframe class='embed-responsive-item' src='$carrera_video2'></iframe> <br><img src='$img_ofer_22' width='300' height='200'><img src='$img_ofer_22' width='300' height='200'><img src='$img_ofer_32' width='300' height='200'></p>");
+              ?>
             </div>
           </div>
-          <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ingenieria en Software</h5>
-          <p>
-            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-          </p>
+        </div>
+        <div class="portfolio-description">
+        <?php
+            $consulta="SELECT nombre_conferencia, src_conferencia FROM conferencias WHERE id_universidad='$admin'";
+            $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la consulta a la base de datos x1");
+            $columna=mysqli_fetch_array($ejecutar);
+            $conferencia = $columna['nombre_conferencia'];
+            $srcconferencia = $columna['src_conferencia'];
+            echo ("<h5>Conferencia: $conferencia</h5><p><iframe class='embed-responsive-item' src='$srcconferencia'></iframe></p>");
+          ?>
         </div>
       </div>
     </div>

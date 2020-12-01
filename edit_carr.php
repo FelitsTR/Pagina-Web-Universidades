@@ -6,8 +6,8 @@
 
     $consulta="SELECT * FROM oferta_educativa WHERE id_oferta='$editor_id'";
     $ejecutar=mysqli_query($conexion,$consulta) or die ("Error en la
-        consulta a la base de datos x1");
-        $columna=mysqli_fetch_array($ejecutar);
+    consulta a la base de datos x1");
+    $columna=mysqli_fetch_array($ejecutar);
     $periodo_academico = $columna['periodo_academico'];
     $carrera = $columna['carrera'];
     $descripcion = $columna['descripcion'];

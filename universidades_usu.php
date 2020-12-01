@@ -103,50 +103,39 @@
 
         <ul id="portfolio-flters" class="d-flex justify-content-end" data-aos="fade-up">
           <li data-filter="*" class="filter-active">TODAS</li>
-          <li data-filter=".filter-app">Municipio</li>
-          <li data-filter=".filter-card">Carrera</li>
-          <li data-filter=".filter-web">Favoritas</li>
+          <li data-filter=".filter-municipio">Municipio</li>
+          <li data-filter=".filter-carrera">Carrera</li>
+          <li data-filter=".filter-favoritos">Favoritas</li>
         </ul>
 
         <div class="row portfolio-container" data-aos="fade-up">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-municipio filter-favoritos">
             <div class="portfolio-img"><img src="assets/img/portafolio/portafolio-1.png" class="img-fluid" ></div>
             <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
+              <h4>Universidad Politécnica de Quintana Roo</h4>
               <a href="assets/img/portafolio/portafolio-1.png" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-universidad.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="vista_usu_uni.php?iduni=1&idofer1=1&idofer2=2" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-carrera">
             <div class="portfolio-img"><img src="assets/img/portafolio/portafolio-2.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="assets/img/portafolio/portafolio-2.png" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-universidad.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <h4>Universidad Tecnológica de la Riviera Maya</h4>
+              <a href="assets/img/portafolio/" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="vista_usu_uni.php?iduni=3&idofer1=5&idofer2=6" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="assets/img/portafolio/portafolio-3.png" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
-              <a href="assets/img/portafolio/portafolio-3.png" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-universidad.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-municipio">
             <div class="portfolio-img"><img src="assets/img/portafolio/portafolio-4.jpeg" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
+              <h4>Universidad Intercultural Maya de Quintana Roo</h4>
               <a href="assets/img/portafolio/portafolio-4.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-universidad.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="vista_usu_uni.php?iduni=2&idofer1=3&idofer2=4" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 

@@ -89,7 +89,7 @@
 
         <div class="section-title" data-aos="zoom-out">
           <h2>Equipo</h2>
-          <p>Nuestro Equipo de Desarrollo</p>
+          <p>Equipo de Desarrollo</p>
         </div>
 
         <div class="row">
@@ -97,7 +97,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up">
               <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/hombre.png" class="img-fluid" alt="">
                 <div class="social">
                   <a href="https://www.facebook.com/profile.php?id=100016759814406" target="_blank"><i class="icofont-facebook"></i></a>
                   <a href="https://www.instagram.com/xnobleswag?r=nametag" target="_blank"><i class="icofont-instagram"></i></a>
@@ -106,7 +106,7 @@
               <div class="member-info">
                 <h4>Erick Espinoza</h4>
                 <span>
-                  El que le gusta complicarse la vida
+                  Encargado Front-End y Back-End
                 </span>
               </div>
             </div>
@@ -115,7 +115,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/mujer.png" class="img-fluid" alt="">
                 <div class="social">
                   <a href="https://www.facebook.com/sandra.ascencio.92" target="_blank"><i class="icofont-facebook"></i></a>
                   <a href="https://www.instagram.com/sandra_asc/?hl=es-la" target="_blank"><i class="icofont-instagram"></i></a>
@@ -123,7 +123,7 @@
               </div>
               <div class="member-info">
                 <h4>Sandra Ascencio</h4>
-                <span>La patrona del diseño :3</span>
+                <span>Encargado de Front-End</span>
               </div>
             </div>
           </div>
@@ -131,7 +131,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="200">
               <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/hombre.png" class="img-fluid" alt="">
                 <div class="social">
                   <a href="https://www.facebook.com/profile.php?id=100041210151495" target="_blank" ><i class="icofont-facebook"></i></a>
                   <a href="https://www.instagram.com/felits.tr/?hl=es-la" target="_blank"><i class="icofont-instagram"></i></a>
@@ -139,7 +139,7 @@
               </div>
               <div class="member-info">
                 <h4>Felix Torres</h4>
-                <span>El guapo del grupo</span>
+                <span>Encargado de Front-End</span>
               </div>
             </div>
           </div>
@@ -147,7 +147,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="300">
               <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/hombre.png" class="img-fluid" alt="">
                 <div class="social">
                   <a href="https://www.facebook.com/azael.caos" target="_blank"><i class="icofont-facebook"></i></a>
                   <a href="https://www.instagram.com/aza.el_sith/?hl=es-la" target="_blank"><i class="icofont-instagram"></i></a>
@@ -155,7 +155,7 @@
               </div>
               <div class="member-info">
                 <h4>Azael</h4>
-                <span>El que se rifa al final con el proyecto</span>
+                <span>Encargado de Back-End</span>
               </div>
             </div>
           </div>
@@ -163,7 +163,7 @@
          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up">
               <div class="member-img">
-                <img src="assets/img/team/team-romo.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/hombre.png" class="img-fluid" alt="">
                 <div class="social">
                   <a href="https://www.facebook.com/luisfernando.lopezromo.7" target="_blank"><i class="icofont-facebook"></i></a>
                   <a href="https://www.instagram.com/fernando_romo43/?hl=es-la" target="_blank"><i class="icofont-instagram"></i></a>
@@ -172,7 +172,7 @@
               <div class="member-info">
                 <h4>Romo</h4>
                 <span>
-                    Es romo pelón
+                  Scrum master Back-End
                 </span>
               </div>
             </div>

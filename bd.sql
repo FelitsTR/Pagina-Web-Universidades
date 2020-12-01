@@ -97,8 +97,3 @@ INSERT INTO municipio (id_municipio, nombre_muni) VALUES
 (11, 'Puerto Morelos');
 
 
-INSERT INTO usuarios_uni (id_usu_uni, correo_u, clave_uni) VALUES
-(1, 'upqrooferia@gmail.com', 'upqroo');
-
-INSERT INTO usuarios (id_usuario, nombre_usu, telefono_usu, correo_usu, clave_usu, motivo_usu) VALUES
-(1, 'Pepe', '9884096915', 'sgr', 'pepe', 1);

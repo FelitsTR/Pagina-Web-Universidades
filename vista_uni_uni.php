@@ -67,7 +67,7 @@
     <div class="container d-flex align-items-center">
 
     <div class="logo mr-auto">
-      <h1 class="text-light"><a href="index.html">Feria Virtual</a></h1>
+      <h1 class="text-light">Feria Virtual</h1>
 
     </div>
 
@@ -76,7 +76,7 @@
       <label id="iconoMenu" for="btn-menu"><img src="images/icons/icono-menu.png" height="30px"></label>
       
       <ul class="menu">
-        <li><a href="universidades_uni.php">Inicio</a></li>
+        <li><a href="cerrar_sesion.php">Cerrrar sesión</a></li>
         <li><a href="form_uni.php">Subir o actualizar información</a></li>
       </ul>
     </nav><!-- .nav-menu -->
@@ -95,7 +95,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>Universidad Ejemplo</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
+            
             <li>Mi universidad</li>
           </ol>
         </div>
